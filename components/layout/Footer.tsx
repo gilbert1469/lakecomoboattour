@@ -18,7 +18,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Tour in barca privata sul Lago di Como. Skipper certificati, esperienze su misura, adatte a famiglie e anziani.
+              Private boat tours on Lake Como. Certified skippers, bespoke experiences, suitable for families and elderly guests.
             </p>
             <div className="mt-4 flex gap-3">
               <a href="#" aria-label="Instagram" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-colors">
@@ -32,7 +32,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">Esplora</h3>
+            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">Explore</h3>
             <ul className="space-y-2">
               {navigation.map((item) => (
                 <li key={item.href}>
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">Contatti</h3>
+            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">Contact</h3>
             <ul className="space-y-3 text-sm text-white/70">
               <li className="flex gap-2">
                 <span className="shrink-0">📍</span>
@@ -75,34 +75,34 @@ export default function Footer() {
 
           {/* Hours */}
           <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">Orari</h3>
+            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold mb-4">Opening Hours</h3>
             <ul className="space-y-2 text-sm text-white/70">
               <li className="flex justify-between gap-4">
-                <span>Lun – Ven</span>
+                <span>Mon – Fri</span>
                 <span>{contact.hours.weekdays}</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span>Sabato</span>
+                <span>Saturday</span>
                 <span>{contact.hours.saturday}</span>
               </li>
               <li className="flex justify-between gap-4">
-                <span>Domenica</span>
+                <span>Sunday</span>
                 <span>{contact.hours.sunday}</span>
               </li>
             </ul>
             <div className="mt-6">
               <Link
-                href="/prenotazione"
+                href="/booking"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-white text-sm font-semibold rounded-full hover:bg-gold-dark transition-colors"
               >
-                Prenota ora →
+                Book now →
               </Link>
             </div>
           </div>
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40">
-          <p>© {year} Lake Como Boat Tour. Tutti i diritti riservati.</p>
+          <p>© {year} Lake Como Boat Tour. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/cookie" className="hover:text-white/70 transition-colors">Cookie Policy</Link>

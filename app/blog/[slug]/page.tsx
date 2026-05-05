@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex items-center gap-3 text-white/70 text-sm mb-3">
               <time dateTime={post.date}>{formatDate(post.date)}</time>
               <span>·</span>
-              <span>{post.readingTime} min lettura</span>
+              <span>{post.readingTime} min read</span>
               <span>·</span>
               <span>{post.author}</span>
             </div>
@@ -113,9 +113,9 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <Link href="/blog" className="text-gold font-semibold hover:underline text-sm">
-                ← Torna al Blog
+                ← Back to Blog
               </Link>
-              <Button href="/prenotazione">Prenota un Tour</Button>
+              <Button href="/booking">Book a Tour</Button>
             </div>
           </div>
         </div>

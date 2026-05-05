@@ -22,7 +22,10 @@
   ],
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/tours", "destination": "/gite-in-barca", "permanent": true },
-    { "source": "/booking", "destination": "/prenotazione", "permanent": true }
+    { "source": "/gite-in-barca", "destination": "/boat-tours", "permanent": true },
+    { "source": "/esperienze", "destination": "/experiences", "permanent": true },
+    { "source": "/prenotazione", "destination": "/booking", "permanent": true },
+    { "source": "/chi-siamo", "destination": "/about", "permanent": true },
+    { "source": "/contatti", "destination": "/contact", "permanent": true }
   ]
 }

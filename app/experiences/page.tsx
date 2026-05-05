@@ -27,7 +27,7 @@ export default function ExperiencesPage() {
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/images/experiences/hero-experiences.jpg"
-            alt="Esperienze a Como"
+            alt="Experiences in Como"
             fill
             priority
             className="object-cover"
@@ -36,13 +36,13 @@ export default function ExperiencesPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">
-            Non solo barca
+            More than just a boat
           </p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white">
-            Esperienze a Como
+            Experiences in Como
           </h1>
           <p className="text-white/80 mt-2 text-lg">
-            Tour in bici, cooking class e deposito bagagli. Tutto in una sola agenzia.
+            Cycling tours, cooking classes and luggage storage. All from one agency.
           </p>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function ExperiencesPage() {
             <div className={idx % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}>
               <div className="text-4xl mb-4">{exp.icon}</div>
               <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">
-                {exp.category === "cycling" ? "Tour in Bicicletta" : exp.category === "cooking" ? "Enogastronomia" : "Servizi"}
+                {exp.category === "cycling" ? "Cycling Tour" : exp.category === "cooking" ? "Food & Wine" : "Services"}
               </p>
               <h2 className="font-serif text-3xl font-bold text-navy mb-4">{exp.name}</h2>
               <p className="text-slate leading-relaxed mb-6">{exp.description}</p>
@@ -85,7 +85,7 @@ export default function ExperiencesPage() {
 
               {/* Includes */}
               <div className="bg-cream rounded-xl p-4 mb-6">
-                <p className="text-xs font-semibold text-navy uppercase tracking-wider mb-2">Include:</p>
+                <p className="text-xs font-semibold text-navy uppercase tracking-wider mb-2">Included:</p>
                 <ul className="flex flex-wrap gap-2">
                   {exp.includes.map((inc) => (
                     <li key={inc} className="text-xs bg-white text-slate px-3 py-1 rounded-full border border-gray-200">
@@ -104,7 +104,7 @@ export default function ExperiencesPage() {
                     <div className="text-sm text-slate mt-1">⏱ {exp.duration}</div>
                   )}
                 </div>
-                <Button href="/prenotazione">Prenota ora</Button>
+                <Button href="/booking">Book Now</Button>
               </div>
             </div>
           </div>
@@ -115,17 +115,17 @@ export default function ExperiencesPage() {
       <Section bg="navy">
         <div className="text-center">
           <h2 className="font-serif text-3xl font-bold text-white mb-4">
-            Vuoi combinare Barca + Esperienze?
+            Want to Combine a Boat Tour + Experiences?
           </h2>
           <p className="text-white/70 max-w-xl mx-auto mb-8">
-            Contattaci per creare un pacchetto personalizzato. Tour in barca al mattino, cooking class nel pomeriggio e deposito bagagli incluso. Tutto con noi.
+            Contact us to create a custom package. Morning boat tour, afternoon cooking class and luggage storage included — all with us.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contatti" variant="outline" className="border-white text-white hover:bg-white hover:text-navy">
-              Contattaci
+            <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-navy">
+              Contact Us
             </Button>
-            <Button href="/prenotazione">
-              Prenota ora
+            <Button href="/booking">
+              Book Now
             </Button>
           </div>
         </div>

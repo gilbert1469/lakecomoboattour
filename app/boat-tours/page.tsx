@@ -23,9 +23,9 @@ export default function ToursPage() {
   const tourJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Tour in Barca Lago di Como",
+    name: "Lake Como Boat Tours",
     description: seo.description,
-    url: `${siteSEO.siteUrl}/gite-in-barca`,
+    url: `${siteSEO.siteUrl}/boat-tours`,
     itemListElement: tours.map((tour, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -55,7 +55,7 @@ export default function ToursPage() {
         <div className="absolute inset-0">
           <Image
             src="/images/tours/hero-tours.jpg"
-            alt="Tour in barca sul Lago di Como"
+            alt="Boat tour on Lake Como"
             fill
             priority
             className="object-cover"
@@ -65,13 +65,13 @@ export default function ToursPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
           <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">
-            Lago di Como · Barca Privata
+            Lake Como · Private Boat
           </p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white">
-            Tour in Barca
+            Boat Tours
           </h1>
           <p className="text-white/80 mt-2 text-lg">
-            6 itinerari. Tutti privati. Tutti con skipper certificato.
+            6 itineraries. All private. All with a certified skipper.
           </p>
         </div>
       </section>
@@ -79,9 +79,9 @@ export default function ToursPage() {
       {/* All Tours */}
       <Section bg="cream">
         <SectionHeader
-          eyebrow="I nostri itinerari"
-          title="Trova il Tour Perfetto per Te"
-          subtitle="Da 2 ore di giro classico fino all'intera giornata personalizzata. Ogni tour è privato: la barca è solo per voi."
+          eyebrow="Our itineraries"
+          title="Find the Perfect Tour for You"
+          subtitle="From a 2-hour classic cruise to a full personalised day. Every tour is private — the boat is exclusively yours."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {tours.map((tour) => (
@@ -90,19 +90,19 @@ export default function ToursPage() {
         </div>
       </Section>
 
-      {/* Info strip */}
+      {/* How it works */}
       <Section bg="white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Come funziona</p>
+            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">How it works</p>
             <h2 className="font-serif text-3xl font-bold text-navy mb-6">
-              Semplice come Salire in Barca
+              As Easy as Stepping on Board
             </h2>
             <ol className="space-y-5">
               {[
-                ["1", "Scegli il tour", "Seleziona l'itinerario che preferisci e verifica la disponibilità online."],
-                ["2", "Prenota", "Compila il modulo o chiamaci. Risposta di conferma entro poche ore."],
-                ["3", "Sali a bordo", "Ci trovi al porto di Como. Lo skipper vi accoglie e parte l'avventura!"],
+                ["1", "Choose your tour", "Browse our itineraries and check availability online."],
+                ["2", "Book", "Fill in the form or call us. Confirmation within a few hours."],
+                ["3", "Step on board", "Meet us at Como harbour. Your skipper will welcome you and the adventure begins!"],
               ].map(([num, title, desc]) => (
                 <li key={num} className="flex gap-4">
                   <div className="w-8 h-8 bg-gold text-white font-bold text-sm rounded-full flex items-center justify-center shrink-0">
@@ -116,13 +116,13 @@ export default function ToursPage() {
               ))}
             </ol>
             <div className="mt-8">
-              <Button href="/prenotazione">Prenota ora</Button>
+              <Button href="/booking">Book Now</Button>
             </div>
           </div>
           <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden">
             <Image
               src="/images/skipper-barca.jpg"
-              alt="Skipper sul Lago di Como"
+              alt="Skipper on Lake Como"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -133,31 +133,28 @@ export default function ToursPage() {
 
       {/* FAQ */}
       <Section bg="cream">
-        <SectionHeader
-          eyebrow="Domande frequenti"
-          title="Tutto quello che vuoi sapere"
-        />
+        <SectionHeader eyebrow="FAQ" title="Everything You Need to Know" />
         <div className="max-w-3xl mx-auto space-y-6">
           {[
             {
-              q: "I prezzi sono per persona o per barca?",
-              a: "I prezzi sono sempre per l'intera barca (non per persona). Potete essere 1 o 6 persone: il prezzo rimane lo stesso. Questo rende i nostri tour particolarmente convenienti per famiglie e gruppi.",
+              q: "Are prices per person or per boat?",
+              a: "Prices are always for the entire boat, not per person. Whether you are 1 or 6 people, the price stays the same. This makes our tours especially good value for families and groups.",
             },
             {
-              q: "È adatto ai bambini?",
-              a: "Assolutamente sì! Abbiamo tour specifici Family con barca spaziosa (fino a 8 posti), salvagenti per bambini, soste balneari sicure e uno skipper abituato a rendere l'esperienza divertente anche per i più piccoli.",
+              q: "Is it suitable for children?",
+              a: "Absolutely! We have specific Family Tours with a spacious boat (up to 8 seats), children's life jackets, safe swimming stops and a skipper who knows how to make the experience fun for the little ones too.",
             },
             {
-              q: "Cosa succede in caso di brutto tempo?",
-              a: "La sicurezza è la nostra priorità. In caso di condizioni meteo avverse, offriamo sempre la possibilità di spostare il tour o il rimborso completo.",
+              q: "What happens in bad weather?",
+              a: "Safety comes first. If weather conditions are unsuitable, we always offer the option to reschedule or a full refund.",
             },
             {
-              q: "Posso personalizzare l'itinerario?",
-              a: "Certamente! Tutti i tour hanno un itinerario di base, ma lo skipper è flessibile. Per la massima libertà vi consigliamo il Tour Privato Giornata Intera: potete decidere voi dove andare.",
+              q: "Can I customise the itinerary?",
+              a: "Absolutely! All tours have a base itinerary, but the skipper is flexible. For maximum freedom, we recommend the Full-Day Private Tour: you decide where to go.",
             },
             {
-              q: "Dove si imbarca?",
-              a: "L'imbarco avviene dal porto di Como o, su richiesta, da altri pontili del lago (Bellagio, Varenna, Tremezzo). Comunicheremo il punto esatto alla conferma della prenotazione.",
+              q: "Where do we board?",
+              a: "Boarding is at Como harbour or, on request, at other lake jetties (Bellagio, Varenna, Tremezzo). We will confirm the exact meeting point upon booking.",
             },
           ].map(({ q, a }) => (
             <div key={q} className="bg-white rounded-xl p-6 shadow-sm">

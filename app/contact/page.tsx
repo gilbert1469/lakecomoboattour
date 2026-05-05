@@ -5,15 +5,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { contact } from "@/data/navigation";
-import Section, { SectionHeader } from "@/components/ui/Section";
+import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 
 const schema = z.object({
-  name: z.string().min(2, "Inserisci il tuo nome"),
-  email: z.string().email("Email non valida"),
-  subject: z.string().min(3, "Inserisci un oggetto"),
-  message: z.string().min(10, "Il messaggio è troppo breve"),
-  privacy: z.literal(true, { message: "Devi accettare la privacy policy" }),
+  name: z.string().min(2, "Please enter your name"),
+  email: z.string().email("Invalid email address"),
+  subject: z.string().min(3, "Please enter a subject"),
+  message: z.string().min(10, "Message is too short"),
+  privacy: z.literal(true, { message: "You must accept the privacy policy" }),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -38,10 +38,10 @@ export default function ContactPage() {
       {/* Header */}
       <div className="bg-navy py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Siamo qui per te</p>
-          <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-4">Contatti</h1>
+          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">We&apos;re here for you</p>
+          <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-4">Contact</h1>
           <p className="text-white/70 text-lg max-w-xl">
-            Hai domande, vuoi un preventivo o semplicemente vuoi salutarci? Scrivi o chiama: rispondiamo entro 24 ore.
+            Have a question, want a quote or just want to say hello? Write or call us — we reply within 24 hours.
           </p>
         </div>
       </div>
@@ -51,19 +51,19 @@ export default function ContactPage() {
           {/* Contact info */}
           <div className="space-y-6">
             <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h2 className="font-serif text-xl font-bold text-navy mb-4">Informazioni</h2>
+              <h2 className="font-serif text-xl font-bold text-navy mb-4">Information</h2>
               <ul className="space-y-4">
                 <li className="flex gap-3">
                   <span className="text-2xl shrink-0">📍</span>
                   <div>
-                    <p className="text-sm font-semibold text-navy">Indirizzo</p>
+                    <p className="text-sm font-semibold text-navy">Address</p>
                     <p className="text-slate text-sm">{contact.address}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <span className="text-2xl shrink-0">📞</span>
                   <div>
-                    <p className="text-sm font-semibold text-navy">Telefono</p>
+                    <p className="text-sm font-semibold text-navy">Phone</p>
                     <a href={`tel:${contact.phone}`} className="text-slate text-sm hover:text-gold transition-colors">
                       {contact.phone}
                     </a>
@@ -88,7 +88,7 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="text-slate text-sm hover:text-gold transition-colors"
                     >
-                      Scrivi su WhatsApp →
+                      Chat on WhatsApp →
                     </a>
                   </div>
                 </li>
@@ -96,18 +96,18 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h2 className="font-serif text-xl font-bold text-navy mb-4">Orari</h2>
+              <h2 className="font-serif text-xl font-bold text-navy mb-4">Opening Hours</h2>
               <ul className="space-y-2 text-sm text-slate">
                 <li className="flex justify-between">
-                  <span>Lunedì – Venerdì</span>
+                  <span>Monday – Friday</span>
                   <span className="font-medium text-navy">{contact.hours.weekdays}</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Sabato</span>
+                  <span>Saturday</span>
                   <span className="font-medium text-navy">{contact.hours.saturday}</span>
                 </li>
                 <li className="flex justify-between">
-                  <span>Domenica</span>
+                  <span>Sunday</span>
                   <span className="font-medium text-navy">{contact.hours.sunday}</span>
                 </li>
               </ul>
@@ -119,23 +119,23 @@ export default function ContactPage() {
             {submitted ? (
               <div className="bg-white rounded-2xl shadow-sm p-8 text-center h-full flex flex-col items-center justify-center">
                 <div className="text-5xl mb-4">✅</div>
-                <h2 className="font-serif text-2xl font-bold text-navy mb-3">Messaggio inviato!</h2>
+                <h2 className="font-serif text-2xl font-bold text-navy mb-3">Message sent!</h2>
                 <p className="text-slate mb-6">
-                  Grazie per averci scritto. Ti risponderemo entro 24 ore all&apos;indirizzo email che hai indicato.
+                  Thank you for writing to us. We will reply within 24 hours to the email address you provided.
                 </p>
-                <Button href="/">Torna alla Home</Button>
+                <Button href="/">Back to Home</Button>
               </div>
             ) : (
               <div className="bg-white rounded-2xl shadow-sm p-8">
-                <h2 className="font-serif text-2xl font-bold text-navy mb-6">Invia un Messaggio</h2>
+                <h2 className="font-serif text-2xl font-bold text-navy mb-6">Send a Message</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm font-medium text-navy mb-1">Nome e Cognome *</label>
+                      <label className="block text-sm font-medium text-navy mb-1">Full Name *</label>
                       <input
                         {...register("name")}
                         className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
-                        placeholder="Mario Rossi"
+                        placeholder="John Smith"
                       />
                       {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                     </div>
@@ -145,29 +145,29 @@ export default function ContactPage() {
                         {...register("email")}
                         type="email"
                         className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
-                        placeholder="mario@esempio.it"
+                        placeholder="john@example.com"
                       />
                       {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-navy mb-1">Oggetto *</label>
+                    <label className="block text-sm font-medium text-navy mb-1">Subject *</label>
                     <input
                       {...register("subject")}
                       className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
-                      placeholder="Informazioni sul tour classico..."
+                      placeholder="Enquiry about the Classic Tour..."
                     />
                     {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-navy mb-1">Messaggio *</label>
+                    <label className="block text-sm font-medium text-navy mb-1">Message *</label>
                     <textarea
                       {...register("message")}
                       rows={6}
                       className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
-                      placeholder="Scrivi qui il tuo messaggio..."
+                      placeholder="Write your message here..."
                     />
                     {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
                   </div>
@@ -180,14 +180,14 @@ export default function ContactPage() {
                       className="mt-0.5 accent-gold"
                     />
                     <label htmlFor="privacy-contact" className="text-sm text-slate">
-                      Ho letto e accetto la{" "}
+                      I have read and accept the{" "}
                       <a href="/privacy" className="text-gold underline">Privacy Policy</a>. *
                     </label>
                   </div>
                   {errors.privacy && <p className="text-red-500 text-xs -mt-3">{errors.privacy.message}</p>}
 
                   <Button type="submit" disabled={isSubmitting} className="w-full">
-                    {isSubmitting ? "Invio in corso..." : "Invia Messaggio"}
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Lake Como Boat Tour – Mappa"
+          title="Lake Como Boat Tour – Map"
           className="absolute inset-0"
         />
       </div>

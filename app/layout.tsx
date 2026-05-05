@@ -20,12 +20,12 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteSEO.siteUrl),
   title: {
-    default: "Lake Como Boat Tour – Tour in Barca Privata sul Lago di Como",
+    default: "Lake Como Boat Tour – Private Boat Tours on Lake Como, Italy",
     template: "%s | Lake Como Boat Tour",
   },
   description:
-    "Tour in barca privata sul Lago di Como con skipper certificato. Family-friendly, adatto agli anziani, multilingue. Prenota il tuo giro da Como, Bellagio, Varenna.",
-  keywords: ["tour barca lago di como", "giro in barca como", "boat tour lake como", "escursione lago como"],
+    "Private boat tours on Lake Como with a certified skipper. Family-friendly, elderly-friendly, multilingual crew. Book your cruise from Como, Bellagio or Varenna.",
+  keywords: ["lake como boat tour", "private boat tour lake como", "lake como cruise", "lake como italy"],
   openGraph: {
     type: "website",
     locale: siteSEO.locale,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="it" className={`${inter.variable} ${playfair.variable} h-full`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full`}>
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

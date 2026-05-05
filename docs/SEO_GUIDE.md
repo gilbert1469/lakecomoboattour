@@ -2,7 +2,7 @@
 
 Questa guida spiega come un agente AI (Claude Cowork) può aggiungere, modificare e ottimizzare contenuti SEO senza rischiare di rompere il codebase.
 
-**Repository**: Lake Como Boat Tour – lakecomoboattour.net  
+**Repository**: Lake Como Boat Tour – lakecomoboatour.net  
 **Stack**: Next.js 16, TypeScript, Tailwind CSS v4, Markdown blog  
 
 ---
@@ -53,7 +53,7 @@ keywords:
   - long-tail keyword
 author: "Lake Como Boat Tour"
 image: "/images/blog/nome-immagine.jpg"
-canonical: "https://lakecomoboattour.net/blog/nome-slug"
+canonical: "https://lakecomoboatour.net/blog/nome-slug"
 ---
 
 Contenuto markdown qui...

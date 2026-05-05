@@ -25,32 +25,32 @@ const usps = [
   {
     icon: "👨‍👩‍👧‍👦",
     title: "Family Friendly",
-    description: "Tour pensati per tutta la famiglia: barca spaziosa, ritmo comodo, skipper esperto con i bambini.",
+    description: "Tours designed for the whole family: spacious boat, relaxed pace, skipper experienced with children.",
   },
   {
     icon: "🧓",
-    title: "Adatto agli Anziani",
-    description: "Accesso facile, sedute comode e nessuna fretta. Il Lago di Como per tutti, senza barriere.",
+    title: "Elderly Friendly",
+    description: "Easy boarding, comfortable seating and no rush. Lake Como for everyone, with no barriers.",
   },
   {
     icon: "🌍",
-    title: "Team Multilingue",
-    description: "Parliamo italiano, inglese, francese e tedesco. I vostri tour spiegati nella vostra lingua.",
+    title: "Multilingual Crew",
+    description: "We speak Italian, English, French and German. Your tour explained in your own language.",
   },
   {
     icon: "🔒",
-    title: "Barca Privata",
-    description: "Nessun altro passeggero: la barca è tutta per voi. Libertà totale su percorso e soste.",
+    title: "Fully Private Boat",
+    description: "No other passengers: the boat is entirely yours. Total freedom over route and stops.",
   },
   {
     icon: "⚓",
-    title: "Skipper Certificato",
-    description: "Professionisti con anni di esperienza sul Lago di Como. Sicurezza e professionalità garantite.",
+    title: "Certified Skipper",
+    description: "Licensed professionals with years of experience on Lake Como. Safety and expertise guaranteed.",
   },
   {
     icon: "⭐",
-    title: "Recensioni 5 Stelle",
-    description: "Centinaia di ospiti soddisfatti su TripAdvisor e Google. La vostra esperienza è la nostra priorità.",
+    title: "5-Star Reviews",
+    description: "Hundreds of happy guests on TripAdvisor and Google. Your experience is our top priority.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function HomePage() {
     description: seo.description,
     url: siteSEO.siteUrl,
     telephone: "+39 031 000 0000",
-    email: "info@lakecomoboattour.net",
+    email: "info@lakecomoboatour.net",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Via Adamo del Pero 38",
@@ -108,7 +108,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/images/hero-lago-como.jpg"
-            alt="Lago di Como visto dalla barca"
+            alt="Lake Como seen from the boat"
             fill
             priority
             className="object-cover"
@@ -119,36 +119,36 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-4">
-            Lago di Como · Barca Privata
+            Lake Como · Private Boat
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-            Scopri il Lago di Como
+            Discover Lake Como
             <br />
-            <span className="text-gold">dalla Prospettiva Giusta</span>
+            <span className="text-gold">from the Best Perspective</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Tour in barca privata con skipper certificato. Ville storiche, borghi pittoreschi,
-            tramonti mozzafiato. Adatti a famiglie, anziani e gruppi internazionali.
+            Private boat tours with a certified skipper. Historic villas, charming villages,
+            breathtaking sunsets. Tailored for families, elderly guests and international travellers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/prenotazione" size="lg">
-              Prenota il tuo Tour
+            <Button href="/booking" size="lg">
+              Book Your Tour
             </Button>
             <Button
-              href="/gite-in-barca"
+              href="/boat-tours"
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-navy"
             >
-              Scopri i Tour
+              Explore Tours
             </Button>
           </div>
 
           <div className="mt-14 grid grid-cols-3 gap-6 max-w-sm mx-auto sm:max-w-md">
             {[
-              ["500+", "Ospiti felici"],
-              ["6", "Tour disponibili"],
-              ["100%", "Barca privata"],
+              ["500+", "Happy guests"],
+              ["6", "Tours available"],
+              ["100%", "Private boat"],
             ].map(([num, label]) => (
               <div key={label}>
                 <div className="text-2xl sm:text-3xl font-bold text-gold">{num}</div>
@@ -168,9 +168,9 @@ export default function HomePage() {
       {/* Featured Tours */}
       <Section bg="cream">
         <SectionHeader
-          eyebrow="I nostri tour"
-          title="Scegli la tua Avventura sul Lago"
-          subtitle="Ogni tour è in barca privata, con skipper certificato. Scegli la durata e l'itinerario che preferisci."
+          eyebrow="Our tours"
+          title="Choose Your Lake Como Adventure"
+          subtitle="Every tour is fully private with a certified skipper. Pick the duration and itinerary that suits you best."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredTours.map((tour) => (
@@ -178,8 +178,8 @@ export default function HomePage() {
           ))}
         </div>
         <div className="text-center mt-10">
-          <Button href="/gite-in-barca" variant="secondary">
-            Vedi tutti i tour →
+          <Button href="/boat-tours" variant="secondary">
+            View all tours →
           </Button>
         </div>
       </Section>
@@ -187,9 +187,9 @@ export default function HomePage() {
       {/* USPs */}
       <Section bg="white">
         <SectionHeader
-          eyebrow="Perché sceglierci"
-          title="Un'Esperienza su Misura per Te"
-          subtitle="Non siamo un servizio di traghetti. Ogni tour è pensato per farti vivere il lago in modo autentico e personale."
+          eyebrow="Why choose us"
+          title="A Tailor-Made Experience, Just for You"
+          subtitle="We're not a ferry service. Every tour is crafted to let you experience the lake in an authentic, personal way."
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {usps.map((usp) => (
@@ -207,22 +207,22 @@ export default function HomePage() {
       {/* Experiences strip */}
       <Section bg="navy">
         <SectionHeader
-          eyebrow="Non solo barca"
-          title="Altre Esperienze da Non Perdere"
-          subtitle="Completa la tua visita con i nostri tour in bici, cooking class e il comodo deposito bagagli."
+          eyebrow="More than just a boat"
+          title="Other Experiences You'll Love"
+          subtitle="Complete your visit with our cycling tours, cooking classes and convenient luggage storage in Como."
           light
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {experiences.map((exp) => (
             <Link
               key={exp.id}
-              href={`/esperienze#${exp.category}`}
+              href={`/experiences#${exp.category}`}
               className="group bg-white/10 hover:bg-white/20 transition-colors rounded-2xl p-6 text-white"
             >
               <div className="text-4xl mb-4">{exp.icon}</div>
               <h3 className="font-serif text-xl font-bold mb-2">{exp.name}</h3>
               <p className="text-white/70 text-sm leading-relaxed">{exp.shortDescription}</p>
-              <div className="mt-4 text-gold text-sm font-semibold group-hover:underline">Scopri →</div>
+              <div className="mt-4 text-gold text-sm font-semibold group-hover:underline">Discover →</div>
             </Link>
           ))}
         </div>
@@ -239,12 +239,11 @@ export default function HomePage() {
             ))}
           </div>
           <blockquote className="font-serif text-2xl lg:text-3xl text-navy font-bold leading-snug mb-6 text-balance">
-            &ldquo;Un&apos;esperienza meravigliosa! Lo skipper ci ha mostrato angoli del lago che non
-            avremmo mai trovato da soli. Consigliato a tutti!&rdquo;
+            &ldquo;A wonderful experience! Our skipper showed us hidden corners of the lake we never would have found on our own. Highly recommended!&rdquo;
           </blockquote>
-          <p className="text-slate text-sm mb-8">— Maria G., Milano · TripAdvisor</p>
-          <Button href="/prenotazione" size="lg">
-            Prenota la tua Esperienza
+          <p className="text-slate text-sm mb-8">— Maria G., Milan · TripAdvisor</p>
+          <Button href="/booking" size="lg">
+            Book Your Experience
           </Button>
         </div>
       </section>

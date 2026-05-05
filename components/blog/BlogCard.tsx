@@ -19,7 +19,7 @@ export default function BlogCard({ post }: { post: BlogPostMeta }) {
         <div className="flex items-center gap-3 text-xs text-slate mb-3">
           <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span>·</span>
-          <span>{post.readingTime} min lettura</span>
+          <span>{post.readingTime} min read</span>
         </div>
         <h3 className="font-serif text-xl font-bold text-navy leading-snug mb-3 group-hover:text-gold transition-colors">
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
@@ -29,7 +29,7 @@ export default function BlogCard({ post }: { post: BlogPostMeta }) {
           href={`/blog/${post.slug}`}
           className="mt-4 text-sm font-semibold text-gold hover:text-gold-dark transition-colors inline-flex items-center gap-1"
         >
-          Leggi l&apos;articolo →
+          Read article →
         </Link>
       </div>
     </article>

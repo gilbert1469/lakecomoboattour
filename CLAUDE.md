@@ -92,7 +92,7 @@ keywords:
   - keyword 2
 author: "Lake Como Boat Tour"
 image: "/images/blog/nome-immagine.jpg"
-canonical: "https://lakecomoboattour.net/blog/nome-slug"
+canonical: "https://lakecomoboatour.net/blog/nome-slug"
 ---
 
 Contenuto markdown qui...
