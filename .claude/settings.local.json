@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --no-git)",
+      "Bash(npm --version)",
+      "Bash(export PATH=\"/opt/homebrew/bin:/usr/local/bin:$PATH\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --no-git --yes)",
+      "Bash(mkdir -p /tmp/lcbt-init)",
+      "Read(//tmp/**)",
+      "Bash(npx create-next-app@latest lake-como-boat-tour --typescript --tailwind --eslint --app --src-dir=false --import-alias=\"@/*\" --no-git --yes)",
+      "Bash(npm install *)",
+      "Bash(node /Users/gilbertomosconi/Sito/node_modules/next/dist/bin/next build)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}
