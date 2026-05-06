@@ -10,7 +10,7 @@ keywords:
   - varenna restaurants
   - freshwater fish lake como
 author: "Lake Como Tourist Center"
-image: "/images/blog/ristoranti-lago-como.jpg"
+image: "https://picsum.photos/seed/lakecomo-food/800/600"
 canonical: "https://milantolakecomo.com/blog/best-restaurants-lake-como"
 ---
 

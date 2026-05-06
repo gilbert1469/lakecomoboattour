@@ -9,7 +9,7 @@ keywords:
   - bellagio varenna
   - lake como travel guide 2025
 author: "Lake Como Tourist Center"
-image: "/images/blog/guida-cosa-vedere.jpg"
+image: "https://picsum.photos/seed/lakecomo-guide/800/600"
 canonical: "https://milantolakecomo.com/blog/what-to-see-lake-como"
 ---
 

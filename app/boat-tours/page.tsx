@@ -54,7 +54,7 @@ export default function ToursPage() {
       <section className="relative h-72 lg:h-96 flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/tours/hero-tours.jpg"
+            src="https://picsum.photos/seed/lakecomo-tours/1920/600"
             alt="Boat tour on Lake Como"
             fill
             priority
@@ -121,7 +121,7 @@ export default function ToursPage() {
           </div>
           <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden">
             <Image
-              src="/images/skipper-barca.jpg"
+              src="https://picsum.photos/seed/lakecomo-skipper/800/600"
               alt="Skipper on Lake Como"
               fill
               className="object-cover"

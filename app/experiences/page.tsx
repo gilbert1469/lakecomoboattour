@@ -26,7 +26,7 @@ export default function ExperiencesPage() {
       <section className="relative h-72 lg:h-80 flex items-end overflow-hidden bg-navy">
         <div className="absolute inset-0 opacity-40">
           <Image
-            src="/images/experiences/hero-experiences.jpg"
+            src="https://picsum.photos/seed/lakecomo-exp/1920/600"
             alt="Experiences in Como"
             fill
             priority

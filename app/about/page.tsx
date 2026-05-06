@@ -23,21 +23,21 @@ const teamMembers = [
     name: "Marco Ferretti",
     role: "Founder & Head Skipper",
     bio: "Born in Como, he has been sailing the lake since he was 10. Professional sailing licence, certified tourist guide. Speaks Italian, English and French.",
-    image: "/images/team/marco.jpg",
+    image: "https://picsum.photos/seed/team-marco/400/400",
     flag: "🇮🇹 🇬🇧 🇫🇷",
   },
   {
     name: "Laura Bianchi",
     role: "Customer Experience & Booking",
     bio: "Responsible for bookings and guest care. She makes sure every experience is perfect from the very first contact.",
-    image: "/images/team/laura.jpg",
+    image: "https://picsum.photos/seed/team-laura/400/400",
     flag: "🇮🇹 🇬🇧",
   },
   {
     name: "Stefan Müller",
     role: "Skipper & Guide",
     bio: "Certified skipper with 15 years of experience on Lake Como. Specialised in tours for families and international groups. Speaks German, English and Italian.",
-    image: "/images/team/stefan.jpg",
+    image: "https://picsum.photos/seed/team-stefan/400/400",
     flag: "🇩🇪 🇬🇧 🇮🇹",
   },
 ];
@@ -72,7 +72,7 @@ export default function AboutPage() {
       <section className="relative h-72 lg:h-96 flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/about-hero.jpg"
+            src="https://picsum.photos/seed/lakecomo-about/1920/600"
             alt="Our team in Como"
             fill
             priority
@@ -119,7 +119,7 @@ export default function AboutPage() {
           </div>
           <div className="relative h-80 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/about-lago.jpg"
+              src="https://picsum.photos/seed/lakecomo-aerial/800/600"
               alt="Aerial view of Lake Como"
               fill
               className="object-cover"
