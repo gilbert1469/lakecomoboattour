@@ -8,9 +8,9 @@ keywords:
   - villa del balbianello
   - bellagio varenna
   - lake como travel guide 2025
-author: "Lake Como Boat Tour"
+author: "Milan to Lake Como"
 image: "/images/blog/guida-cosa-vedere.jpg"
-canonical: "https://lakecomoboatour.net/blog/what-to-see-lake-como"
+canonical: "https://milantolakecomo.com/blog/what-to-see-lake-como"
 ---
 
 Lake Como is one of the most beautiful places in Italy and in the world. With its deep blue waters, noble villas, medieval villages and the backdrop of the Alps, it enchants millions of visitors every year. In this guide we take you through the must-see spots.
@@ -43,6 +43,6 @@ The city of Como has a beautiful medieval heart, with its **Cathedral**, the **B
 
 The most free and authentic way to discover Lake Como is undoubtedly by **private boat**. You're not tied to ferry timetables, you can stop wherever you like, admire the villas from the water and reach hidden coves and corners that you simply can't see from the road.
 
-At **Lake Como Boat Tour** we organise tailor-made private tours, suitable for families, couples and groups. Our certified skipper will accompany you with stories and facts that will make your cruise even more special.
+At **Milan to Lake Como** we organise tailor-made private tours, suitable for families, couples and groups. Our certified skipper will accompany you with stories and facts that will make your cruise even more special.
 
 [Explore all our tours →](/boat-tours)

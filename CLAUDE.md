@@ -1,4 +1,4 @@
-# Lake Como Boat Tour – CLAUDE.md
+# Milan to Lake Como – CLAUDE.md
 
 Questo file documenta la struttura, le convenzioni e le istruzioni per Claude Code (e Claude Cowork) su come lavorare su questo progetto senza rompere niente.
 
@@ -90,9 +90,9 @@ description: "Meta description per SEO (max 160 caratteri)"
 keywords:
   - keyword 1
   - keyword 2
-author: "Lake Como Boat Tour"
+author: "Milan to Lake Como"
 image: "/images/blog/nome-immagine.jpg"
-canonical: "https://lakecomoboatour.net/blog/nome-slug"
+canonical: "https://milantolakecomo.com/blog/nome-slug"
 ---
 
 Contenuto markdown qui...

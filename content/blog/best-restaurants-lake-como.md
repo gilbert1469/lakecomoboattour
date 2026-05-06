@@ -9,9 +9,9 @@ keywords:
   - bellagio restaurants
   - varenna restaurants
   - freshwater fish lake como
-author: "Lake Como Boat Tour"
+author: "Milan to Lake Como"
 image: "/images/blog/ristoranti-lago-como.jpg"
-canonical: "https://lakecomoboatour.net/blog/best-restaurants-lake-como"
+canonical: "https://milantolakecomo.com/blog/best-restaurants-lake-como"
 ---
 
 Lake Como is not only about scenery and villas — it's also a serious food destination. Larian cuisine blends mountain and lakeside tradition with Lombard and Alpine influences, creating truly unique dishes. Here's our selection of the best places to eat.

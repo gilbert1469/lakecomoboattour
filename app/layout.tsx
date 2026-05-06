@@ -20,8 +20,8 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteSEO.siteUrl),
   title: {
-    default: "Lake Como Boat Tour – Private Boat Tours on Lake Como, Italy",
-    template: "%s | Lake Como Boat Tour",
+    default: "Milan to Lake Como – Private Boat Tours on Lake Como, Italy",
+    template: "%s | Milan to Lake Como",
   },
   description:
     "Private boat tours on Lake Como with a certified skipper. Family-friendly, elderly-friendly, multilingual crew. Book your cruise from Como, Bellagio or Varenna.",

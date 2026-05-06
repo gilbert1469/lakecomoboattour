@@ -102,7 +102,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40">
-          <p>© {year} Lake Como Boat Tour. All rights reserved.</p>
+          <p>© {year} Milan to Lake Como. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/cookie" className="hover:text-white/70 transition-colors">Cookie Policy</Link>

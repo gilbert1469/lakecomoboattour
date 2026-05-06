@@ -206,7 +206,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Lake Como Boat Tour – Map"
+          title="Milan to Lake Como – Map"
           className="absolute inset-0"
         />
       </div>

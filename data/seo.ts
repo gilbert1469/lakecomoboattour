@@ -7,16 +7,16 @@ export interface PageSEO {
 }
 
 export const siteSEO = {
-  siteName: "Lake Como Boat Tour",
-  siteUrl: "https://lakecomoboatour.net",
+  siteName: "Milan to Lake Como",
+  siteUrl: "https://milantolakecomo.com",
   defaultOgImage: "/images/og-default.jpg",
   locale: "en_US",
-  twitterHandle: "@lakecomoboatour",
+  twitterHandle: "@milantolakecomo",
 };
 
 export const pageSEO: Record<string, PageSEO> = {
   home: {
-    title: "Lake Como Boat Tour – Private Boat Tours on Lake Como, Italy",
+    title: "Milan to Lake Como – Private Boat Tours on Lake Como, Italy",
     description:
       "Private boat tours on Lake Como with a certified skipper. Family-friendly, elderly-friendly, multilingual crew. Book your tour from Como, Bellagio or Varenna.",
     keywords: [
@@ -30,7 +30,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-home.jpg",
   },
   tours: {
-    title: "Boat Tours on Lake Como – All Itineraries | Lake Como Boat Tour",
+    title: "Boat Tours on Lake Como – All Itineraries | Milan to Lake Como",
     description:
       "Explore all our private boat tours on Lake Como: historic villas, sunset cruises, Bellagio & Varenna, full-day tours. Private boat, certified skipper, family-friendly.",
     keywords: [
@@ -44,7 +44,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-tours.jpg",
   },
   experiences: {
-    title: "Lake Como Experiences – Cycling, Cooking Class & Luggage Storage | Lake Como Boat Tour",
+    title: "Lake Como Experiences – Cycling, Cooking Class & Luggage Storage | Milan to Lake Como",
     description:
       "More than boats: cycling tours on Lake Como, authentic Italian cooking class, and secure luggage storage in the heart of Como. Experiences for every taste.",
     keywords: [
@@ -58,7 +58,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-experiences.jpg",
   },
   booking: {
-    title: "Book Your Lake Como Boat Tour | Lake Como Boat Tour",
+    title: "Book a Lake Como Boat Tour | Milan to Lake Como",
     description:
       "Book your private boat tour on Lake Como online. Check availability and choose your itinerary. Instant confirmation, free cancellation up to 48h before.",
     keywords: [
@@ -70,7 +70,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-booking.jpg",
   },
   blog: {
-    title: "Blog – Discover Lake Como | Lake Como Boat Tour",
+    title: "Blog – Discover Lake Como | Milan to Lake Como",
     description:
       "Guides, tips and stories about Lake Como: what to see, where to eat, the most beautiful villages, historic villas and everything you need to know before you visit.",
     keywords: [
@@ -83,7 +83,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-blog.jpg",
   },
   about: {
-    title: "About Us – Our Agency in Como | Lake Como Boat Tour",
+    title: "About Us – Our Agency in Como | Milan to Lake Como",
     description:
       "We are a private tour agency based in Como (Via Adamo del Pero 38). Multilingual team, certified skippers and a passion for Lake Como.",
     keywords: [
@@ -95,7 +95,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-about.jpg",
   },
   contact: {
-    title: "Contact Us – Lake Como Boat Tour | Via Adamo del Pero 38, Como",
+    title: "Contact Us – Milan to Lake Como | Via Adamo del Pero 38, Como",
     description:
       "Get in touch for information, custom quotes and bookings. We are in Como, Via Adamo del Pero 38. We reply within 24 hours.",
     keywords: [

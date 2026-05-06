@@ -61,11 +61,11 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": siteSEO.siteUrl,
-    name: "Lake Como Boat Tour",
+    name: "Milan to Lake Como",
     description: seo.description,
     url: siteSEO.siteUrl,
     telephone: "+39 031 000 0000",
-    email: "info@lakecomoboatour.net",
+    email: "info@milantolakecomo.com",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Via Adamo del Pero 38",

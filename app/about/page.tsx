@@ -46,7 +46,7 @@ export default function AboutPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    name: "Lake Como Boat Tour",
+    name: "Milan to Lake Como",
     description: seo.description,
     url: siteSEO.siteUrl,
     telephone: contact.phone,
@@ -97,7 +97,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-slate leading-relaxed">
               <p>
-                Lake Como Boat Tour was born from the passion of Marco Ferretti, a Como native, for his lake.
+                Milan to Lake Como was born from the passion of Marco Ferretti, a Como native, for his lake.
                 After years working as a private skipper, in 2018 he decided to share that passion with visitors
                 from all over the world, founding the agency with the goal of offering an authentic alternative
                 to scheduled ferries.

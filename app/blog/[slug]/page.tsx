@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
     author: { "@type": "Organization", name: post.author, url: siteSEO.siteUrl },
     publisher: {
       "@type": "Organization",
-      name: "Lake Como Boat Tour",
+      name: "Milan to Lake Como",
       url: siteSEO.siteUrl,
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": `${siteSEO.siteUrl}/blog/${post.slug}` },
