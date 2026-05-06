@@ -19,7 +19,7 @@ export default function Header() {
                 Lake Como
               </div>
               <div className="text-xs text-gold font-medium tracking-widest uppercase leading-tight">
-                Boat Tour
+                Tourist Center
               </div>
             </div>
           </Link>

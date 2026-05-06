@@ -206,7 +206,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Milan to Lake Como – Map"
+          title="Lake Como Tourist Center – Map"
           className="absolute inset-0"
         />
       </div>

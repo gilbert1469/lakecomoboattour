@@ -1,6 +1,6 @@
 # COORDINATION.md – Stato del Progetto
 
-Ultimo aggiornamento: 2026-05-05
+Ultimo aggiornamento: 2026-05-06
 
 ## Stato generale
 

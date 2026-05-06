@@ -7,7 +7,7 @@ export interface PageSEO {
 }
 
 export const siteSEO = {
-  siteName: "Milan to Lake Como",
+  siteName: "Lake Como Tourist Center",
   siteUrl: "https://milantolakecomo.com",
   defaultOgImage: "/images/og-default.jpg",
   locale: "en_US",
@@ -16,9 +16,9 @@ export const siteSEO = {
 
 export const pageSEO: Record<string, PageSEO> = {
   home: {
-    title: "Milan to Lake Como – Private Boat Tours on Lake Como, Italy",
+    title: "Lake Como Tourist Center – Boat Tours, Day Trips & Local Expertise",
     description:
-      "Private boat tours on Lake Como with a certified skipper. Family-friendly, elderly-friendly, multilingual crew. Book your tour from Como, Bellagio or Varenna.",
+      "Your gateway to Lake Como experiences: private boat tours, day trips, cycling, cooking classes and more. Certified skippers, multilingual crew, family-friendly.",
     keywords: [
       "lake como boat tour",
       "private boat tour lake como",
@@ -30,7 +30,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-home.jpg",
   },
   tours: {
-    title: "Boat Tours on Lake Como – All Itineraries | Milan to Lake Como",
+    title: "Boat Tours on Lake Como – All Itineraries | Lake Como Tourist Center",
     description:
       "Explore all our private boat tours on Lake Como: historic villas, sunset cruises, Bellagio & Varenna, full-day tours. Private boat, certified skipper, family-friendly.",
     keywords: [
@@ -44,7 +44,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-tours.jpg",
   },
   experiences: {
-    title: "Lake Como Experiences – Cycling, Cooking Class & Luggage Storage | Milan to Lake Como",
+    title: "Lake Como Experiences – Cycling, Cooking Class & Luggage Storage | Lake Como Tourist Center",
     description:
       "More than boats: cycling tours on Lake Como, authentic Italian cooking class, and secure luggage storage in the heart of Como. Experiences for every taste.",
     keywords: [
@@ -58,7 +58,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-experiences.jpg",
   },
   booking: {
-    title: "Book a Lake Como Boat Tour | Milan to Lake Como",
+    title: "Book a Lake Como Boat Tour | Lake Como Tourist Center",
     description:
       "Book your private boat tour on Lake Como online. Check availability and choose your itinerary. Instant confirmation, free cancellation up to 48h before.",
     keywords: [
@@ -70,7 +70,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-booking.jpg",
   },
   blog: {
-    title: "Blog – Discover Lake Como | Milan to Lake Como",
+    title: "Blog – Discover Lake Como | Lake Como Tourist Center",
     description:
       "Guides, tips and stories about Lake Como: what to see, where to eat, the most beautiful villages, historic villas and everything you need to know before you visit.",
     keywords: [
@@ -83,7 +83,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-blog.jpg",
   },
   about: {
-    title: "About Us – Our Agency in Como | Milan to Lake Como",
+    title: "About Us – Our Agency in Como | Lake Como Tourist Center",
     description:
       "We are a private tour agency based in Como (Via Adamo del Pero 38). Multilingual team, certified skippers and a passion for Lake Como.",
     keywords: [
@@ -95,7 +95,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-about.jpg",
   },
   contact: {
-    title: "Contact Us – Milan to Lake Como | Via Adamo del Pero 38, Como",
+    title: "Contact Us – Lake Como Tourist Center | Via Adamo del Pero 38, Como",
     description:
       "Get in touch for information, custom quotes and bookings. We are in Como, Via Adamo del Pero 38. We reply within 24 hours.",
     keywords: [

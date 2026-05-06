@@ -61,7 +61,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": siteSEO.siteUrl,
-    name: "Milan to Lake Como",
+    name: "Lake Como Tourist Center",
     description: seo.description,
     url: siteSEO.siteUrl,
     telephone: "+39 031 000 0000",
@@ -119,7 +119,7 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
           <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-4">
-            Lake Como · Private Boat
+            Lake Como · Tourist Center
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
             Discover Lake Como

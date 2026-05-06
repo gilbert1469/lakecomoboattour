@@ -14,11 +14,11 @@ export default function Footer() {
               <span className="text-2xl">⛵</span>
               <div>
                 <div className="font-serif text-lg font-bold leading-tight">Lake Como</div>
-                <div className="text-xs text-gold font-medium tracking-widest uppercase">Boat Tour</div>
+                <div className="text-xs text-gold font-medium tracking-widest uppercase">Tourist Center</div>
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Private boat tours on Lake Como. Certified skippers, bespoke experiences, suitable for families and elderly guests.
+              Your gateway to Lake Como experiences — boat tours, day trips, local expertise.
             </p>
             <div className="mt-4 flex gap-3">
               <a href="#" aria-label="Instagram" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold transition-colors">
@@ -102,7 +102,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-xs text-white/40">
-          <p>© {year} Milan to Lake Como. All rights reserved.</p>
+          <p>© {year} Lake Como Tourist Center. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/cookie" className="hover:text-white/70 transition-colors">Cookie Policy</Link>

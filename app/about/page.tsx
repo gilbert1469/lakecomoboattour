@@ -46,7 +46,7 @@ export default function AboutPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
-    name: "Milan to Lake Como",
+    name: "Lake Como Tourist Center",
     description: seo.description,
     url: siteSEO.siteUrl,
     telephone: contact.phone,
@@ -97,10 +97,9 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-slate leading-relaxed">
               <p>
-                Milan to Lake Como was born from the passion of Marco Ferretti, a Como native, for his lake.
+                Lake Como Tourist Center was born from the passion of Marco Ferretti, a Como native, for his lake.
                 After years working as a private skipper, in 2018 he decided to share that passion with visitors
-                from all over the world, founding the agency with the goal of offering an authentic alternative
-                to scheduled ferries.
+                from all over the world, founding the agency as a one-stop hub for authentic Lake Como experiences.
               </p>
               <p>
                 The secret? The private boat. No fixed timetable, no other passengers, no rush.

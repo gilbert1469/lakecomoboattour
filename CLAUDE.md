@@ -1,4 +1,4 @@
-# Milan to Lake Como – CLAUDE.md
+# Lake Como Tourist Center – CLAUDE.md
 
 Questo file documenta la struttura, le convenzioni e le istruzioni per Claude Code (e Claude Cowork) su come lavorare su questo progetto senza rompere niente.
 
@@ -90,7 +90,7 @@ description: "Meta description per SEO (max 160 caratteri)"
 keywords:
   - keyword 1
   - keyword 2
-author: "Milan to Lake Como"
+author: "Lake Como Tourist Center"
 image: "/images/blog/nome-immagine.jpg"
 canonical: "https://milantolakecomo.com/blog/nome-slug"
 ---

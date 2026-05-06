@@ -9,7 +9,7 @@ keywords:
   - bellagio restaurants
   - varenna restaurants
   - freshwater fish lake como
-author: "Milan to Lake Como"
+author: "Lake Como Tourist Center"
 image: "/images/blog/ristoranti-lago-como.jpg"
 canonical: "https://milantolakecomo.com/blog/best-restaurants-lake-como"
 ---

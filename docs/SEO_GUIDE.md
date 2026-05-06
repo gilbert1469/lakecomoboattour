@@ -2,7 +2,7 @@
 
 Questa guida spiega come un agente AI (Claude Cowork) può aggiungere, modificare e ottimizzare contenuti SEO senza rischiare di rompere il codebase.
 
-**Repository**: Milan to Lake Como – milantolakecomo.com  
+**Repository**: Lake Como Tourist Center – milantolakecomo.com  
 **Stack**: Next.js 16, TypeScript, Tailwind CSS v4, Markdown blog  
 
 ---
@@ -18,7 +18,7 @@ Ogni pagina ha i propri metadata definiti nell'oggetto `pageSEO` nel file `data/
 // data/seo.ts
 export const pageSEO = {
   home: {
-    title: "Milan to Lake Como – Tour in Barca privata sul Lago di Como",
+    title: "Lake Como Tourist Center – Tour in Barca privata sul Lago di Como",
     description: "Tour in barca privata sul Lago di Como con skipper certificato...",
     keywords: ["tour barca lago di como", "giro in barca lago como", ...],
     ogImage: "/images/og-home.jpg",
@@ -51,7 +51,7 @@ keywords:
   - keyword principale
   - keyword secondaria
   - long-tail keyword
-author: "Milan to Lake Como"
+author: "Lake Como Tourist Center"
 image: "/images/blog/nome-immagine.jpg"
 canonical: "https://milantolakecomo.com/blog/nome-slug"
 ---
@@ -130,7 +130,7 @@ Questi file gestiscono la struttura del sito. Modificarli può rompere il build:
 
 ## Idee di contenuto per articoli blog
 
-Topic ad alto potenziale SEO per Milan to Lake Como:
+Topic ad alto potenziale SEO per Lake Como Tourist Center:
 1. "Cosa vedere a Bellagio in un giorno" (keyword: cosa vedere bellagio)
 2. "Come arrivare al Lago di Como da Milano" (keyword: como da milano)
 3. "Lago di Como con bambini: guida completa" (keyword: lago di como bambini)
