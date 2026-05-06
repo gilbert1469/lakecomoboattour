@@ -82,7 +82,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-navy/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">Our story</p>
+          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">Our story</p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white">About Us</h1>
         </div>
       </section>
@@ -91,7 +91,7 @@ export default function AboutPage() {
       <Section bg="white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Our story</p>
+            <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-3">Our story</p>
             <h2 className="font-serif text-3xl font-bold text-navy mb-6">
               Born on the Lake, Grown for the Lake
             </h2>
@@ -167,7 +167,7 @@ export default function AboutPage() {
                 />
               </div>
               <h3 className="font-serif text-xl font-bold text-navy">{member.name}</h3>
-              <p className="text-gold text-sm font-semibold mt-1 mb-2">{member.role}</p>
+              <p className="text-navy-light text-sm font-semibold mt-1 mb-2">{member.role}</p>
               <p className="text-slate text-sm leading-relaxed mb-2">{member.bio}</p>
               <p className="text-lg">{member.flag}</p>
             </div>
@@ -178,7 +178,7 @@ export default function AboutPage() {
       {/* Location */}
       <Section bg="navy">
         <div className="text-center max-w-2xl mx-auto">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">Find us</p>
+          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-3">Find us</p>
           <h2 className="font-serif text-3xl font-bold text-white mb-6">
             We&apos;re in the Heart of Como
           </h2>

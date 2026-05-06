@@ -18,7 +18,7 @@ export default function Header() {
               <div className="font-serif text-lg font-bold text-navy leading-tight">
                 Lake Como
               </div>
-              <div className="text-xs text-gold font-medium tracking-widest uppercase leading-tight">
+              <div className="text-xs text-navy-light font-medium tracking-widest uppercase leading-tight">
                 Tourist Center
               </div>
             </div>
@@ -31,7 +31,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="ml-4 px-5 py-2 bg-gold text-white font-semibold rounded-full text-sm hover:bg-gold-dark transition-colors"
+                  className="ml-4 px-5 py-2 bg-gold-light text-navy font-semibold rounded-full text-sm hover:bg-gold transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={
                   item.label === "Prenota"
-                    ? "mt-2 px-4 py-3 bg-gold text-white font-semibold rounded-full text-center text-sm"
+                    ? "mt-2 px-4 py-3 bg-gold-light text-navy font-semibold rounded-full text-center text-sm"
                     : "px-4 py-3 text-sm font-medium text-slate hover:text-navy hover:bg-gray-50 rounded-md"
                 }
               >

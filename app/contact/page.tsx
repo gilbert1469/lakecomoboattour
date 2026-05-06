@@ -38,7 +38,7 @@ export default function ContactPage() {
       {/* Header */}
       <div className="bg-navy py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">We&apos;re here for you</p>
+          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">We&apos;re here for you</p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-4">Contact</h1>
           <p className="text-white/70 text-lg max-w-xl">
             Have a question, want a quote or just want to say hello? Write or call us — we reply within 24 hours.
@@ -64,7 +64,7 @@ export default function ContactPage() {
                   <span className="text-2xl shrink-0">📞</span>
                   <div>
                     <p className="text-sm font-semibold text-navy">Phone</p>
-                    <a href={`tel:${contact.phone}`} className="text-slate text-sm hover:text-gold transition-colors">
+                    <a href={`tel:${contact.phone}`} className="text-slate text-sm hover:text-gold-dark transition-colors">
                       {contact.phone}
                     </a>
                   </div>
@@ -73,7 +73,7 @@ export default function ContactPage() {
                   <span className="text-2xl shrink-0">✉️</span>
                   <div>
                     <p className="text-sm font-semibold text-navy">Email</p>
-                    <a href={`mailto:${contact.email}`} className="text-slate text-sm hover:text-gold transition-colors">
+                    <a href={`mailto:${contact.email}`} className="text-slate text-sm hover:text-gold-dark transition-colors">
                       {contact.email}
                     </a>
                   </div>
@@ -86,7 +86,7 @@ export default function ContactPage() {
                       href={`https://wa.me/${contact.whatsapp.replace(/\s/g, "")}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate text-sm hover:text-gold transition-colors"
+                      className="text-slate text-sm hover:text-gold-dark transition-colors"
                     >
                       Chat on WhatsApp →
                     </a>
@@ -134,7 +134,7 @@ export default function ContactPage() {
                       <label className="block text-sm font-medium text-navy mb-1">Full Name *</label>
                       <input
                         {...register("name")}
-                        className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                        className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                         placeholder="John Smith"
                       />
                       {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
@@ -144,7 +144,7 @@ export default function ContactPage() {
                       <input
                         {...register("email")}
                         type="email"
-                        className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                        className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                         placeholder="john@example.com"
                       />
                       {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -155,7 +155,7 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-navy mb-1">Subject *</label>
                     <input
                       {...register("subject")}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                       placeholder="Enquiry about the Classic Tour..."
                     />
                     {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     <textarea
                       {...register("message")}
                       rows={6}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark resize-none"
                       placeholder="Write your message here..."
                     />
                     {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
@@ -181,7 +181,7 @@ export default function ContactPage() {
                     />
                     <label htmlFor="privacy-contact" className="text-sm text-slate">
                       I have read and accept the{" "}
-                      <a href="/privacy" className="text-gold underline">Privacy Policy</a>. *
+                      <a href="/privacy" className="text-navy-light underline">Privacy Policy</a>. *
                     </label>
                   </div>
                   {errors.privacy && <p className="text-red-500 text-xs -mt-3">{errors.privacy.message}</p>}

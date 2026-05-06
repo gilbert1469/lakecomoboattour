@@ -23,7 +23,7 @@ export default function ToursPage() {
   const tourJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Lake Como Boat Tours",
+    name: "Lake Como Tourist Center – Tours",
     description: seo.description,
     url: `${siteSEO.siteUrl}/boat-tours`,
     itemListElement: tours.map((tour, i) => ({
@@ -64,7 +64,7 @@ export default function ToursPage() {
           <div className="absolute inset-0 bg-navy/60" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">
+          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">
             Lake Como · Private Boat
           </p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white">
@@ -94,7 +94,7 @@ export default function ToursPage() {
       <Section bg="white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-3">How it works</p>
+            <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-3">How it works</p>
             <h2 className="font-serif text-3xl font-bold text-navy mb-6">
               As Easy as Stepping on Board
             </h2>
@@ -105,7 +105,7 @@ export default function ToursPage() {
                 ["3", "Step on board", "Meet us at Como harbour. Your skipper will welcome you and the adventure begins!"],
               ].map(([num, title, desc]) => (
                 <li key={num} className="flex gap-4">
-                  <div className="w-8 h-8 bg-gold text-white font-bold text-sm rounded-full flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 bg-gold-light text-navy font-bold text-sm rounded-full flex items-center justify-center shrink-0">
                     {num}
                   </div>
                   <div>

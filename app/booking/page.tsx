@@ -55,7 +55,7 @@ export default function BookingPage() {
           <p className="text-slate leading-relaxed mb-8">
             Thank you for getting in touch. You will receive a confirmation email within a few hours.
             For urgent enquiries, call us directly on{" "}
-            <a href={`tel:${contact.phone}`} className="text-gold font-semibold">
+            <a href={`tel:${contact.phone}`} className="text-navy-light font-semibold">
               {contact.phone}
             </a>
             .
@@ -71,7 +71,7 @@ export default function BookingPage() {
       {/* Hero */}
       <div className="bg-navy py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">
+          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">
             Book online
           </p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-4">
@@ -93,7 +93,7 @@ export default function BookingPage() {
               </h2>
 
               {/* Google Calendar note */}
-              <div className="bg-gold/10 border border-gold/30 rounded-xl p-4 mb-6 flex gap-3">
+              <div className="bg-cream border border-gold/40 rounded-xl p-4 mb-6 flex gap-3">
                 <span className="text-xl">📅</span>
                 <div>
                   <p className="text-sm font-semibold text-navy">Real-time availability</p>
@@ -110,7 +110,7 @@ export default function BookingPage() {
                     <label className="block text-sm font-medium text-navy mb-1">First Name *</label>
                     <input
                       {...register("firstName")}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                       placeholder="John"
                     />
                     {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
@@ -119,7 +119,7 @@ export default function BookingPage() {
                     <label className="block text-sm font-medium text-navy mb-1">Last Name *</label>
                     <input
                       {...register("lastName")}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                       placeholder="Smith"
                     />
                     {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>}
@@ -132,7 +132,7 @@ export default function BookingPage() {
                     <input
                       {...register("email")}
                       type="email"
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                       placeholder="john@example.com"
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -142,7 +142,7 @@ export default function BookingPage() {
                     <input
                       {...register("phone")}
                       type="tel"
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                       placeholder="+1 555 000 0000"
                     />
                     {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
@@ -153,7 +153,7 @@ export default function BookingPage() {
                   <label className="block text-sm font-medium text-navy mb-1">Preferred service *</label>
                   <select
                     {...register("service")}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark bg-white"
                   >
                     <option value="">Select a tour or experience...</option>
                     <optgroup label="🚢 Boat Tours">
@@ -177,7 +177,7 @@ export default function BookingPage() {
                       {...register("date")}
                       type="date"
                       min={new Date().toISOString().split("T")[0]}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
                     />
                     {errors.date && <p className="text-red-500 text-xs mt-1">{errors.date.message}</p>}
                   </div>
@@ -185,7 +185,7 @@ export default function BookingPage() {
                     <label className="block text-sm font-medium text-navy mb-1">Preferred time *</label>
                     <select
                       {...register("time")}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark bg-white"
                     >
                       <option value="">Select a time...</option>
                       {timeSlots.map((t) => (
@@ -200,7 +200,7 @@ export default function BookingPage() {
                   <label className="block text-sm font-medium text-navy mb-1">Number of people *</label>
                   <select
                     {...register("people")}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold bg-white"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark bg-white"
                   >
                     <option value="">How many people?</option>
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
@@ -215,7 +215,7 @@ export default function BookingPage() {
                   <textarea
                     {...register("notes")}
                     rows={4}
-                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold resize-none"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark resize-none"
                     placeholder="Children, special requirements, celebrations, dietary needs..."
                   />
                 </div>
@@ -229,7 +229,7 @@ export default function BookingPage() {
                   />
                   <label htmlFor="privacy" className="text-sm text-slate">
                     I have read and accept the{" "}
-                    <a href="/privacy" className="text-gold underline">Privacy Policy</a>
+                    <a href="/privacy" className="text-navy-light underline">Privacy Policy</a>
                     {" "}and consent to the processing of my personal data for the management of this request. *
                   </label>
                 </div>
@@ -251,7 +251,7 @@ export default function BookingPage() {
               </p>
               <a
                 href={`tel:${contact.phone}`}
-                className="flex items-center gap-3 text-navy font-semibold hover:text-gold transition-colors"
+                className="flex items-center gap-3 text-navy font-semibold hover:text-gold-dark transition-colors"
               >
                 <span className="text-xl">📞</span>
                 {contact.phone}
@@ -260,7 +260,7 @@ export default function BookingPage() {
                 href={`https://wa.me/${contact.whatsapp.replace(/\s/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 flex items-center gap-3 text-navy font-semibold hover:text-gold transition-colors"
+                className="mt-3 flex items-center gap-3 text-navy font-semibold hover:text-gold-dark transition-colors"
               >
                 <span className="text-xl">💬</span>
                 WhatsApp
@@ -276,19 +276,19 @@ export default function BookingPage() {
               <h3 className="font-serif text-xl font-bold mb-4">Cancellation Policy</h3>
               <ul className="space-y-3 text-sm text-white/80">
                 <li className="flex gap-2">
-                  <span className="text-gold">✓</span>
+                  <span className="text-gold-light">✓</span>
                   Free cancellation up to 48h before
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-gold">✓</span>
+                  <span className="text-gold-light">✓</span>
                   Full refund in case of bad weather
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-gold">✓</span>
+                  <span className="text-gold-light">✓</span>
                   No upfront payment required
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-gold">✓</span>
+                  <span className="text-gold-light">✓</span>
                   Option to reschedule your date
                 </li>
               </ul>

@@ -21,7 +21,7 @@ export default function TourCard({ tour, variant = "default" }: TourCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         {tour.tag && (
-          <div className="absolute top-3 left-3 px-3 py-1 bg-gold text-white text-xs font-bold rounded-full uppercase tracking-wide">
+          <div className="absolute top-3 left-3 px-3 py-1 bg-navy text-white text-xs font-bold rounded-full uppercase tracking-wide">
             {tour.tag}
           </div>
         )}
@@ -59,7 +59,7 @@ export default function TourCard({ tour, variant = "default" }: TourCardProps) {
           </div>
           <Link
             href={`/booking?tour=${tour.slug}`}
-            className="px-4 py-2 bg-gold text-white text-sm font-semibold rounded-full hover:bg-gold-dark transition-colors"
+            className="px-4 py-2 bg-gold-light text-navy text-sm font-semibold rounded-full hover:bg-gold transition-colors"
           >
             Book
           </Link>

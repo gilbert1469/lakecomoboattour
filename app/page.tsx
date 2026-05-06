@@ -118,7 +118,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
-          <p className="text-gold font-semibold uppercase tracking-widest text-sm mb-4">
+          <p className="text-gold-light font-semibold uppercase tracking-widest text-sm mb-4">
             Lake Como · Tourist Center
           </p>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
@@ -151,7 +151,7 @@ export default function HomePage() {
               ["100%", "Private boat"],
             ].map(([num, label]) => (
               <div key={label}>
-                <div className="text-2xl sm:text-3xl font-bold text-gold">{num}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-gold-light">{num}</div>
                 <div className="text-xs text-white/70 mt-1">{label}</div>
               </div>
             ))}

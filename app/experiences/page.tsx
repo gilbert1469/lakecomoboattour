@@ -35,7 +35,7 @@ export default function ExperiencesPage() {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
-          <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">
+          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">
             More than just a boat
           </p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white">
@@ -65,7 +65,7 @@ export default function ExperiencesPage() {
             {/* Content */}
             <div className={idx % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}>
               <div className="text-4xl mb-4">{exp.icon}</div>
-              <p className="text-gold text-sm font-semibold uppercase tracking-widest mb-2">
+              <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-2">
                 {exp.category === "cycling" ? "Cycling Tour" : exp.category === "cooking" ? "Food & Wine" : "Services"}
               </p>
               <h2 className="font-serif text-3xl font-bold text-navy mb-4">{exp.name}</h2>

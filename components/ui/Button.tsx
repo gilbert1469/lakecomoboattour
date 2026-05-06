@@ -14,9 +14,9 @@ interface ButtonProps {
 }
 
 const variants = {
-  primary: "bg-gold text-white hover:bg-gold-dark",
+  primary: "bg-gold-light text-navy hover:bg-gold transition-colors",
   secondary: "bg-navy text-white hover:bg-navy-dark",
-  outline: "border-2 border-gold text-gold hover:bg-gold hover:text-white",
+  outline: "border-2 border-gold-light text-navy hover:bg-gold-light transition-colors",
 };
 
 const sizes = {

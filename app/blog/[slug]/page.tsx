@@ -106,13 +106,13 @@ export default async function BlogPostPage({ params }: Props) {
             <span className="text-navy font-medium truncate max-w-xs">{post.title}</span>
           </nav>
 
-          <article className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy prose-a:text-gold prose-strong:text-navy">
+          <article className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-navy prose-a:text-navy-light prose-strong:text-navy">
             <MDXRemote source={post.content} />
           </article>
 
           <div className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-              <Link href="/blog" className="text-gold font-semibold hover:underline text-sm">
+              <Link href="/blog" className="text-navy-light font-semibold hover:underline text-sm">
                 ← Back to Blog
               </Link>
               <Button href="/booking">Book a Tour</Button>
