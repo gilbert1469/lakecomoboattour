@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
       "Scenic stops",
     ],
     includes: ["Bicycle (city bike or e-bike)", "Helmet", "Certified guide", "Water & snack"],
-    image: "https://picsum.photos/seed/lakecomo-cycling/800/600",
+    image: "/images/experience-cycling.jpg",
     icon: "🚲",
   },
   {
@@ -54,7 +54,7 @@ export const experiences: Experience[] = [
       "Recipe booklet as a gift",
     ],
     includes: ["Ingredients", "Apron", "Meal of what you cook", "Digital recipe booklet"],
-    image: "https://picsum.photos/seed/lakecomo-cooking/800/600",
+    image: "/images/experience-cooking.jpg",
     icon: "👨‍🍳",
   },
   {
@@ -74,7 +74,7 @@ export const experiences: Experience[] = [
       "Home delivery available",
     ],
     includes: ["Secure storage", "Deposit receipt", "Luggage insurance"],
-    image: "https://picsum.photos/seed/lakecomo-luggage/800/600",
+    image: "/images/experience-luggage.jpg",
     icon: "🧳",
   },
 ];

@@ -72,7 +72,7 @@ export default function AboutPage() {
       <section className="relative h-72 lg:h-96 flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://picsum.photos/seed/lakecomo-about/1920/600"
+            src="/images/about-agency.jpg"
             alt="Our team in Como"
             fill
             priority
@@ -119,7 +119,7 @@ export default function AboutPage() {
           </div>
           <div className="relative h-80 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="https://picsum.photos/seed/lakecomo-aerial/800/600"
+              src="/images/about-lake.jpg"
               alt="Aerial view of Lake Como"
               fill
               className="object-cover"
