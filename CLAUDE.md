@@ -60,14 +60,14 @@ Definiti in `app/globals.css` via `@theme`:
 
 | Nome           | Valore     | Uso principale              |
 |----------------|------------|-----------------------------|
-| `navy`         | `#1B3A6B`  | Testi, sfondi scuri          |
-| `navy-dark`    | `#122849`  | Hover navy                   |
-| `navy-light`   | `#2a5090`  | Variante chiara              |
-| `gold`         | `#C9A84C`  | Accent, CTA, tag             |
-| `gold-dark`    | `#a8862d`  | Hover gold                   |
-| `gold-light`   | `#e2c36e`  | Variante su sfondi scuri     |
-| `cream`        | `#F8F4EC`  | Sfondi alternati sezioni     |
-| `slate`        | `#4A5568`  | Testo body                   |
+| `navy`         | `#0C4A6E`  | Testi, sfondi scuri          |
+| `navy-dark`    | `#083650`  | Hover navy                   |
+| `navy-light`   | `#0369A1`  | Variante chiara              |
+| `gold`         | `#0EA5E9`  | Accent, CTA, tag (sky blue)  |
+| `gold-dark`    | `#0284C7`  | Hover gold                   |
+| `gold-light`   | `#38BDF8`  | Variante su sfondi scuri     |
+| `cream`        | `#E0F2FE`  | Sfondi alternati sezioni     |
+| `slate`        | `#475569`  | Testo body                   |
 
 Usa `text-navy`, `bg-gold`, `text-slate`, ecc.
 

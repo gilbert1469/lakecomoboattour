@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand colors */
-  --color-navy: #1B3A6B;
-  --color-navy-dark: #122849;
-  --color-navy-light: #2a5090;
-  --color-gold: #C9A84C;
-  --color-gold-dark: #a8862d;
-  --color-gold-light: #e2c36e;
-  --color-cream: #F8F4EC;
-  --color-slate: #4A5568;
+  /* Brand colors – lake-inspired palette */
+  --color-navy: #0C4A6E;
+  --color-navy-dark: #083650;
+  --color-navy-light: #0369A1;
+  --color-gold: #0EA5E9;
+  --color-gold-dark: #0284C7;
+  --color-gold-light: #38BDF8;
+  --color-cream: #E0F2FE;
+  --color-slate: #475569;
 
   /* Typography */
   --font-sans: "Inter", system-ui, sans-serif;
@@ -20,8 +20,8 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  --background: #F0F9FF;
+  --foreground: #0C4A6E;
 }
 
 body {
@@ -48,15 +48,15 @@ html {
 .hero-gradient {
   background: linear-gradient(
     to bottom,
-    rgba(27, 58, 107, 0.55) 0%,
-    rgba(27, 58, 107, 0.3) 60%,
-    rgba(27, 58, 107, 0.6) 100%
+    rgba(12, 74, 110, 0.60) 0%,
+    rgba(12, 74, 110, 0.30) 60%,
+    rgba(12, 74, 110, 0.65) 100%
   );
 }
 
-.gold-underline {
+.sky-underline {
   text-decoration: underline;
-  text-decoration-color: #C9A84C;
+  text-decoration-color: #0EA5E9;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
 }
