@@ -107,7 +107,7 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://picsum.photos/seed/lakecomo-hero/1920/1080"
+            src="/images/hero.jpg"
             alt="Lake Como seen from the boat"
             fill
             priority
