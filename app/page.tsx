@@ -128,7 +128,7 @@ export default function HomePage() {
             <span>3 minutes walk from Como San Giovanni station · Open daily</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/booking" size="lg">
+            <Button href="/taxi-boat-lake-como" size="lg">
               Book Your Tour
             </Button>
             <Button
@@ -258,7 +258,7 @@ export default function HomePage() {
             &ldquo;A wonderful experience! Our skipper showed us hidden corners of the lake we never would have found on our own. Highly recommended!&rdquo;
           </blockquote>
           <p className="text-slate text-sm mb-8">— Maria G., Milan · TripAdvisor</p>
-          <Button href="/booking" size="lg">
+          <Button href="/taxi-boat-lake-como" size="lg">
             Book Your Experience
           </Button>
         </div>
