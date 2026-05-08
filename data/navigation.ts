@@ -1,6 +1,6 @@
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Boat Tours", href: "/boat-tours" },
+  { label: "Boat Tours", href: "/taxi-boat-lake-como" },
   { label: "Experiences", href: "/experiences" },
   { label: "Book Now", href: "/booking" },
   { label: "Blog", href: "/blog" },

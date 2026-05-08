@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${base}/boat-tours`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/taxi-boat-lake-como`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/experiences`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/booking`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const tourRoutes: MetadataRoute.Sitemap = tours.map((t) => ({
-    url: `${base}/boat-tours#${t.slug}`,
+    url: `${base}/taxi-boat-lake-como#${t.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,

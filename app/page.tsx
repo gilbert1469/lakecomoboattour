@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
 import { getFeaturedTours } from "@/data/tours";
-import { experiences } from "@/data/experiences";
 import TourCard from "@/components/tours/TourCard";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
@@ -130,12 +129,16 @@ export default function HomePage() {
             Private boat tours with a certified skipper. Historic villas, charming villages,
             breathtaking sunsets. Tailored for families, elderly guests and international travellers.
           </p>
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-6">
+            <span>📍</span>
+            <span>3 minutes walk from Como San Giovanni station · Open daily</span>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/booking" size="lg">
               Book Your Tour
             </Button>
             <Button
-              href="/boat-tours"
+              href="/taxi-boat-lake-como"
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-navy"
@@ -178,7 +181,7 @@ export default function HomePage() {
           ))}
         </div>
         <div className="text-center mt-10">
-          <Button href="/boat-tours" variant="secondary">
+          <Button href="/taxi-boat-lake-como" variant="secondary">
             View all tours →
           </Button>
         </div>
@@ -204,25 +207,44 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Experiences strip */}
+      {/* Why book with us */}
       <Section bg="navy">
         <SectionHeader
-          eyebrow="More than just a boat"
-          title="Other Experiences You'll Love"
-          subtitle="Complete your visit with our cycling tours, cooking classes and convenient luggage storage in Como."
+          eyebrow="Why book with us"
+          title="We Are Your Reference Point in Como"
+          subtitle="3 minutes walk from Como San Giovanni station. Book with confidence: if the weather changes, we give you a full refund and help you reorganise your day."
           light
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {experiences.map((exp) => (
+          {[
+            {
+              icon: "🌦️",
+              title: "Weather Guarantee",
+              description: "If conditions change and your tour cannot run, you get a full refund. We also keep your luggage and help you find the best alternative for the day.",
+              href: "/contact",
+            },
+            {
+              icon: "✈️",
+              title: "Malpensa Full Day Package",
+              description: "Landing at Malpensa? We pick you up, store your bags, show you Como and take you on the lake. One day, one package, zero stress.",
+              href: "/malpensa-to-como",
+            },
+            {
+              icon: "🧳",
+              title: "Luggage Storage",
+              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Adamo del Pero 38 — 3 minutes walk from Como San Giovanni station.",
+              href: "/experiences#luggage",
+            },
+          ].map((item) => (
             <Link
-              key={exp.id}
-              href={`/experiences#${exp.category}`}
+              key={item.title}
+              href={item.href}
               className="group bg-white/10 hover:bg-white/20 transition-colors rounded-2xl p-6 text-white"
             >
-              <div className="text-4xl mb-4">{exp.icon}</div>
-              <h3 className="font-serif text-xl font-bold mb-2">{exp.name}</h3>
-              <p className="text-white/70 text-sm leading-relaxed">{exp.shortDescription}</p>
-              <div className="mt-4 text-gold text-sm font-semibold group-hover:underline">Discover →</div>
+              <div className="text-4xl mb-4">{item.icon}</div>
+              <h3 className="font-serif text-xl font-bold mb-2">{item.title}</h3>
+              <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
+              <div className="mt-4 text-gold text-sm font-semibold group-hover:underline">Learn more →</div>
             </Link>
           ))}
         </div>

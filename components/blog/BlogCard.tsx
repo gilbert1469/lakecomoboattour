@@ -21,7 +21,7 @@ export default function BlogCard({ post }: { post: BlogPostMeta }) {
           <span>·</span>
           <span>{post.readingTime} min read</span>
         </div>
-        <h3 className="font-serif text-xl font-bold text-navy leading-snug mb-3 group-hover:text-gold transition-colors">
+        <h3 className="font-serif text-xl font-bold text-navy leading-snug mb-3 group-hover:text-gold-dark transition-colors">
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
         </h3>
         <p className="text-slate text-sm leading-relaxed flex-1">{post.description}</p>

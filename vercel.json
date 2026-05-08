@@ -22,7 +22,7 @@
   ],
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
-    { "source": "/gite-in-barca", "destination": "/boat-tours", "permanent": true },
+    { "source": "/gite-in-barca", "destination": "/taxi-boat-lake-como", "permanent": true },
     { "source": "/esperienze", "destination": "/experiences", "permanent": true },
     { "source": "/prenotazione", "destination": "/booking", "permanent": true },
     { "source": "/chi-siamo", "destination": "/about", "permanent": true },

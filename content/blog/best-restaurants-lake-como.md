@@ -38,7 +38,7 @@ The centre of Como offers a wider variety: traditional osteria, pizzeria, and fi
 
 If you want a truly special experience, book one of our **private tours with a picnic on board**. We prepare a hamper with local produce — cheeses, cured meats, artisan bread and local wine — and take you to a quiet bay where you can anchor and eat with the whole lake to yourselves. Something no lakeside restaurant can offer.
 
-[Discover our Full-Day Private Tour →](/boat-tours)
+[Discover our Full-Day Private Tour →](/taxi-boat-lake-como)
 
 ## Wine Pairings
 

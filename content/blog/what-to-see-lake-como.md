@@ -45,4 +45,4 @@ The most free and authentic way to discover Lake Como is undoubtedly by **privat
 
 At **Lake Como Tourist Center** we organise tailor-made private tours, suitable for families, couples and groups. Our certified skipper will accompany you with stories and facts that will make your cruise even more special.
 
-[Explore all our tours →](/boat-tours)
+[Explore all our tours →](/taxi-boat-lake-como)

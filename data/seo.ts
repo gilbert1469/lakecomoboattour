@@ -8,7 +8,7 @@ export interface PageSEO {
 
 export const siteSEO = {
   siteName: "Lake Como Tourist Center",
-  siteUrl: "https://milantolakecomo.com",
+  siteUrl: "https://milantocomo.com",
   defaultOgImage: "/images/og-default.jpg",
   locale: "en_US",
   twitterHandle: "@milantolakecomo",
@@ -18,7 +18,7 @@ export const pageSEO: Record<string, PageSEO> = {
   home: {
     title: "Lake Como Tourist Center | Milan to Lake Como",
     description:
-      "Your gateway to Lake Como experiences: private boat tours, day trips, cycling, cooking classes and more. Certified skippers, multilingual crew, family-friendly.",
+      "Lake Como Tourist Center — 3 minutes walk from Como San Giovanni station. Private taxi boat tours, Malpensa full day package, luggage storage. Book with us: if the weather changes, full refund guaranteed.",
     keywords: [
       "lake como boat tour",
       "private boat tour lake como",
@@ -26,20 +26,23 @@ export const pageSEO: Record<string, PageSEO> = {
       "lake como tour italy",
       "bellagio boat tour",
       "como lake private boat",
+      "taxi boat lake como",
+      "lake como tourist center",
+      "milan to como",
+      "lake como from milan",
     ],
     ogImage: "/images/og-home.jpg",
   },
-  tours: {
-    title: "Boat Tours on Lake Como – All Itineraries | Lake Como Tourist Center | Milan to Lake Como",
+  taxiBoat: {
+    title: "Taxi Boat Lake Como — Private Boat Experience | Lake Como Tourist Center",
     description:
-      "Explore all our private boat tours on Lake Como: historic villas, sunset cruises, Bellagio & Varenna, full-day tours. Private boat, certified skipper, family-friendly.",
+      "Private taxi boat tours on Lake Como. Historic villas, Bellagio, Varenna. Book with us: full refund if weather changes. 3 minutes walk from Como San Giovanni station.",
     keywords: [
-      "lake como boat tours",
-      "lake como itineraries",
-      "villa balbianello boat tour",
-      "bellagio varenna boat trip",
-      "sunset cruise lake como",
-      "lake como private boat tour",
+      "taxi boat lake como",
+      "private boat tour lake como",
+      "lake como boat experience",
+      "boat tour como",
+      "lake como boat rental",
     ],
     ogImage: "/images/og-tours.jpg",
   },
@@ -93,6 +96,33 @@ export const pageSEO: Record<string, PageSEO> = {
       "tour operator lake como",
     ],
     ogImage: "/images/og-about.jpg",
+  },
+  malpensa: {
+    title: "Malpensa to Como — Full Day Lake Experience | Lake Como Tourist Center",
+    description:
+      "Land at Malpensa and experience Lake Como the same day. We pick you up, store your luggage, guided tour + private taxi boat. Full day package.",
+    keywords: [
+      "malpensa to como",
+      "transfer malpensa como",
+      "como from malpensa airport",
+      "malpensa lake como day trip",
+    ],
+    ogImage: "/images/og-malpensa.jpg",
+  },
+  milanToComo: {
+    title: "Milan to Como — Train, Times & Everything You Need to Know",
+    description:
+      "How to get from Milan to Como by train in 30 minutes. Is Como part of Milan? Which station to use? Everything you need to plan your Lake Como day trip from Milan.",
+    keywords: [
+      "milan to como",
+      "milan como train",
+      "milan to lake como",
+      "como san giovanni station",
+      "train milan como",
+      "is como part of milan",
+      "how to get to lake como from milan",
+    ],
+    ogImage: "/images/og-milan-to-como.jpg",
   },
   contact: {
     title: "Contact Us – Lake Como Tourist Center | Via Adamo del Pero 38, Como",
