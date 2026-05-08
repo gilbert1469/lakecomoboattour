@@ -64,7 +64,7 @@ export const experiences: Experience[] = [
     category: "luggage",
     shortDescription: "Drop your bags with us and explore Como hands-free. Safe, flexible and affordable.",
     description:
-      "Waiting for check-in or missed your connection? Leave your luggage safely at our agency in the centre of Como (Via Adamo del Pero 38) and enjoy the city or the lake without any worries. The service is available every day with flexible hours. Pick-up and delivery also available on request.",
+      "Waiting for check-in or missed your connection? Leave your luggage safely at our agency in the centre of Como (Via Borgo Vico 42) and enjoy the city or the lake without any worries. The service is available every day with flexible hours. Pick-up and delivery also available on request.",
     price: 6,
     priceNote: "per bag per day",
     highlights: [
@@ -84,7 +84,7 @@ export const experiences: Experience[] = [
     category: "transfer",
     shortDescription: "We pick you up at Malpensa Arrivals and take you through a full day on Lake Como — guided tour, private taxi boat, luggage storage all included.",
     description:
-      "Land at Malpensa and make the most of your day. We pick you up directly at the Arrivals exit, bring you to Como where you drop your bags at our office (Via Adamo del Pero 38, 3 minutes walk from Como San Giovanni station), take you on a guided walking tour of Como historic centre and a private taxi boat on the lake. At the end of the day we drop you at Como San Giovanni station (30 min train to Milano Centrale) or back to Malpensa if needed.",
+      "Land at Malpensa and make the most of your day. We pick you up directly at the Arrivals exit, bring you to Como where you drop your bags at our office (Via Borgo Vico 42, 3 minutes walk from Como San Giovanni station), take you on a guided walking tour of Como historic centre and a private taxi boat on the lake. At the end of the day we drop you at Como San Giovanni station (30 min train to Milano Centrale) or back to Malpensa if needed.",
     duration: "6-8 hours",
     price: 0,
     priceNote: "contact us for group pricing",

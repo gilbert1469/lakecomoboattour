@@ -88,7 +88,7 @@ export const pageSEO: Record<string, PageSEO> = {
   about: {
     title: "About Us – Our Agency in Como | Lake Como Tourist Center | Milan to Lake Como",
     description:
-      "We are a private tour agency based in Como (Via Adamo del Pero 38). Multilingual team, certified skippers and a passion for Lake Como.",
+      "We are a private tour agency based in Como (Via Borgo Vico 42). Multilingual team, certified skippers and a passion for Lake Como.",
     keywords: [
       "lake como tour agency",
       "lake como boat tour about",
@@ -125,9 +125,9 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-milan-to-como.jpg",
   },
   contact: {
-    title: "Contact Us – Lake Como Tourist Center | Via Adamo del Pero 38, Como",
+    title: "Contact Us – Lake Como Tourist Center | Via Borgo Vico 42, Como",
     description:
-      "Get in touch for information, custom quotes and bookings. We are in Como, Via Adamo del Pero 38. We reply within 24 hours.",
+      "Get in touch for information, custom quotes and bookings. We are in Como, Via Borgo Vico 42. We reply within 24 hours.",
     keywords: [
       "contact lake como boat tour",
       "lake como agency address",

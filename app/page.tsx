@@ -63,11 +63,11 @@ export default function HomePage() {
     name: "Lake Como Tourist Center",
     description: seo.description,
     url: siteSEO.siteUrl,
-    telephone: "+39 031 000 0000",
+    telephone: "+39 334 381 7235",
     email: "info@milantolakecomo.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Via Adamo del Pero 38",
+      streetAddress: "Via Borgo Vico 42",
       addressLocality: "Como",
       postalCode: "22100",
       addressCountry: "IT",
@@ -80,15 +80,9 @@ export default function HomePage() {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         opens: "09:00",
-        closes: "18:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "09:00",
-        closes: "13:00",
+        closes: "21:00",
       },
     ],
     priceRange: "€€",
@@ -126,7 +120,7 @@ export default function HomePage() {
             <span className="text-gold">from the Best Perspective</span>
           </h1>
           <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Private boat tours with a certified skipper. Historic villas, charming villages,
+            Historic villas, charming villages,
             breathtaking sunsets. Tailored for families, elderly guests and international travellers.
           </p>
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-6">
@@ -232,7 +226,7 @@ export default function HomePage() {
             {
               icon: "🧳",
               title: "Luggage Storage",
-              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Adamo del Pero 38 — 3 minutes walk from Como San Giovanni station.",
+              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 42 — 3 minutes walk from Como San Giovanni station.",
               href: "/experiences#luggage",
             },
           ].map((item) => (

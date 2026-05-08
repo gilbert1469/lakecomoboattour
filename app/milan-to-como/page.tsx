@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "What should I do when I arrive at Como San Giovanni?",
-    a: "Lake Como Tourist Center is 3 minutes walk from Como San Giovanni station at Via Adamo del Pero 38. Come find us first — we will help you plan the perfect day based on current weather and lake conditions.",
+    a: "Lake Como Tourist Center is 3 minutes walk from Como San Giovanni station at Via Borgo Vico 42. Come find us first — we will help you plan the perfect day based on current weather and lake conditions.",
   },
 ];
 
@@ -163,7 +163,7 @@ export default function MilanToComoPage() {
             make the most of your time in Como.
           </p>
           <p className="text-gold-light font-semibold mb-8">
-            📍 Via Adamo del Pero 38, Como
+            📍 Via Borgo Vico 42, Como
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">Find Us</Button>

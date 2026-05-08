@@ -39,7 +39,9 @@
       "Bash(sed -i '' 's|/boat-tours|/taxi-boat-lake-como|g' /Users/gilbertomosconi/Sito/app/taxi-boat-lake-como/page.tsx)",
       "Bash(sed -i '' 's|\\(/boat-tours\\)|\\(/taxi-boat-lake-como\\)|g' /Users/gilbertomosconi/Sito/content/blog/best-restaurants-lake-como.md /Users/gilbertomosconi/Sito/content/blog/what-to-see-lake-como.md)",
       "Bash(npx next *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(npx vercel *)",
+      "Bash(/opt/homebrew/bin/node /opt/homebrew/bin/npx vercel ls)"
     ]
   }
 }

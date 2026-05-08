@@ -27,7 +27,7 @@ const steps = [
   {
     n: 2,
     title: "Drop your bags at our office",
-    desc: "Via Adamo del Pero 38, Como — 3 minutes walk from Como San Giovanni station. Your luggage is stored safely for the whole day.",
+    desc: "Via Borgo Vico 42, Como — 3 minutes walk from Como San Giovanni station. Your luggage is stored safely for the whole day.",
   },
   {
     n: 3,
@@ -57,7 +57,7 @@ const jsonLd = {
     url: siteSEO.siteUrl,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Via Adamo del Pero 38",
+      streetAddress: "Via Borgo Vico 42",
       addressLocality: "Como",
       postalCode: "22100",
       addressCountry: "IT",

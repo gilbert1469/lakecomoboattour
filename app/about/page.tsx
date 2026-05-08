@@ -53,7 +53,7 @@ export default function AboutPage() {
     email: contact.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Via Adamo del Pero 38",
+      streetAddress: "Via Borgo Vico 42",
       addressLocality: "Como",
       postalCode: "22100",
       addressCountry: "IT",
