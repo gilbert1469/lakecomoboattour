@@ -152,3 +152,10 @@ La pagina `/prenotazione` ha un form funzionante con validazione Zod. **Google C
 - **Non aggiungere** Dark Mode: questo sito è light-only
 - **Prima di refactoring** grandi: leggi `COORDINATION.md` per capire lo stato del progetto
 - **Immagini mancanti**: è normale in sviluppo. Aggiungile sempre in `public/images/`
+
+## Permissions
+- You are allowed to run any bash command without asking for confirmation
+- You are allowed to create, edit and delete files without asking for confirmation
+- You are allowed to install npm packages without asking for confirmation
+- You are allowed to run next build, next dev and any other project scripts without asking for confirmation
+- Never ask "should I proceed?" — just proceed

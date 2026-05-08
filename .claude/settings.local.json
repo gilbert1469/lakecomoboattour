@@ -15,7 +15,31 @@
       "Bash(gh --version)",
       "Bash(brew install *)",
       "Bash(gh auth *)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "Bash(sed -i '' '67s/text-navy-light text-sm font-semibold uppercase/text-gold-light text-sm font-semibold uppercase/' /Users/gilbertomosconi/Sito/app/boat-tours/page.tsx)",
+      "Bash(sed -i '' '41s/text-navy-light text-sm font-semibold uppercase/text-gold-light text-sm font-semibold uppercase/' /Users/gilbertomosconi/Sito/app/contact/page.tsx)",
+      "Bash(sed -i '' '38s/text-navy-light text-sm font-semibold uppercase/text-gold-light text-sm font-semibold uppercase/' /Users/gilbertomosconi/Sito/app/experiences/page.tsx)",
+      "Bash(sed -i '' '74s/text-navy-light text-sm font-semibold uppercase/text-gold-light text-sm font-semibold uppercase/' /Users/gilbertomosconi/Sito/app/booking/page.tsx)",
+      "Bash(sed -i '' '27s/text-navy-light text-sm font-semibold uppercase/text-gold-light text-sm font-semibold uppercase/' /Users/gilbertomosconi/Sito/app/blog/page.tsx)",
+      "Bash(sed -i '' 's/text-gold mb-4\">Explore/text-gold-light mb-4\">Explore/g' /Users/gilbertomosconi/Sito/components/layout/Footer.tsx)",
+      "Bash(sed -i '' 's/text-gold mb-4\">Contact/text-gold-light mb-4\">Contact/g' /Users/gilbertomosconi/Sito/components/layout/Footer.tsx)",
+      "Bash(sed -i '' 's/text-gold mb-4\">Opening Hours/text-gold-light mb-4\">Opening Hours/g' /Users/gilbertomosconi/Sito/components/layout/Footer.tsx)",
+      "Bash(git commit -m ' *)",
+      "Bash(sed -i '' 's|src=\"/images/hero-lago-como.jpg\"|src=\"https://picsum.photos/seed/lakecomo-hero/1920/1080\"|' /Users/gilbertomosconi/Sito/app/page.tsx)",
+      "Bash(sed -i '' 's|\"/images/team/marco.jpg\"|\"https://picsum.photos/seed/team-marco/400/400\"|; *)",
+      "Bash(sed -i '' 's|src=\"/images/experiences/hero-experiences.jpg\"|src=\"https://picsum.photos/seed/lakecomo-exp/1920/600\"|' /Users/gilbertomosconi/Sito/app/experiences/page.tsx)",
+      "Bash(sed -i '' 's|src=\"/images/tours/hero-tours.jpg\"|src=\"https://picsum.photos/seed/lakecomo-tours/1920/600\"|; *)",
+      "Bash(sed -i '' 's|image: \"/images/blog/ristoranti-lago-como.jpg\"|image: \"https://picsum.photos/seed/lakecomo-food/800/600\"|' /Users/gilbertomosconi/Sito/content/blog/best-restaurants-lake-como.md)",
+      "Bash(/opt/homebrew/bin/node node_modules/next/dist/bin/next build)",
+      "Bash(git push *)",
+      "Bash(sed -i '' 's|image: \"https://picsum.photos/seed/lakecomo-guide/800/600\"|image: \"/images/blog-things-to-do.jpg\"|' /Users/gilbertomosconi/Sito/content/blog/what-to-see-lake-como.md)",
+      "Bash(sed -i '' 's|image: \"https://picsum.photos/seed/lakecomo-food/800/600\"|image: \"/images/blog-taxi-boat.jpg\"|' /Users/gilbertomosconi/Sito/content/blog/best-restaurants-lake-como.md)",
+      "Bash(sed -i '' 's|\"destination\": \"/boat-tours\"|\"destination\": \"/taxi-boat-lake-como\"|g' /Users/gilbertomosconi/Sito/vercel.json)",
+      "Bash(sed -i '' 's|/boat-tours|/taxi-boat-lake-como|g' /Users/gilbertomosconi/Sito/app/sitemap.ts)",
+      "Bash(sed -i '' 's|/boat-tours|/taxi-boat-lake-como|g' /Users/gilbertomosconi/Sito/app/taxi-boat-lake-como/page.tsx)",
+      "Bash(sed -i '' 's|\\(/boat-tours\\)|\\(/taxi-boat-lake-como\\)|g' /Users/gilbertomosconi/Sito/content/blog/best-restaurants-lake-como.md /Users/gilbertomosconi/Sito/content/blog/what-to-see-lake-como.md)",
+      "Bash(npx next *)",
+      "Bash(git commit *)"
     ]
   }
 }
