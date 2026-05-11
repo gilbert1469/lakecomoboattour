@@ -64,6 +64,14 @@ export default function TourCard({ tour, variant = "default" }: TourCardProps) {
             Book
           </Link>
         </div>
+
+        {/* Detail link */}
+        <Link
+          href={`/taxi-boat-lake-como/${tour.slug}`}
+          className="mt-3 text-sm font-medium text-navy-light hover:text-navy transition-colors"
+        >
+          Discover more →
+        </Link>
       </div>
     </article>
   );
