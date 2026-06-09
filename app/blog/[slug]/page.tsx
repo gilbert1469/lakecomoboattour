@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -56,7 +57,15 @@ const richTextOptions = {
     [BLOCKS.OL_LIST]: (_node: any, children: any) => (
       <ol className="list-decimal list-inside mb-4 space-y-1 text-slate">{children}</ol>
     ),
-    [BLOCKS.LIST_ITEM]: (_node: any, children: any) => <li>{children}</li>,
+    [BLOCKS.LIST_ITEM]: (_node: any, children: any) => (
+      <li className="leading-relaxed">
+        {React.Children.map(children, (child) =>
+          React.isValidElement(child) && (child as React.ReactElement<any>).type === "p"
+            ? (child as React.ReactElement<any>).props.children
+            : child
+        )}
+      </li>
+    ),
     [BLOCKS.HR]: () => <hr className="my-8 border-gray-200" />,
     [INLINES.HYPERLINK]: (node: any, children: any) => (
       <a
