@@ -8,7 +8,7 @@ export interface PageSEO {
 
 export const siteSEO = {
   siteName: "Lake Como Tourist Center",
-  siteUrl: "https://milantocomo.com",
+  siteUrl: "https://milantolakecomo.com",
   defaultOgImage: "/images/og-default.jpg",
   locale: "en_US",
   twitterHandle: "@milantolakecomo",
