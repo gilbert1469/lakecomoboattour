@@ -120,66 +120,19 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      {/* Hero */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero.jpg"
-            alt="Lake Como seen from the boat"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="hero-gradient absolute inset-0" />
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
-          <p className="text-gold-light font-semibold uppercase tracking-widest text-sm mb-4">
-            Lake Como · Tourist Center
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-            Discover Lake Como
-            <br />
-            <span className="text-gold">from the Best Perspective</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Historic villas, charming villages,
-            breathtaking sunsets. Tailored for families, elderly guests and international travellers.
-          </p>
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-white/90 text-sm mb-6">
-            <span>📍</span>
-            <span>3 minutes walk from Como San Giovanni station · Open daily</span>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/taxi-boat-lake-como" size="lg">
-              Book Your Tour
-            </Button>
-            <Button
-              href="/taxi-boat-lake-como"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-navy"
-            >
-              Explore Tours
-            </Button>
-          </div>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg className="w-6 h-6 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </section>
-
       {/* Featured Tours */}
       <Section bg="cream">
-        <SectionHeader
-          eyebrow="Boat Tours:"
-          title="Choose Your Experience"
-          subtitle="Every tour is fully private with a certified skipper. Pick the duration and itinerary that suits you best."
-        />
+        <div className="mb-12 text-center max-w-2xl mx-auto">
+          <h2 className="font-serif text-3xl lg:text-4xl font-bold text-navy">
+            Choose Your Experience
+          </h2>
+          <p className="text-sm font-semibold uppercase tracking-widest mt-3 text-navy-light">
+            Boat Tours:
+          </p>
+          <p className="mt-4 text-lg leading-relaxed text-slate">
+            Every tour is fully private with a certified skipper. Pick the duration and itinerary that suits you best.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredTours.map((tour) => (
             <TourCard key={tour.id} tour={tour} />
