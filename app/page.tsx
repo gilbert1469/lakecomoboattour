@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
 import { getFeaturedTours } from "@/data/tours";
+import { getExperiencesByCategory } from "@/data/experiences";
 import TourCard from "@/components/tours/TourCard";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
+import { formatPrice } from "@/lib/utils";
 
 const seo = pageSEO.home;
 
@@ -45,6 +47,38 @@ const usps = [
 
 export default function HomePage() {
   const featuredTours = getFeaturedTours();
+  const cookingClass = getExperiencesByCategory("cooking")[0];
+  const guidedTours = getExperiencesByCategory("guided")[0];
+
+  const experienceHighlights = [
+    {
+      title: cookingClass.name,
+      icon: cookingClass.icon,
+      duration: cookingClass.duration,
+      price: cookingClass.price,
+      priceNote: cookingClass.priceNote,
+      image: cookingClass.image,
+      href: "/experiences#cooking",
+    },
+    {
+      title: guidedTours.name,
+      icon: guidedTours.icon,
+      duration: guidedTours.duration,
+      price: guidedTours.price,
+      priceNote: guidedTours.priceNote,
+      image: guidedTours.image,
+      href: "/experiences#guided",
+    },
+    {
+      title: "Water Sports",
+      icon: "🌊",
+      duration: undefined,
+      price: 0,
+      priceNote: "Quotation on request",
+      image: "/images/kite_surf.jpg",
+      href: "/experiences/water-sports",
+    },
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -142,8 +176,8 @@ export default function HomePage() {
       {/* Featured Tours */}
       <Section bg="cream">
         <SectionHeader
-          eyebrow="Our tours"
-          title="Choose Your Lake Como Adventure"
+          eyebrow="Boat Tours:"
+          title="Choose Your Experience"
           subtitle="Every tour is fully private with a certified skipper. Pick the duration and itinerary that suits you best."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -155,6 +189,61 @@ export default function HomePage() {
           <Button href="/taxi-boat-lake-como" variant="secondary">
             View all tours →
           </Button>
+        </div>
+
+        <p className="text-navy-light text-sm font-semibold uppercase tracking-widest text-center mt-16 mb-8">
+          Experiences Chosen For You:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {experienceHighlights.map((exp) => (
+            <article
+              key={exp.title}
+              className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+            >
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src={exp.image}
+                  alt={exp.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+              <div className="flex flex-col flex-1 p-6">
+                <h3 className="font-serif text-xl font-bold text-navy leading-snug mb-3">
+                  {exp.icon} {exp.title}
+                </h3>
+                {exp.duration && (
+                  <div className="flex items-center gap-1 text-sm text-slate mb-3">
+                    <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {exp.duration}
+                  </div>
+                )}
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-navy">
+                    {exp.price > 0 ? formatPrice(exp.price) : exp.priceNote}
+                  </span>
+                  {exp.price > 0 && exp.priceNote && (
+                    <span className="block text-xs text-slate mt-0.5">{exp.priceNote}</span>
+                  )}
+                </div>
+                <div className="flex-1" />
+                <div className="flex items-center gap-3">
+                  <Link
+                    href="/booking"
+                    className="px-4 py-2 bg-gold-light text-navy text-sm font-semibold rounded-full hover:bg-gold transition-colors"
+                  >
+                    Book
+                  </Link>
+                  <Link href={exp.href} className="text-sm font-medium text-navy-light hover:text-navy transition-colors">
+                    Discover more →
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
       </Section>
 

@@ -68,45 +68,31 @@ export default function AboutPage() {
 
       {/* Story */}
       <Section bg="white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-3">Our story</p>
-            <h2 className="font-serif text-3xl font-bold text-navy mb-6">
-              Born on the Lake, Grown for the Lake
-            </h2>
-            <div className="space-y-4 text-slate leading-relaxed">
-              <p>
-                Lake Como Tourist Center was born from the meeting of two passions for this lake.
-              </p>
-              <p>
-                Gilberto Mosconi, a Como native, grew up on these shores and spent years exploring every
-                corner of the lake — its hidden bays, its iconic villas, its rhythms through the seasons.
-                That deep local knowledge became the foundation of everything we do.
-              </p>
-              <p>
-                Alongside him, Natalie Vogt brings over 40 years of experience in the Lake Como travel
-                industry. One of the most respected names in local tourism, Natalie has spent four decades
-                building relationships, curating experiences and welcoming visitors from every corner of
-                the world to this extraordinary place.
-              </p>
-              <p>
-                Together, they built Lake Como Tourist Center for one kind of traveller — the one who wants
-                to do more than just pass through. We plan, we guide, we take care of every detail, so that
-                every hour spent here becomes something worth remembering.
-              </p>
-            </div>
-            <div className="mt-8">
-              <Button href="/booking">Book Your Experience</Button>
-            </div>
-          </div>
-          <div className="relative h-80 lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/images/about-lake.jpg"
-              alt="Aerial view of Lake Como"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+        <div className="max-w-3xl mx-auto">
+          <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-3">Our story</p>
+          <h2 className="font-serif text-3xl font-bold text-navy mb-6">
+            Born on the Lake, Grown for the Lake
+          </h2>
+          <div className="space-y-4 text-slate leading-relaxed">
+            <p>
+              Lake Como Tourist Center was born from the meeting of two passions for this lake.
+            </p>
+            <p>
+              Gilberto Mosconi, a Como native, grew up on these shores and spent years exploring every
+              corner of the lake — its hidden bays, its iconic villas, its rhythms through the seasons.
+              That deep local knowledge became the foundation of everything we do.
+            </p>
+            <p>
+              Alongside him, Natalie Vogt brings over 40 years of experience in the Lake Como travel
+              industry. One of the most respected names in local tourism, Natalie has spent four decades
+              building relationships, curating experiences and welcoming visitors from every corner of
+              the world to this extraordinary place.
+            </p>
+            <p>
+              Together, they built Lake Como Tourist Center for one kind of traveller — the one who wants
+              to do more than just pass through. We plan, we guide, we take care of every detail, so that
+              every hour spent here becomes something worth remembering.
+            </p>
           </div>
         </div>
       </Section>

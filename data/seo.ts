@@ -76,9 +76,9 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-experiences.jpg",
   },
   wineTasting: {
-    title: "Wine Tasting on Lake Como | Lake Como Tourist Center",
+    title: "Wine Tasting in Como | Lake Como Tourist Center",
     description:
-      "Discover the wines of the Lake Como area with a guided tasting experience led by certified sommeliers, paired with typical local products.",
+      "A different way to discover the flavours of the lake — guided wine tasting sessions in Como and around the lake, led by expert sommeliers.",
     keywords: [
       "wine tasting lake como",
       "lake como wine",

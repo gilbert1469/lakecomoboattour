@@ -18,7 +18,6 @@ export const navigation: NavItem[] = [
     href: "/experiences",
     children: [
       { label: "All Experiences", href: "/experiences" },
-      { label: "Wine Tasting", href: "/experiences/wine-tasting" },
       {
         label: "Water Sports",
         href: "/experiences/water-sports",
@@ -32,7 +31,6 @@ export const navigation: NavItem[] = [
     ],
   },
   { label: "Luggage Storage", href: "/luggage-storage" },
-  { label: "Book Now", href: "/booking" },
   { label: "Blog", href: "/blog" },
   { label: "FAQ", href: "/faq" },
   { label: "About Us", href: "/about" },

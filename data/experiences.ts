@@ -59,12 +59,12 @@ export const experiences: Experience[] = [
   {
     id: "wine-tasting",
     slug: "wine-tasting-lake-como",
-    name: "Wine Tasting on Lake Como",
+    name: "Wine Tasting in Como",
     category: "wine",
     shortDescription:
-      "A guided wine tasting with certified sommeliers, featuring the finest local labels paired with typical products from the region.",
+      "A different way to discover the flavours of the lake — guided wine tasting sessions in Como and in some of the most scenic spots around the lake.",
     description:
-      "Discover the wines of the Lake Como area with a guided tasting experience. Our certified sommeliers take you through the finest local labels, paired with typical products from the region. Available at selected wineries around the lake, or on board during a private boat tour on request.",
+      "A different way to discover the flavours of the lake. We offer guided wine tasting sessions in the heart of Como and in some of the most scenic spots around the lake — with views that make every sip better. Our expert sommeliers will guide you through a curated selection of local and Italian labels: whites, rosés and reds, chosen to suit every palate. Whether you're looking for a relaxed afternoon experience or a special moment to share, we'll find the right option for you.",
     price: 0,
     priceNote: "Quotation on request",
     highlights: [
@@ -74,7 +74,7 @@ export const experiences: Experience[] = [
       "Available on board on request",
     ],
     includes: ["Guided tasting", "Certified sommelier", "Local product pairing"],
-    image: "https://picsum.photos/seed/lakecomo-wine-tasting/800/600",
+    image: "/images/wine.jpeg",
     icon: "🍷",
   },
   {
