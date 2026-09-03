@@ -11,7 +11,7 @@ keywords:
   - freshwater fish lake como
 author: "Lake Como Tourist Center"
 image: "/images/blog-taxi-boat.jpg"
-canonical: "https://milantolakecomo.com/blog/best-restaurants-lake-como"
+canonical: "https://lakecomotouristcenter.com/blog/best-restaurants-lake-como"
 ---
 
 Lake Como is not only about scenery and villas — it's also a serious food destination. Larian cuisine blends mountain and lakeside tradition with Lombard and Alpine influences, creating truly unique dishes. Here's our selection of the best places to eat.

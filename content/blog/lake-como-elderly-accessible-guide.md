@@ -10,7 +10,7 @@ keywords:
   - lake como no walking
 author: "Lake Como Tourist Center"
 image: "/images/tour-classic.jpg"
-canonical: "https://milantolakecomo.com/blog/lake-como-elderly-accessible-guide"
+canonical: "https://lakecomotouristcenter.com/blog/lake-como-elderly-accessible-guide"
 ---
 
 Lake Como is a remarkably accessible destination for elderly travellers — provided you approach it the right way. The lake itself presents no physical barriers. The challenge, as with any Italian destination, is the steep terrain of some villages and the crowds on the public ferries. A private taxi boat solves both problems entirely.

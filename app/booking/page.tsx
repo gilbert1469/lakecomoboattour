@@ -4,11 +4,16 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import { tours } from "@/data/tours";
 import { experiences } from "@/data/experiences";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { contact } from "@/data/navigation";
+
+const EMAILJS_SERVICE_ID = "service_pvty7cg";
+const EMAILJS_TEMPLATE_ID = "template_zrttijd";
+const EMAILJS_PUBLIC_KEY = "i54f0HPpkKN2Zc4QN";
 
 const schema = z.object({
   firstName: z.string().min(2, "Please enter your first name"),
@@ -27,8 +32,14 @@ type FormData = z.infer<typeof schema>;
 
 const timeSlots = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"];
 
+const serviceOptions = [
+  ...tours.map((t) => ({ slug: t.slug, name: t.name })),
+  ...experiences.map((e) => ({ slug: e.slug, name: e.name })),
+];
+
 export default function BookingPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const {
     register,
@@ -39,9 +50,31 @@ export default function BookingPage() {
   });
 
   const onSubmit = async (data: FormData) => {
-    await new Promise((r) => setTimeout(r, 1000));
-    console.log("Booking request:", data);
-    setSubmitted(true);
+    setSubmitError(false);
+    const serviceLabel = serviceOptions.find((s) => s.slug === data.service)?.name ?? data.service;
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          first_name: data.firstName,
+          last_name: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          service: serviceLabel,
+          date: data.date,
+          time: data.time,
+          people: data.people,
+          notes: data.notes ?? "",
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      setSubmitted(true);
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+      setSubmitError(true);
+    }
   };
 
   if (submitted) {
@@ -53,7 +86,7 @@ export default function BookingPage() {
             Request received!
           </h1>
           <p className="text-slate leading-relaxed mb-8">
-            Thank you for getting in touch. You will receive a confirmation email within a few hours.
+            Thank you! We&apos;ve received your booking request and will confirm within a few hours.
             For urgent enquiries, call us directly on{" "}
             <a href={`tel:${contact.phone}`} className="text-navy-light font-semibold">
               {contact.phone}
@@ -236,6 +269,12 @@ export default function BookingPage() {
                   </label>
                 </div>
                 {errors.privacy && <p className="text-red-500 text-xs -mt-3">{errors.privacy.message}</p>}
+
+                {submitError && (
+                  <div className="bg-red-50 border border-red-200 text-red-600 text-sm rounded-lg px-4 py-3">
+                    Something went wrong. Please try again or contact us on WhatsApp.
+                  </div>
+                )}
 
                 <Button type="submit" disabled={isSubmitting} className="w-full">
                   {isSubmitting ? "Sending..." : "Send Booking Request"}

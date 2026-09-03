@@ -8,17 +8,17 @@ export interface PageSEO {
 
 export const siteSEO = {
   siteName: "Lake Como Tourist Center",
-  siteUrl: "https://milantolakecomo.com",
+  siteUrl: "https://lakecomotouristcenter.com",
   defaultOgImage: "/images/og-default.jpg",
   locale: "en_US",
-  twitterHandle: "@milantolakecomo",
+  twitterHandle: "@lakecomotouristcenter",
 };
 
 export const pageSEO: Record<string, PageSEO> = {
   home: {
-    title: "Lake Como Tourist Center | Milan to Lake Como",
+    title: "Lake Como Tourist Center | Private Boat Tours & Experiences in Como",
     description:
-      "Lake Como Tourist Center — 3 minutes walk from Como San Giovanni station. Private taxi boat tours, luggage storage. Book with us: if the weather changes, full refund guaranteed.",
+      "Private boat tours and curated experiences on Lake Como, 3 minutes walk from Como San Giovanni station. Certified skippers, complimentary luggage storage, and a full refund if the weather changes.",
     keywords: [
       "lake como boat tour",
       "private boat tour lake como",
@@ -47,7 +47,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-tours.jpg",
   },
   experiences: {
-    title: "Lake Como Experiences – Guided Tours, Cooking Class & Cycling | Lake Como Tourist Center | Milan to Lake Como",
+    title: "Lake Como Experiences – Guided Tours, Cooking Class & Cycling | Lake Como Tourist Center",
     description:
       "More than boats: guided tours around the lake, authentic Italian cooking class, cycling tours and water sports in the heart of Como. Experiences for every taste.",
     keywords: [
@@ -88,7 +88,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-experiences.jpg",
   },
   booking: {
-    title: "Book a Tour | Lake Como Tourist Center | Milan to Lake Como",
+    title: "Book a Tour | Lake Como Tourist Center",
     description:
       "Book your private boat tour on Lake Como online. Check availability and choose your itinerary. Instant confirmation, free cancellation up to 48h before.",
     keywords: [
@@ -100,7 +100,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-booking.jpg",
   },
   blog: {
-    title: "Blog – Discover Lake Como | Lake Como Tourist Center | Milan to Lake Como",
+    title: "Blog – Discover Lake Como | Lake Como Tourist Center",
     description:
       "Guides, tips and stories about Lake Como: what to see, where to eat, the most beautiful villages, historic villas and everything you need to know before you visit.",
     keywords: [
@@ -113,7 +113,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-blog.jpg",
   },
   about: {
-    title: "About Us – Our Agency in Como | Lake Como Tourist Center | Milan to Lake Como",
+    title: "About Us – Our Agency in Como | Lake Como Tourist Center",
     description:
       "We are a private tour agency based in Como (Via Borgo Vico 62). Multilingual team, certified skippers and a passion for Lake Como.",
     keywords: [
@@ -125,7 +125,7 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-about.jpg",
   },
   milanToComo: {
-    title: "Milan to Como — Train, Times & Everything You Need to Know",
+    title: "Milan to Como — Train, Times & Everything You Need to Know | Lake Como Tourist Center",
     description:
       "How to get from Milan to Como by train in 30 minutes. Is Como part of Milan? Which station to use? Everything you need to plan your Lake Como day trip from Milan.",
     keywords: [

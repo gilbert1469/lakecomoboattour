@@ -92,7 +92,7 @@ keywords:
   - keyword 2
 author: "Lake Como Tourist Center"
 image: "/images/blog/nome-immagine.jpg"
-canonical: "https://milantolakecomo.com/blog/nome-slug"
+canonical: "https://lakecomotouristcenter.com/blog/nome-slug"
 ---
 
 Contenuto markdown qui...

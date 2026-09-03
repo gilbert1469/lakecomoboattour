@@ -10,7 +10,7 @@ keywords:
   - lake como day trip with children
 author: "Lake Como Tourist Center"
 image: "/images/tour-family.jpg"
-canonical: "https://milantolakecomo.com/blog/lake-como-with-kids-family-guide"
+canonical: "https://lakecomotouristcenter.com/blog/lake-como-with-kids-family-guide"
 ---
 
 Lake Como is one of those destinations that works surprisingly well for families with children. The boat, the villas, the clear water and the alpine scenery create a natural sense of wonder — even for children who would normally prefer a screen.

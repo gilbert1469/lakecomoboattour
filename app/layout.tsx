@@ -21,8 +21,8 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteSEO.siteUrl),
   title: {
-    default: "Lake Como Tourist Center | Milan to Lake Como",
-    template: "%s | Lake Como Tourist Center | Milan to Lake Como",
+    default: "Lake Como Tourist Center | Private Boat Tours & Experiences in Como",
+    template: "%s",
   },
   description:
     "Your gateway to Lake Como experiences: private boat tours, day trips, cycling, cooking classes and more. Certified skippers, multilingual crew, family-friendly.",

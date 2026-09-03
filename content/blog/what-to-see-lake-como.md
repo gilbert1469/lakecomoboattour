@@ -10,7 +10,7 @@ keywords:
   - lake como travel guide 2025
 author: "Lake Como Tourist Center"
 image: "/images/blog-things-to-do.jpg"
-canonical: "https://milantolakecomo.com/blog/what-to-see-lake-como"
+canonical: "https://lakecomotouristcenter.com/blog/what-to-see-lake-como"
 ---
 
 Lake Como is one of the most beautiful places in Italy and in the world. With its deep blue waters, noble villas, medieval villages and the backdrop of the Alps, it enchants millions of visitors every year. In this guide we take you through the must-see spots.
