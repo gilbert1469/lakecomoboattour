@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { pageSEO, siteSEO } from "@/data/seo";
-import { tours } from "@/data/tours";
+import { tours, getBoatTours, getWaterSportTours } from "@/data/tours";
 import TourCard from "@/components/tours/TourCard";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
@@ -20,6 +20,9 @@ export const metadata: Metadata = {
 };
 
 export default function ToursPage() {
+  const boatTours = getBoatTours();
+  const waterSportTours = getWaterSportTours();
+
   const tourJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -34,11 +37,15 @@ export default function ToursPage() {
         name: tour.name,
         description: tour.shortDescription,
         touristType: ["Family", "Leisure"],
-        offers: {
-          "@type": "Offer",
-          price: tour.price,
-          priceCurrency: "EUR",
-        },
+        ...(tour.priceFrom !== null
+          ? {
+              offers: {
+                "@type": "Offer",
+                price: tour.priceFrom,
+                priceCurrency: "EUR",
+              },
+            }
+          : {}),
       },
     })),
   };
@@ -71,27 +78,41 @@ export default function ToursPage() {
             Boat Tours
           </h1>
           <p className="text-white/80 mt-2 text-lg">
-            6 itineraries. All private. All with a certified skipper.
+            12 itineraries. All private. All with a certified skipper.
           </p>
         </div>
       </section>
 
-      {/* All Tours */}
+      {/* Boat Tours */}
       <Section bg="cream">
         <SectionHeader
           eyebrow="Our itineraries"
           title="Find the Perfect Tour for You"
-          subtitle="From a 2-hour classic cruise to a full personalised day. Every tour is private — the boat is exclusively yours."
+          subtitle="From a 1-hour first taste to a full personalised day. Every tour is private — the boat is exclusively yours."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {tours.map((tour) => (
+          {boatTours.map((tour) => (
+            <TourCard key={tour.id} tour={tour} />
+          ))}
+        </div>
+      </Section>
+
+      {/* Water Sports & Boat Tour */}
+      <Section bg="white">
+        <SectionHeader
+          eyebrow="Boat + Water Sports"
+          title="Water Sports & Boat Tour"
+          subtitle="A scenic cruise combined with a kite or wingfoil lesson in the lake's wind zone."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {waterSportTours.map((tour) => (
             <TourCard key={tour.id} tour={tour} />
           ))}
         </div>
       </Section>
 
       {/* How it works */}
-      <Section bg="white">
+      <Section bg="cream">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-3">How it works</p>
@@ -132,7 +153,7 @@ export default function ToursPage() {
       </Section>
 
       {/* FAQ */}
-      <Section bg="cream">
+      <Section bg="white">
         <SectionHeader eyebrow="FAQ" title="Everything You Need to Know" />
         <div className="max-w-3xl mx-auto space-y-6">
           {[
@@ -146,7 +167,7 @@ export default function ToursPage() {
             },
             {
               q: "What happens in bad weather?",
-              a: "Safety comes first. If weather conditions are unsuitable, we always offer the option to reschedule or a full refund.",
+              a: "Safety comes first — if conditions are unsuitable, we always offer the option to reschedule or a full refund. If your reservation is for the Exclusive Venetian Boat or the Private Ferry, please note that these boats can still operate in light rain, provided the lake allows safe navigation.",
             },
             {
               q: "Can I customise the itinerary?",
@@ -157,7 +178,7 @@ export default function ToursPage() {
               a: "Boarding is at Como harbour or, on request, at other lake jetties (Bellagio, Varenna, Tremezzo). We will confirm the exact meeting point upon booking.",
             },
           ].map(({ q, a }) => (
-            <div key={q} className="bg-white rounded-xl p-6 shadow-sm">
+            <div key={q} className="bg-cream rounded-xl p-6 shadow-sm">
               <h3 className="font-semibold text-navy mb-2">{q}</h3>
               <p className="text-slate text-sm leading-relaxed">{a}</p>
             </div>

@@ -18,30 +18,6 @@ export const metadata: Metadata = {
   },
 };
 
-const teamMembers = [
-  {
-    name: "Marco Ferretti",
-    role: "Founder & Head Skipper",
-    bio: "Born in Como, he has been sailing the lake since he was 10. Professional sailing licence, certified tourist guide. Speaks Italian, English and French.",
-    image: "https://picsum.photos/seed/team-marco/400/400",
-    flag: "🇮🇹 🇬🇧 🇫🇷",
-  },
-  {
-    name: "Laura Bianchi",
-    role: "Customer Experience & Booking",
-    bio: "Responsible for bookings and guest care. She makes sure every experience is perfect from the very first contact.",
-    image: "https://picsum.photos/seed/team-laura/400/400",
-    flag: "🇮🇹 🇬🇧",
-  },
-  {
-    name: "Stefan Müller",
-    role: "Skipper & Guide",
-    bio: "Certified skipper with 15 years of experience on Lake Como. Specialised in tours for families and international groups. Speaks German, English and Italian.",
-    image: "https://picsum.photos/seed/team-stefan/400/400",
-    flag: "🇩🇪 🇬🇧 🇮🇹",
-  },
-];
-
 export default function AboutPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -53,12 +29,15 @@ export default function AboutPage() {
     email: contact.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Via Borgo Vico 42",
+      streetAddress: "Via Borgo Vico 62",
       addressLocality: "Como",
       postalCode: "22100",
       addressCountry: "IT",
     },
-    founder: { "@type": "Person", name: "Marco Ferretti" },
+    founder: [
+      { "@type": "Person", name: "Gilberto Mosconi" },
+      { "@type": "Person", name: "Natalie Vogt" },
+    ],
   };
 
   return (
@@ -97,20 +76,23 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-slate leading-relaxed">
               <p>
-                Lake Como Tourist Center was born from the passion of Marco Ferretti, a Como native, for his lake.
-                After years working as a private skipper, in 2018 he decided to share that passion with visitors
-                from all over the world, founding the agency as a one-stop hub for authentic Lake Como experiences.
+                Lake Como Tourist Center was born from the meeting of two passions for this lake.
               </p>
               <p>
-                The secret? The private boat. No fixed timetable, no other passengers, no rush.
-                Just you, the lake and a skipper who knows it like the back of his hand, ready to share
-                every hidden story behind those villas and villages.
+                Gilberto Mosconi, a Como native, grew up on these shores and spent years exploring every
+                corner of the lake — its hidden bays, its iconic villas, its rhythms through the seasons.
+                That deep local knowledge became the foundation of everything we do.
               </p>
               <p>
-                Today our team includes 3 certified skippers and a dedicated guest experience staff.
-                We speak Italian, English, French and German. We have welcomed families from around the
-                world, honeymooning couples, grandparents with grandchildren and groups of friends.
-                Everyone has left with something special.
+                Alongside him, Natalie Vogt brings over 40 years of experience in the Lake Como travel
+                industry. One of the most respected names in local tourism, Natalie has spent four decades
+                building relationships, curating experiences and welcoming visitors from every corner of
+                the world to this extraordinary place.
+              </p>
+              <p>
+                Together, they built Lake Como Tourist Center for one kind of traveller — the one who wants
+                to do more than just pass through. We plan, we guide, we take care of every detail, so that
+                every hour spent here becomes something worth remembering.
               </p>
             </div>
             <div className="mt-8">
@@ -148,33 +130,6 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Team */}
-      <Section bg="white">
-        <SectionHeader
-          eyebrow="The team"
-          title="The People Who Make Your Tour Special"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {teamMembers.map((member) => (
-            <div key={member.name} className="text-center">
-              <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4 shadow-md">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                  sizes="128px"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-bold text-navy">{member.name}</h3>
-              <p className="text-navy-light text-sm font-semibold mt-1 mb-2">{member.role}</p>
-              <p className="text-slate text-sm leading-relaxed mb-2">{member.bio}</p>
-              <p className="text-lg">{member.flag}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* Location */}
       <Section bg="navy">
         <div className="text-center max-w-2xl mx-auto">
@@ -184,8 +139,7 @@ export default function AboutPage() {
           </h2>
           <div className="text-white/80 space-y-2 mb-8">
             <p className="text-xl font-semibold text-white">📍 {contact.address}</p>
-            <p>5 minutes from Como Cathedral and the marina</p>
-            <p>Nearby car parks available</p>
+            <p>3 minutes from Como train station</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">View on Map</Button>

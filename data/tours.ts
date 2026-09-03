@@ -1,181 +1,282 @@
+export type TourCategory = "boat-tour" | "water-sports";
+
+export interface BoatPriceRow {
+  speedboat: number;
+  luxuryBoat: number;
+  venetianBoat: number;
+}
+
 export interface Tour {
   id: string;
   slug: string;
   name: string;
+  category: TourCategory;
+  duration: string;
+  /** null = "Quotation on request" */
+  priceFrom: number | null;
+  priceNote: string;
+  /** Absent = don't show a pax-range line for this tour. */
+  paxNote?: string;
+  boats: string[];
+  /** Defaults to "Boats available" when absent. */
+  boatsLabel?: string;
   shortDescription: string;
   description: string;
-  duration: string;
-  price: number;
-  priceNote: string;
-  maxPeople: number;
-  highlights: string[];
   includes: string[];
   image: string;
   featured: boolean;
   tag?: string;
-  itinerary: string;
+  /** Per-boat price table for the detail page. Absent = quotation on request for every boat. */
+  pricing?: BoatPriceRow;
 }
 
-// Prices per boat. Fuel & VAT included. Multiple boat sizes available — contact us for large groups.
-// Prices are fixed. Departures from Como city only.
+// Standard copy used on every regular boat-tour card/detail page.
+const STANDARD_PAX_NOTE = "Available from 1 to 50 pax depending on the chosen boat";
+const STANDARD_BOATS: string[] = ["Speedboat", "Luxury Boat", "Exclusive Venetian Boat", "Private Ferry"];
+const SUGGESTED_BOATS: string[] = ["Luxury Boat", "Exclusive Venetian Boat", "Riva"];
+const STANDARD_PRICE_NOTE = "per boat · fuel & VAT included";
+const STANDARD_INCLUDES = ["Private boat", "Certified skipper", "Fuel & VAT included", "Complimentary luggage storage available"];
+
+// Boat classes bookable on every standard tour, with capacity — shown on detail pages.
+export const boatOptions = [
+  { name: "Speedboat", maxPax: 6 },
+  { name: "Luxury Boat", maxPax: 6 },
+  { name: "Exclusive Venetian Boat", maxPax: 10 },
+  { name: "Private Ferry", maxPax: "25 or 50", quotationOnly: true },
+] as const;
+
 export const tours: Tour[] = [
   {
-    id: "tour-1h",
-    slug: "lake-como-1-hour-tour",
-    name: "1 Hour Discovery Tour",
-    shortDescription: "A scenic cruise along the western shore of the first basin past Como's most iconic villas — Villa Olmo, Villa d'Este, Villa Pizzo and Villa Oleandra.",
-    description:
-      "Un primo assaggio del Lago di Como navigando lungo la sponda occidentale del primo bacino. Dal molo di Como si costeggia la riva ammirando Villa Olmo, elegante dimora neoclassica di proprietà del Comune, Villa D'Este — uno degli hotel di lusso più famosi al mondo con il suo parco terrazzato sul lago — e Villa Pizzo, residenza nobiliare del XVII secolo arroccata sul promontorio di Cernobbio. Si raggiunge infine Laglio, dove si trova Villa Oleandra, la celebre residenza privata di George Clooney. Navigazione continua, nessuna sosta a terra.",
+    id: "tour-highlights",
+    slug: "lake-como-highlights",
+    name: "Lake Como Highlights",
+    category: "boat-tour",
     duration: "1 hour",
-    price: 220,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Villa Olmo", "Villa d'Este", "Villa Pizzo", "Villa Oleandra — George Clooney's residence"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT"],
-    image: "/images/tour-villa.jpg",
+    priceFrom: 300,
+    priceNote: STANDARD_PRICE_NOTE,
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "An hour on Lake Como is just enough to understand why people keep coming back — the western shore out, the eastern shore back.",
+    description:
+      "An hour on Lake Como is just enough to understand why people keep coming back. Departing from Como, you'll cruise the western shore through Cernobbio, Moltrasio and Laglio, returning via the eastern bank past Torno, Villa Pliniana and Blevio — historic villas, mountain backdrops and authentic villages gliding by one after another. A perfect first taste of the lake.",
+    includes: STANDARD_INCLUDES,
+    image: "/images/tour-classic.jpg",
     featured: false,
-    itinerary: "First basin western shore. Villa Olmo, Villa d'Este, Villa Pizzo, Villa Oleandra (Clooney). No stops.",
+    pricing: { speedboat: 300, luxuryBoat: 345, venetianBoat: 405 },
   },
   {
-    id: "tour-2h",
-    slug: "lake-como-2-hour-tour",
-    name: "2 Hour West Branch Tour",
-    shortDescription: "Two hours exploring the western branch, including the spectacular Nesso Waterfall and the villages of Blevio, Torno and Carate Urio.",
-    description:
-      "The 2-hour tour adds one of the most spectacular natural attractions of the lake to the first basin route: the Nesso Waterfall, where the Nose torrent plunges through a rocky gorge directly into the lake — visible only from the water. Along the way you will pass the villages of Blevio, Torno and Carate Urio and admire the most iconic villas of the western shore, including Villa Versace (now Villa Fontanelle) and Villa Pliniana, built in 1573 and famous for its intermittent spring cited by Pliny the Younger and Leonardo da Vinci. Continuous navigation, no land stops.",
+    id: "tour-surroundings",
+    slug: "como-and-surroundings",
+    name: "Como & Surroundings",
+    category: "boat-tour",
     duration: "2 hours",
-    price: 400,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Nesso Waterfall", "Villa Pliniana (1573)", "Villa Fontanelle (ex Villa Versace)", "Villages of Blevio and Torno"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT"],
+    priceFrom: 500,
+    priceNote: STANDARD_PRICE_NOTE,
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "Two hours to explore beyond Como's first basin, reaching the dramatic Orrido di Nesso gorge and back along the eastern shore.",
+    description:
+      "Two hours give you room to breathe and explore beyond Como's first basin. Heading west through Cernobbio, Moltrasio and Laglio, the route continues to the dramatic Orrido di Nesso gorge before looping back along the eastern shore past Torno, Villa Pliniana and Blevio. Historic villas, rugged mountain scenery and quiet lakeside villages — a proper introduction to the lake, at a relaxed pace.",
+    includes: STANDARD_INCLUDES,
     image: "/images/tour-morning.jpg",
     featured: false,
-    itinerary: "Western branch. Blevio, Torno, Carate Urio. Nesso Waterfall, Villa Fontanelle, Villa Pliniana. No land stops.",
+    pricing: { speedboat: 500, luxuryBoat: 575, venetianBoat: 675 },
   },
   {
-    id: "tour-3h",
-    slug: "lake-como-3-hour-tour",
-    name: "3 Hour Grand Tour",
-    shortDescription: "Heart of the lake: Villa del Balbianello, Nesso Waterfall and Villa La Cassinella. One stop included.",
-    description:
-      "The 3-hour tour reaches the heart of the lake. After crossing the first basin with its historic villas and the Nesso Waterfall, you arrive at Villa del Balbianello in Lenno — built in 1787 on an ancient Franciscan monastery, now owned by FAI and famous worldwide for its terraced gardens and as a filming location for Star Wars Episode II and Casino Royale. You then navigate towards Villa La Cassinella, considered one of the most exclusive private villas on the lake with its pool, tennis courts and inner courtyard — visible only from the water. One land stop in a centre-lake village. Return to Como.",
+    id: "tour-heart",
+    slug: "heart-of-the-lake",
+    name: "Heart of the Lake",
+    category: "boat-tour",
     duration: "3 hours",
-    price: 650,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Villa del Balbianello — Star Wars & Casino Royale location", "Nesso Waterfall", "Villa La Cassinella (private, lake view only)", "1 land stop"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT", "1 stop"],
-    image: "/images/tour-classic.jpg",
+    priceFrom: 700,
+    priceNote: STANDARD_PRICE_NOTE,
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "Reach the lake's most iconic spots — Villa del Balbianello and Bellagio — without committing to a full day.",
+    description:
+      "Three hours on the water strike the right balance — enough time to reach the lake's most iconic spots without committing to a full day. From Como, the route heads north along the western shore through Cernobbio, Moltrasio and Laglio, arriving at the magnificent Villa del Balbianello. From there, you'll continue to Bellagio, set against dramatic mountain scenery at the very heart of the lake. The return leg follows the eastern shore past Torno, Villa Pliniana and Blevio, offering a completely different perspective on the way back to Como.",
+    includes: STANDARD_INCLUDES,
+    image: "/images/tour-villa.jpg",
     featured: true,
     tag: "Most Popular",
-    itinerary: "First basin, Nesso Waterfall, Villa del Balbianello (Lenno), Villa La Cassinella. 1 land stop.",
+    pricing: { speedboat: 700, luxuryBoat: 805, venetianBoat: 945 },
   },
   {
-    id: "tour-4h",
-    slug: "lake-como-4-hour-tour",
-    name: "4 Hour Centre Lake Tour",
-    shortDescription: "Full centre lake tour including Isola Comacina, Villa Balbiano and a stop in Bellagio — the pearl of the lake.",
-    description:
-      "A complete tour of the centre lake with a stop in Bellagio, the most famous village on Lake Como, nicknamed the pearl of the lake for its position on the promontory dividing the two branches. You navigate all the villas of the first basin, the Nesso Waterfall, Villa del Balbianello, Villa La Cassinella, Isola Comacina — the only island on Lake Como, with a millenary history including a 12th-century papal curse — and Villa Balbiano, known as the filming location for House of Gucci. Stop in Bellagio to walk the medieval alleys, the gardens of Villa Melzi and the panoramic terraces. Return to Como.",
+    id: "tour-half-day",
+    slug: "half-day-tour",
+    name: "Half Day Tour",
+    category: "boat-tour",
     duration: "4 hours",
-    price: 850,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Bellagio — pearl of the lake", "Isola Comacina", "Villa Balbiano — House of Gucci location", "Villa del Balbianello"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT", "1 land stop"],
-    image: "/images/tour-bellagio.jpg",
-    featured: true,
-    tag: "Recommended",
-    itinerary: "First basin, Nesso Waterfall, Villa Balbianello, Isola Comacina, Villa Balbiano (House of Gucci), Bellagio stop.",
-  },
-  {
-    id: "tour-5h",
-    slug: "lake-como-5-hour-tour",
-    name: "5 Hour Iconic Tour",
-    shortDescription: "All the iconic highlights plus a second stop in Varenna or Menaggio with time for lunch on the lake.",
+    priceFrom: 900,
+    priceNote: STANDARD_PRICE_NOTE,
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "Villa del Balbianello, Bellagio and Varenna — colourful houses, historic villas and striking mountain scenery.",
     description:
-      "The 5-hour tour adds a second stop to the full centre lake itinerary, with a choice between Varenna and Menaggio and enough time for lunch at a lakeside restaurant. Varenna is one of the most romantic villages on the lake, with its medieval castle, Villa Monastero — a former Cistercian convent with botanical gardens open to the public — and Villa Cipressi. Menaggio offers an elegant lakefront promenade and the opportunity to explore the historic centre. Two stops total, relaxed pace. Return to Como.",
-    duration: "5 hours",
-    price: 950,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Varenna — Villa Monastero & medieval castle", "Menaggio lakefront", "Lunch stop included", "All centre lake highlights"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT", "2 stops", "Lunch stop (lunch not included)"],
-    image: "/images/tour-villa.jpg",
+      "Four hours give you the space to go beyond the postcard views and get a genuine feel for the lake. Departing from Como, the route follows the western shore through Cernobbio, Moltrasio and Laglio to Villa del Balbianello, then continues to Bellagio before crossing to Varenna — colourful houses, historic villas and some of the most striking mountain scenery on the entire lake. The return journey along the eastern shore winds through hidden villages, Villa Pliniana, Torno and Blevio. Four hours that never feel rushed.",
+    includes: STANDARD_INCLUDES,
+    image: "/images/blog-things-to-do.jpg",
     featured: false,
-    itinerary: "Full centre lake itinerary + 2nd stop in Varenna or Menaggio. Lunch stop included. 2 stops total.",
+    pricing: { speedboat: 900, luxuryBoat: 1035, venetianBoat: 1215 },
   },
   {
-    id: "tour-6h",
-    slug: "lake-como-6-hour-tour",
-    name: "6 Hour Full Lake",
-    shortDescription: "Personalised full iconic lake tour with 3 stops. Includes Villa Carlotta, Argegno and all the classic destinations.",
-    description:
-      "A fully personalised tour covering the entire iconic part of the lake, with the itinerary agreed in advance and three stops of your choice. In addition to all the destinations of the previous tours, you can include Villa Carlotta in Tremezzo — one of the most beautiful botanical gardens in Italy, with azaleas, rhododendrons and neoclassical sculpture collections — and the village of Argegno, departure point of the cable car to Pigra with panoramic views of the Alps. Ideal for those who want to discover the lake at a leisurely pace without missing the main highlights. Return to Como.",
+    id: "tour-six-hours",
+    slug: "six-hours-of-wonder",
+    name: "Six Hours of Wonder",
+    category: "boat-tour",
     duration: "6 hours",
-    price: 1100,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Villa Carlotta — botanical gardens Tremezzo", "Argegno & Pigra cable car", "3 stops of your choice", "Fully personalised itinerary"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT", "3 stops"],
-    image: "/images/tour-morning.jpg",
+    priceFrom: 1300,
+    priceNote: STANDARD_PRICE_NOTE,
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "The same iconic stretch as the Half Day Tour, with time to actually stop, swim and linger at a viewpoint.",
+    description:
+      "Six hours give you the freedom to do the lake properly. The route covers the same iconic stretch as the half day tour — western shore, Villa del Balbianello, Bellagio, Varenna — but with time to actually stop. Swim off the boat in a quiet bay, linger at a viewpoint. No rushing between landmarks, just the lake at its best. The right amount of time to see everything and still feel like you've enjoyed it.",
+    includes: [...STANDARD_INCLUDES, "Swimming stop"],
+    image: "/images/hero.jpg",
     featured: false,
-    itinerary: "Full iconic lake, personalised itinerary, 3 stops of your choice. Villa Carlotta option, Argegno.",
+    pricing: { speedboat: 1300, luxuryBoat: 1495, venetianBoat: 1495 },
   },
   {
-    id: "tour-8h",
-    slug: "lake-como-8-hour-tour",
-    name: "8 Hour Complete Day",
-    shortDescription: "The entire lake from Como to the northern branch. Bellano Gorge, Varenna, 3+ stops, lunch and swimming included.",
-    description:
-      "A full day on the lake. The entire stretch of water from Como to the northern branch, with the possibility of reaching Bellano and its Orrido — a natural gorge carved by the Pioverna torrent, visitable on suspended walkways — and Varenna. Lunch included at a lakeside restaurant agreed in advance. Three or more land stops, swimming in the lake at the quietest spots. Completely customisable itinerary based on the group's interests. Return to Como.",
+    id: "tour-full-day",
+    slug: "full-day-tour",
+    name: "Full Day Tour",
+    category: "boat-tour",
     duration: "8 hours",
-    price: 1300,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Bellano Orrido — suspended walkways", "Entire lake north to south", "Lunch included", "Swimming stop & 3+ land stops"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT", "3+ stops", "Swimming & lunch time"],
-    image: "/images/tour-family.jpg",
-    featured: true,
+    priceFrom: 1500,
+    priceNote: STANDARD_PRICE_NOTE,
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "One boat, no fixed agenda. Departing any time between 10am and 6pm, north to south, with as many stops as you want.",
+    description:
+      "Eight hours, one boat, no fixed agenda. Departing any time between 10am and 6pm, this is the most flexible way to experience Lake Como — north to south, with as many stops as you want along the way. Pull into charming villages, drift past iconic villas, swim in clear water off secluded shores and take your time with the scenery. Mountains, greenery, light changing through the day. No rushing, no groups, no compromises.",
+    includes: [...STANDARD_INCLUDES, "Fully flexible itinerary", "Swimming stops"],
+    image: "/images/about-lake.jpg",
+    featured: false,
     tag: "Best Value",
-    itinerary: "Entire lake to northern branch. Bellano Orrido, Varenna. 3+ stops, lunch, swimming. Fully customisable.",
+    pricing: { speedboat: 1500, luxuryBoat: 1725, venetianBoat: 1820 },
   },
   {
-    id: "tour-tramonto",
-    slug: "sunset-cruise-lake-como",
-    name: "Sunset Cruise",
-    shortDescription: "A 1.5-hour evening cruise along the first basin as the Alps and villas turn red and gold at sunset.",
-    description:
-      "An evening navigation along the first basin in the light of the sunset. The Alps and villas turn red and gold as the lake calms after the daytime traffic. The tour departs around 18:00 and returns around 19:30–20:00, cruising past Villa d'Este, Villa Oleandra and the villages of the first basin in a completely different atmosphere to the daytime tours. Ideal for couples and for those spending just one evening in Como.",
+    id: "tour-sunset",
+    slug: "sunset-tour",
+    name: "Sunset Tour",
+    category: "boat-tour",
     duration: "1.5 hours",
-    price: 350,
-    priceNote: "per boat · fuel & VAT included",
-    maxPeople: 12,
-    highlights: ["Alpine sunset", "Villa d'Este & Villa Oleandra by evening light", "Departure ~18:00", "Ideal for couples"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT"],
+    priceFrom: 500,
+    priceNote: STANDARD_PRICE_NOTE,
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "The most scenic stretch of the lake at the most beautiful time of day — prosecco in hand.",
+    description:
+      "There is no better way to end a day on Lake Como than from the water. As the light softens and the mountains turn golden, you'll cruise the most scenic stretch of the lake at the most beautiful time of day — prosecco in hand. No agenda, no rush — just the lake, the colours and the moment. Departure time varies by season to catch the best light. Prosecco included.",
+    includes: [...STANDARD_INCLUDES, "Prosecco on board"],
     image: "/images/tour-sunset.jpg",
     featured: true,
     tag: "Romantic",
-    itinerary: "First basin evening navigation. Villa d'Este, Villa Oleandra. Departure ~18:00, return ~19:30–20:00.",
+    pricing: { speedboat: 500, luxuryBoat: 575, venetianBoat: 675 },
   },
   {
-    id: "tour-cena",
-    slug: "dinner-cruise-lake-como",
-    name: "Dinner Cruise",
-    shortDescription: "Evening navigation to a lakeside restaurant for dinner, then a night return to Como. Dinner not included in price.",
+    id: "tour-family",
+    slug: "family-tour",
+    name: "Family Tour",
+    category: "boat-tour",
+    duration: "4 hours recommended",
+    priceFrom: 1000,
+    priceNote: STANDARD_PRICE_NOTE,
+    boats: SUGGESTED_BOATS,
+    boatsLabel: "Boats suggested",
+    shortDescription:
+      "Designed with children in mind — fewer landmarks, more fun, with inflatables and snacks on board.",
     description:
-      "The boat departs in the late afternoon from Como and reaches one of our partner lakeside restaurants by water. After dinner, return to Como navigating by night with the lake illuminated by the reflections of the villages. Dinner cost not included in the tour price. Departure time and restaurant agreed in advance.",
-    duration: "~4 hours",
-    price: 700,
-    priceNote: "per boat · fuel & VAT included — dinner not included",
-    maxPeople: 12,
-    highlights: ["Lakeside restaurant by boat", "Night navigation return", "Villages reflected on the water", "Dinner reservation assistance"],
-    includes: ["Private boat", "Certified skipper", "Fuel & VAT", "Restaurant reservation assistance"],
-    image: "/images/tour-bellagio.jpg",
+      "A boat trip the whole family will remember. The route is designed with children in mind — fewer landmarks, more fun. Extra stops for swimming, inflatables in the water and plenty of time to just enjoy being on the lake together. Includes: inflatables, snorkelling masks, light snacks and soft drinks on board. Must be booked in advance. Customisable on request (duration, stops, extras).",
+    includes: [...STANDARD_INCLUDES, "Inflatables & snorkelling masks", "Light snacks & soft drinks"],
+    image: "/images/tour-family.jpg",
+    featured: true,
+    tag: "Family Favourite",
+    pricing: { speedboat: 1000, luxuryBoat: 1135, venetianBoat: 1315 },
+  },
+  {
+    id: "tour-custom",
+    slug: "custom-tour",
+    name: "Custom Tour",
+    category: "boat-tour",
+    duration: "Tailored to you",
+    priceFrom: null,
+    priceNote: "",
+    paxNote: STANDARD_PAX_NOTE,
+    boats: STANDARD_BOATS,
+    shortDescription:
+      "Tell us where you want to go and how long you want to stay out — we'll build the route around you.",
+    description:
+      "A custom journey designed around your preferences. Tell us where you want to go, how long you want to stay out and what you want to see — we'll build the route around you. Whether it's a specific villa, a hidden bay or a combination of stops no standard tour covers, we'll make it happen. Get in touch and we'll put together a proposal.",
+    includes: STANDARD_INCLUDES,
+    image: "/images/blog-taxi-boat.jpg",
     featured: false,
-    tag: "Special",
-    itinerary: "Late afternoon departure, navigation to partner lakeside restaurant, dinner, night return to Como. ~4 hours.",
+    tag: "On Request",
+  },
+  {
+    id: "tour-wedding",
+    slug: "wedding-tour",
+    name: "Wedding Tour",
+    category: "boat-tour",
+    duration: "Tailored to you",
+    priceFrom: null,
+    priceNote: "",
+    boats: SUGGESTED_BOATS,
+    boatsLabel: "Boats suggested",
+    shortDescription:
+      "Arriving by private boat makes it unforgettable — from guest transfers to a scenic cruise for the wedding party.",
+    description:
+      "Lake Como is one of the most romantic settings in the world — and arriving by private boat makes it unforgettable. Whether you're looking for a boat to transfer guests between venues, a scenic cruise for the wedding party or something completely bespoke, we'll tailor every detail to your day. Contact us to discuss your plans.",
+    includes: STANDARD_INCLUDES,
+    image: "/images/wedding.png",
+    featured: false,
+    tag: "On Request",
+  },
+  {
+    id: "tour-photoshoot",
+    slug: "photoshoot-tour",
+    name: "Photoshoot Tour",
+    category: "boat-tour",
+    duration: "Tailored to you",
+    priceFrom: null,
+    priceNote: "",
+    boats: SUGGESTED_BOATS,
+    boatsLabel: "Boats suggested",
+    shortDescription:
+      "Iconic villas, dramatic mountains and light photographers dream about — our skippers know every angle of the lake.",
+    description:
+      "Lake Como offers an extraordinary backdrop — iconic villas, dramatic mountains, crystal-clear water and light that photographers dream about. Our skippers know every angle of the lake and will position the boat exactly where you need it, for as long as you need it. Ideal for fashion shoots, elopements, content creation and professional photography. Get in touch to plan your session.",
+    includes: STANDARD_INCLUDES,
+    image: "/images/photoshoot.png",
+    featured: false,
+    tag: "On Request",
+  },
+  {
+    id: "tour-watersport",
+    slug: "boat-tour-water-sport-lesson",
+    name: "Boat Tour 4h + Water Sport Lesson (Kite or WingFoil)",
+    category: "water-sports",
+    duration: "4 hours",
+    priceFrom: 1100,
+    priceNote: "per boat · fuel & VAT included",
+    paxNote: "Max 6 pax",
+    boats: ["Speedboat"],
+    shortDescription:
+      "A fast-paced cruise from Como past Isola Comacina and Villa Oleandra, then a kite or wingfoil lesson in the lake's wind zone.",
+    description:
+      "Pickup at 13:00. A fast-paced cruise from Como along the western shore — Cernobbio, Torno, Laglio, Nesso and its famous waterfall, Argegno, Isola Comacina (the only island on Lake Como), Villa Olmo, Villa D'Este, Villa Pizzo, Villa Oleandra (George Clooney's residence), Villa La Casinella, Villa del Balbianello, Bellagio and Varenna — no stops, no going ashore, just the lake passing by at its finest. From Bellagio the boat heads north to the wind zone above the lake, where your kite or wingfoil lesson begins. From the water you'll see the magnificent Castello di Santa Maria Rezzonico and the villages of Cremia. This product is available on Speedboat only, max 6 pax.",
+    includes: ["Private speedboat", "Certified skipper", "Fuel & VAT included", "Kite or WingFoil lesson", "Pickup at 13:00", "Complimentary luggage storage available"],
+    image: "/images/watersport-tour.jpg",
+    featured: false,
+    tag: "Speedboat Only",
   },
 ];
 
@@ -189,4 +290,12 @@ export function getFeaturedTours(): Tour[] {
 
 export function getAllTours(): Tour[] {
   return tours;
+}
+
+export function getBoatTours(): Tour[] {
+  return tours.filter((t) => t.category === "boat-tour");
+}
+
+export function getWaterSportTours(): Tour[] {
+  return tours.filter((t) => t.category === "water-sports");
 }

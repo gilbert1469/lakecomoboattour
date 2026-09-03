@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { navigation, contact } from "@/data/navigation";
 
 export default function Footer() {
@@ -11,14 +12,22 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-2xl">⛵</span>
+              <span className="w-10 h-10 lg:w-12 lg:h-12 shrink-0 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/images/logo-icon.png"
+                  alt="Lake Como Tourist Center"
+                  width={48}
+                  height={48}
+                  className="w-9 h-9 lg:w-11 lg:h-11 object-contain"
+                />
+              </span>
               <div>
                 <div className="font-serif text-lg font-bold leading-tight">Lake Como</div>
                 <div className="text-xs text-gold-light font-medium tracking-widest uppercase">Tourist Center</div>
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              Your gateway to Lake Como experiences — boat tours, day trips, local expertise.
+              We Make Experiences
             </p>
             <div className="mt-4 flex gap-3">
               <a href="#" aria-label="Instagram" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-gold-light transition-colors">
@@ -76,20 +85,7 @@ export default function Footer() {
           {/* Hours */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-gold-light mb-4">Opening Hours</h3>
-            <ul className="space-y-2 text-sm text-white/70">
-              <li className="flex justify-between gap-4">
-                <span>Mon – Fri</span>
-                <span>{contact.hours.weekdays}</span>
-              </li>
-              <li className="flex justify-between gap-4">
-                <span>Saturday</span>
-                <span>{contact.hours.saturday}</span>
-              </li>
-              <li className="flex justify-between gap-4">
-                <span>Sunday</span>
-                <span>{contact.hours.sunday}</span>
-              </li>
-            </ul>
+            <p className="text-sm text-white/70">Open all days · {contact.hours.weekdays}</p>
             <div className="mt-6">
               <Link
                 href="/booking"

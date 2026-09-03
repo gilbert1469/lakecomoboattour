@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { navigation, contact } from "@/data/navigation";
@@ -13,7 +14,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl">⛵</span>
+            <Image
+              src="/images/logo-icon.png"
+              alt="Lake Como Tourist Center"
+              width={48}
+              height={48}
+              className="w-10 h-10 lg:w-12 lg:h-12"
+              priority
+            />
             <div>
               <div className="font-serif text-lg font-bold text-navy leading-tight">
                 Lake Como

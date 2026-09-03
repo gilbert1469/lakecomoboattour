@@ -158,7 +158,9 @@ export default function BookingPage() {
                     <option value="">Select a tour or experience...</option>
                     <optgroup label="🚢 Boat Tours">
                       {tours.map((t) => (
-                        <option key={t.slug} value={t.slug}>{t.name} – {t.duration} – from €{t.price}</option>
+                        <option key={t.slug} value={t.slug}>
+                          {t.name} – {t.duration} – {t.priceFrom !== null ? `from €${t.priceFrom}` : "on request"}
+                        </option>
                       ))}
                     </optgroup>
                     <optgroup label="✨ Experiences">

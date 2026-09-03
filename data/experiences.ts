@@ -2,7 +2,7 @@ export interface Experience {
   id: string;
   slug: string;
   name: string;
-  category: "cycling" | "cooking" | "luggage" | "transfer" | "kite" | "sailing" | "wingfoil" | "windsurf";
+  category: "cycling" | "cooking" | "guided" | "kite" | "sailing" | "wingfoil" | "windsurf";
   shortDescription: string;
   description: string;
   duration?: string;
@@ -16,25 +16,24 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    id: "cycling-lago",
-    slug: "cycling-tour-lake-como",
-    name: "Lake Como Cycling Tour",
-    category: "cycling",
-    shortDescription: "Pedal along the lakeshore on routes for all levels, through nature and picturesque villages.",
+    id: "guided-tours",
+    slug: "guided-tours-lake-como",
+    name: "Guided Tours",
+    category: "guided",
+    shortDescription: "Our certified guides bring Lake Como to life — its history, its villas, its hidden stories.",
     description:
-      "Discover Lake Como on two wheels! Our cycling tours follow scenic routes along the lake shores, through medieval villages, historic villas and breathtaking views. We have bikes for adults, children and e-bikes for those who prefer a boost on the hills. Accompanied by an expert local guide.",
-    duration: "3–4 hours",
-    price: 45,
-    priceNote: "per person",
+      "Our certified guides bring Lake Como to life — its history, its villas, its hidden stories. We offer guided tours in Como, Tremezzo, Menaggio, Bellagio, Varenna and all the villages around the lake, as well as museum and villa visits.",
+    price: 0,
+    priceNote: "Quotation on request",
     highlights: [
-      "Routes for all fitness levels",
-      "E-bikes available",
-      "Expert local guide",
-      "Scenic stops",
+      "Como, Tremezzo, Menaggio, Bellagio, Varenna & more",
+      "Museum and villa visits",
+      "Groups of up to 25 people",
+      "8 languages available",
     ],
-    includes: ["Bicycle (city bike or e-bike)", "Helmet", "Certified guide", "Water & snack"],
-    image: "/images/experience-cycling.jpg",
-    icon: "🚲",
+    includes: ["Certified local guide", "Groups up to 25 people", "IT · EN · FR · DE · ES · PT · ZH · AR"],
+    image: "/images/guided-tours.png",
+    icon: "🗺️",
   },
   {
     id: "cooking-class",
@@ -58,46 +57,25 @@ export const experiences: Experience[] = [
     icon: "👨‍🍳",
   },
   {
-    id: "luggage-storage",
-    slug: "luggage-storage-como",
-    name: "Luggage Storage Como",
-    category: "luggage",
-    shortDescription: "Drop your bags with us and explore Como hands-free. Safe, flexible and affordable.",
+    id: "cycling-lago",
+    slug: "cycling-tour-lake-como",
+    name: "Lake Como Cycling Tour",
+    category: "cycling",
+    shortDescription: "Pedal along the lakeshore on routes for all levels, through nature and picturesque villages.",
     description:
-      "Waiting for check-in or missed your connection? Leave your luggage safely at our agency in the centre of Como (Via Borgo Vico 42) and enjoy the city or the lake without any worries. The service is available every day with flexible hours. Pick-up and delivery also available on request.",
-    price: 6,
-    priceNote: "per bag per day",
+      "Discover Lake Como on two wheels! Our cycling tours follow scenic routes along the lake shores, through medieval villages, historic villas and breathtaking views. We have bikes for adults, children and e-bikes for those who prefer a boost on the hills. Accompanied by an expert local guide.",
+    duration: "3–4 hours",
+    price: 45,
+    priceNote: "per person",
     highlights: [
-      "Central location in Como",
-      "Open every day",
-      "24/7 CCTV surveillance",
-      "Home delivery available",
+      "Routes for all fitness levels",
+      "E-bikes available",
+      "Expert local guide",
+      "Scenic stops",
     ],
-    includes: ["Secure storage", "Deposit receipt", "Luggage insurance"],
-    image: "/images/experience-luggage.jpg",
-    icon: "🧳",
-  },
-  {
-    id: "malpensa-full-day",
-    slug: "malpensa-to-como-full-day",
-    name: "Malpensa Full Day Package",
-    category: "transfer",
-    shortDescription: "We pick you up at Malpensa Arrivals and take you through a full day on Lake Como — guided tour, private taxi boat, luggage storage all included.",
-    description:
-      "Land at Malpensa and make the most of your day. We pick you up directly at the Arrivals exit, bring you to Como where you drop your bags at our office (Via Borgo Vico 42, 3 minutes walk from Como San Giovanni station), take you on a guided walking tour of Como historic centre and a private taxi boat on the lake. At the end of the day we drop you at Como San Giovanni station (30 min train to Milano Centrale) or back to Malpensa if needed.",
-    duration: "6-8 hours",
-    price: 0,
-    priceNote: "contact us for group pricing",
-    highlights: [
-      "Pickup at Malpensa Arrivals",
-      "Luggage storage included",
-      "Guided tour of Como historic centre",
-      "Private taxi boat on the lake",
-      "Drop-off at Como San Giovanni or Malpensa",
-    ],
-    includes: ["Private transfer from Malpensa", "Luggage storage", "Walking tour guide", "Private taxi boat", "Flexible return"],
-    image: "/images/experience-malpensa.jpg",
-    icon: "✈️",
+    includes: ["Bicycle (city bike or e-bike)", "Helmet", "Certified guide", "Water & snack"],
+    image: "/images/experience-cycling.jpg",
+    icon: "🚲",
   },
   {
     id: "kite-surfing",
@@ -195,8 +173,4 @@ export function getExperiencesByCategory(category: Experience["category"]): Expe
 
 export function getWaterSportExperiences(): Experience[] {
   return experiences.filter((e) => ["kite", "sailing", "wingfoil", "windsurf"].includes(e.category));
-}
-
-export function getTransferExperiences(): Experience[] {
-  return experiences.filter((e) => e.category === "transfer");
 }

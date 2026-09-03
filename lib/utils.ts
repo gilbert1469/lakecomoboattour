@@ -20,3 +20,9 @@ export function formatPrice(price: number): string {
     minimumFractionDigits: 0,
   }).format(price);
 }
+
+/** "1 hour" -> "1h", "1.5 hours" -> "1.5h", "4 hours recommended" -> "4h". Returns null when the tour has no fixed duration. */
+export function getShortDuration(duration: string): string | null {
+  const match = duration.match(/^(\d+(?:\.\d+)?)\s*hours?/i);
+  return match ? `${match[1]}h` : null;
+}

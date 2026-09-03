@@ -22,34 +22,24 @@ export const metadata: Metadata = {
 
 const usps = [
   {
-    icon: "👨‍👩‍👧‍👦",
-    title: "Family Friendly",
-    description: "Tours designed for the whole family: spacious boat, relaxed pace, skipper experienced with children.",
-  },
-  {
-    icon: "🧓",
-    title: "Elderly Friendly",
-    description: "Easy boarding, comfortable seating and no rush. Lake Como for everyone, with no barriers.",
-  },
-  {
-    icon: "🌍",
-    title: "Multilingual Crew",
-    description: "We speak Italian, English, French and German. Your tour explained in your own language.",
-  },
-  {
     icon: "🔒",
     title: "Fully Private Boat",
     description: "No other passengers: the boat is entirely yours. Total freedom over route and stops.",
   },
   {
-    icon: "⚓",
-    title: "Certified Skipper",
-    description: "Licensed professionals with years of experience on Lake Como. Safety and expertise guaranteed.",
+    icon: "🧳",
+    title: "Complimentary Luggage Storage",
+    description: "Drop your bags at our secure office before or after your tour. Our luggage storage is staffed and monitored at all times.",
   },
   {
-    icon: "⭐",
-    title: "5-Star Reviews",
-    description: "Hundreds of happy guests on TripAdvisor and Google. Your experience is our top priority.",
+    icon: "🏠",
+    title: "From the Station to the Lake",
+    description: "Step off the train and straight onto your tour in Como or on the lake. Drop your bags at our office — 3 minutes from Como San Giovanni station — and you're ready to go.",
+  },
+  {
+    icon: "💁",
+    title: "Physical Help Desk",
+    description: "We are available in person at our office to answer any question and help you make the most of your time in Como and on the lake.",
   },
 ];
 
@@ -64,10 +54,10 @@ export default function HomePage() {
     description: seo.description,
     url: siteSEO.siteUrl,
     telephone: "+39 334 381 7235",
-    email: "info@milantolakecomo.com",
+    email: "info@lakecomotouristcenter.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Via Borgo Vico 42",
+      streetAddress: "Via Borgo Vico 62",
       addressLocality: "Como",
       postalCode: "22100",
       addressCountry: "IT",
@@ -82,7 +72,7 @@ export default function HomePage() {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         opens: "09:00",
-        closes: "21:00",
+        closes: "20:30",
       },
     ],
     priceRange: "€€",
@@ -140,19 +130,6 @@ export default function HomePage() {
               Explore Tours
             </Button>
           </div>
-
-          <div className="mt-14 grid grid-cols-3 gap-6 max-w-sm mx-auto sm:max-w-md">
-            {[
-              ["500+", "Happy guests"],
-              ["6", "Tours available"],
-              ["100%", "Private boat"],
-            ].map(([num, label]) => (
-              <div key={label}>
-                <div className="text-2xl sm:text-3xl font-bold text-gold-light">{num}</div>
-                <div className="text-xs text-white/70 mt-1">{label}</div>
-              </div>
-            ))}
-          </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
@@ -209,7 +186,7 @@ export default function HomePage() {
           subtitle="3 minutes walk from Como San Giovanni station. Book with confidence: if the weather changes, we give you a full refund and help you reorganise your day."
           light
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {[
             {
               icon: "🌦️",
@@ -218,16 +195,10 @@ export default function HomePage() {
               href: "/contact",
             },
             {
-              icon: "✈️",
-              title: "Malpensa Full Day Package",
-              description: "Landing at Malpensa? We pick you up, store your bags, show you Como and take you on the lake. One day, one package, zero stress.",
-              href: "/malpensa-to-como",
-            },
-            {
               icon: "🧳",
               title: "Luggage Storage",
-              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 42 — 3 minutes walk from Como San Giovanni station.",
-              href: "/experiences#luggage",
+              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 62 — 3 minutes walk from Como San Giovanni station.",
+              href: "/luggage-storage",
             },
           ].map((item) => (
             <Link
@@ -243,26 +214,6 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
-
-      {/* Testimonial CTA */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <div className="flex justify-center gap-1 mb-4">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <svg key={i} className="w-6 h-6 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-          <blockquote className="font-serif text-2xl lg:text-3xl text-navy font-bold leading-snug mb-6 text-balance">
-            &ldquo;A wonderful experience! Our skipper showed us hidden corners of the lake we never would have found on our own. Highly recommended!&rdquo;
-          </blockquote>
-          <p className="text-slate text-sm mb-8">— Maria G., Milan · TripAdvisor</p>
-          <Button href="/taxi-boat-lake-como" size="lg">
-            Book Your Experience
-          </Button>
-        </div>
-      </section>
     </>
   );
 }

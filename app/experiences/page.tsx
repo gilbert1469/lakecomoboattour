@@ -22,30 +22,12 @@ export const metadata: Metadata = {
 export default function ExperiencesPage() {
   return (
     <>
-      {/* Page hero */}
-      <section className="relative h-72 lg:h-80 flex items-end overflow-hidden bg-navy">
-        <div className="absolute inset-0 opacity-40">
-          <Image
-            src="https://picsum.photos/seed/lakecomo-exp/1920/600"
-            alt="Experiences in Como"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
-          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">
-            More than just a boat
-          </p>
-          <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white">
-            Experiences in Como
-          </h1>
-          <p className="text-white/80 mt-2 text-lg">
-            Cycling tours, cooking classes and luggage storage. All from one agency.
-          </p>
-        </div>
-      </section>
+      {/* Page title */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-6 text-center">
+        <h1 className="font-serif text-3xl lg:text-5xl font-bold text-navy">
+          Experiences in Como &amp; Surroundings
+        </h1>
+      </div>
 
       {/* Experiences */}
       {experiences.map((exp, idx) => (
@@ -66,7 +48,13 @@ export default function ExperiencesPage() {
             <div className={idx % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}>
               <div className="text-4xl mb-4">{exp.icon}</div>
               <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-2">
-                {exp.category === "cycling" ? "Cycling Tour" : exp.category === "cooking" ? "Food & Wine" : "Services"}
+                {exp.category === "cycling"
+                  ? "Cycling Tour"
+                  : exp.category === "cooking"
+                  ? "Food & Wine"
+                  : exp.category === "guided"
+                  ? "Local Guide"
+                  : "Services"}
               </p>
               <h2 className="font-serif text-3xl font-bold text-navy mb-4">{exp.name}</h2>
               <p className="text-slate leading-relaxed mb-6">{exp.description}</p>
@@ -98,8 +86,14 @@ export default function ExperiencesPage() {
               {/* Price + CTA */}
               <div className="flex items-center gap-6">
                 <div>
-                  <span className="text-3xl font-bold text-navy">{formatPrice(exp.price)}</span>
-                  <span className="text-sm text-slate ml-2">{exp.priceNote}</span>
+                  {exp.price > 0 ? (
+                    <>
+                      <span className="text-3xl font-bold text-navy">{formatPrice(exp.price)}</span>
+                      <span className="text-sm text-slate ml-2">{exp.priceNote}</span>
+                    </>
+                  ) : (
+                    <span className="text-3xl font-bold text-navy">{exp.priceNote}</span>
+                  )}
                   {exp.duration && (
                     <div className="text-sm text-slate mt-1">⏱ {exp.duration}</div>
                   )}
