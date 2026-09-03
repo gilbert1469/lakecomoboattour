@@ -61,15 +61,29 @@ export const pageSEO: Record<string, PageSEO> = {
     ogImage: "/images/og-experiences.jpg",
   },
   waterSports: {
-    title: "Water Sports on Lake Como – Kite Surf, Wing Foil, Windsurf & Sailing | Lake Como Tourist Center",
+    title: "Water Sports on Lake Como – Kite Surf / Kite Foil, Wing Foil, Wind Surf / Wind Foil & Sailing | Lake Como Tourist Center",
     description:
-      "All water sports on Lake Como in one place: kite surfing, wing foiling, windsurfing and sailing with certified local instructors and reliable thermal winds.",
+      "All water sports on Lake Como in one place: kite surf / kite foil, wing foil, wind surf / wind foil and sailing with certified local instructors and reliable thermal winds.",
     keywords: [
       "lake como water sports",
       "kite surfing lake como",
+      "kite foil lake como",
       "wing foil lake como",
       "windsurf lake como",
+      "wind foil lake como",
       "sailing lake como",
+    ],
+    ogImage: "/images/og-experiences.jpg",
+  },
+  wineTasting: {
+    title: "Wine Tasting on Lake Como | Lake Como Tourist Center",
+    description:
+      "Discover the wines of the Lake Como area with a guided tasting experience led by certified sommeliers, paired with typical local products.",
+    keywords: [
+      "wine tasting lake como",
+      "lake como wine",
+      "sommelier lake como",
+      "lake como food and wine",
     ],
     ogImage: "/images/og-experiences.jpg",
   },

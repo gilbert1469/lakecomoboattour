@@ -39,8 +39,8 @@ export default function WaterSportsPage() {
         <p className="mt-4 max-w-2xl mx-auto text-slate text-lg leading-relaxed">
           Lake Como&apos;s reliable thermal winds and calm water make it one of Northern Italy&apos;s
           best spots for water sports. We connect you with certified local instructors for kite
-          surfing, wing foiling, windsurfing and sailing — for complete beginners and experienced
-          riders alike. Pick an activity below to find out more.
+          surf / kite foil, wing foil, wind surf / wind foil and sailing — for complete beginners
+          and experienced riders alike. Pick an activity below to find out more.
         </p>
       </div>
 

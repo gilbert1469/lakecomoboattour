@@ -27,9 +27,11 @@
     { "source": "/prenotazione", "destination": "/booking", "permanent": true },
     { "source": "/chi-siamo", "destination": "/about", "permanent": true },
     { "source": "/contatti", "destination": "/contact", "permanent": true },
-    { "source": "/experiences/kite-surfing-lake-como", "destination": "/experiences/water-sports/kite-surf", "permanent": true },
+    { "source": "/experiences/kite-surfing-lake-como", "destination": "/experiences/water-sports/kite-surf-kite-foil", "permanent": true },
     { "source": "/experiences/sailing-lake-como", "destination": "/experiences/water-sports/sailing", "permanent": true },
     { "source": "/experiences/wing-foil-lake-como", "destination": "/experiences/water-sports/wing-foil", "permanent": true },
-    { "source": "/experiences/wind-surfing-lake-como", "destination": "/experiences/water-sports/wind", "permanent": true }
+    { "source": "/experiences/wind-surfing-lake-como", "destination": "/experiences/water-sports/wind-surf-wind-foil", "permanent": true },
+    { "source": "/experiences/water-sports/kite-surf", "destination": "/experiences/water-sports/kite-surf-kite-foil", "permanent": true },
+    { "source": "/experiences/water-sports/wind", "destination": "/experiences/water-sports/wind-surf-wind-foil", "permanent": true }
   ]
 }

@@ -18,13 +18,14 @@ export const navigation: NavItem[] = [
     href: "/experiences",
     children: [
       { label: "All Experiences", href: "/experiences" },
+      { label: "Wine Tasting", href: "/experiences/wine-tasting" },
       {
         label: "Water Sports",
         href: "/experiences/water-sports",
         children: [
-          { label: "Kite Surf", href: "/experiences/water-sports/kite-surf" },
+          { label: "Kite Surf / Kite Foil", href: "/experiences/water-sports/kite-surf-kite-foil" },
           { label: "Wing Foil", href: "/experiences/water-sports/wing-foil" },
-          { label: "Wind", href: "/experiences/water-sports/wind" },
+          { label: "Wind Surf / Wind Foil", href: "/experiences/water-sports/wind-surf-wind-foil" },
           { label: "Sailing", href: "/experiences/water-sports/sailing" },
         ],
       },

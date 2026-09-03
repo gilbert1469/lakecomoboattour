@@ -2,7 +2,7 @@ export interface Experience {
   id: string;
   slug: string;
   name: string;
-  category: "cycling" | "cooking" | "guided" | "kite" | "sailing" | "wingfoil" | "windsurf";
+  category: "cycling" | "cooking" | "guided" | "kite" | "sailing" | "wingfoil" | "windsurf" | "wine";
   shortDescription: string;
   description: string;
   duration?: string;
@@ -57,6 +57,27 @@ export const experiences: Experience[] = [
     icon: "👨‍🍳",
   },
   {
+    id: "wine-tasting",
+    slug: "wine-tasting-lake-como",
+    name: "Wine Tasting on Lake Como",
+    category: "wine",
+    shortDescription:
+      "A guided wine tasting with certified sommeliers, featuring the finest local labels paired with typical products from the region.",
+    description:
+      "Discover the wines of the Lake Como area with a guided tasting experience. Our certified sommeliers take you through the finest local labels, paired with typical products from the region. Available at selected wineries around the lake, or on board during a private boat tour on request.",
+    price: 0,
+    priceNote: "Quotation on request",
+    highlights: [
+      "Certified sommeliers",
+      "Finest local labels",
+      "Paired with typical regional products",
+      "Available on board on request",
+    ],
+    includes: ["Guided tasting", "Certified sommelier", "Local product pairing"],
+    image: "https://picsum.photos/seed/lakecomo-wine-tasting/800/600",
+    icon: "🍷",
+  },
+  {
     id: "cycling-lago",
     slug: "cycling-tour-lake-como",
     name: "Lake Como Cycling Tour",
@@ -80,11 +101,11 @@ export const experiences: Experience[] = [
   {
     id: "kite-surfing",
     slug: "kite-surfing-lake-como",
-    name: "Kite Surfing Lake Como",
+    name: "Kite Surf / Kite Foil Lake Como",
     category: "kite",
-    shortDescription: "Learn or improve your kite surfing on Lake Como with certified instructors. Lessons for all levels.",
+    shortDescription: "Learn or improve your kite surfing or kite foiling on Lake Como with certified instructors. Lessons for all levels.",
     description:
-      "Lake Como is one of the best spots in northern Italy for kite surfing, thanks to its reliable thermal winds. We connect you with certified local instructors for beginner lessons or advanced sessions. Equipment included.",
+      "Lake Como is one of the best spots in northern Italy for kite surfing and kite foiling, thanks to its reliable thermal winds. We connect you with certified local instructors for beginner lessons or advanced sessions, on kiteboard or hydrofoil. Equipment included.",
     duration: "2–3 hours",
     price: 0,
     priceNote: "contact us for pricing",
@@ -94,8 +115,8 @@ export const experiences: Experience[] = [
       "Equipment included",
       "Best wind conditions on the lake",
     ],
-    includes: ["Kite equipment", "Wetsuit", "Certified instructor", "Safety briefing"],
-    image: "/images/experience-kite.jpg",
+    includes: ["Kite surf & kite foil equipment", "Wetsuit", "Certified instructor", "Safety briefing"],
+    image: "/images/kite_surf.jpg",
     icon: "🪁",
   },
   {
@@ -116,7 +137,7 @@ export const experiences: Experience[] = [
       "Authentic lake experience",
     ],
     includes: ["Sailboat", "Certified skipper", "Safety equipment", "Water on board"],
-    image: "/images/experience-sailing.jpg",
+    image: "/images/sailing.jpeg",
     icon: "⛵",
   },
   {
@@ -137,17 +158,17 @@ export const experiences: Experience[] = [
       "Beginner to advanced",
     ],
     includes: ["Wing foil equipment", "Wetsuit", "Instructor", "Safety briefing"],
-    image: "/images/experience-wingfoil.jpg",
+    image: "/images/wing_foil.webp",
     icon: "🏄",
   },
   {
     id: "wind-surfing",
     slug: "wind-surfing-lake-como",
-    name: "Wind Surfing Lake Como",
+    name: "Wind Surf / Wind Foil Lake Como",
     category: "windsurf",
-    shortDescription: "Classic wind surfing on Lake Como with reliable thermal winds and expert instructors.",
+    shortDescription: "Classic wind surfing or wind foiling on Lake Como with reliable thermal winds and expert instructors.",
     description:
-      "Lake Como has been a wind surfing destination for decades. Reliable thermal winds, clear water and stunning mountain scenery make it one of the best spots in northern Italy. We connect you with certified schools and instructors for lessons or free sessions.",
+      "Lake Como has been a wind surfing and wind foiling destination for decades. Reliable thermal winds, clear water and stunning mountain scenery make it one of the best spots in northern Italy. We connect you with certified schools and instructors for lessons or free sessions, on board or hydrofoil.",
     duration: "2–4 hours",
     price: 0,
     priceNote: "contact us for pricing",
@@ -157,8 +178,8 @@ export const experiences: Experience[] = [
       "All levels",
       "Equipment rental available",
     ],
-    includes: ["Windsurf board & sail", "Wetsuit", "Certified instructor", "Equipment rental"],
-    image: "/images/experience-windsurf.jpg",
+    includes: ["Windsurf & wind foil equipment", "Wetsuit", "Certified instructor", "Equipment rental"],
+    image: "/images/wind_surf.jpeg",
     icon: "🌊",
   },
 ];

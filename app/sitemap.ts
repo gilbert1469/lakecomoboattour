@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/taxi-boat-lake-como`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/experiences`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/experiences/water-sports`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/experiences/wine-tasting`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/booking`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
