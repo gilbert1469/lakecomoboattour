@@ -269,8 +269,7 @@ export default function BookingPage() {
               </a>
               <div className="mt-4 text-xs text-slate">
                 <p className="font-medium">Opening hours:</p>
-                <p>Mon–Fri: {contact.hours.weekdays}</p>
-                <p>Sat: {contact.hours.saturday}</p>
+                <p>Mon–Sun: {contact.hours}</p>
               </div>
             </div>
 

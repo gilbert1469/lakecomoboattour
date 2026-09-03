@@ -84,7 +84,7 @@ export default function LuggageStoragePage() {
             also help carry your luggage physically — just ask.
           </p>
           <p className="font-semibold text-navy">
-            Open all days, {contact.hours.weekdays}.
+            Mon–Sun: {contact.hours}.
           </p>
           <p>
             Need to drop off before opening or collect after closing? The service is

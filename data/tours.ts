@@ -190,7 +190,7 @@ export const tours: Tour[] = [
     duration: "4 hours recommended",
     priceFrom: 1000,
     priceNote: STANDARD_PRICE_NOTE,
-    boats: SUGGESTED_BOATS,
+    boats: ["Speedboat", "Luxury Boat"],
     boatsLabel: "Boats suggested",
     shortDescription:
       "Designed with children in mind — fewer landmarks, more fun, with inflatables and snacks on board.",
@@ -262,7 +262,7 @@ export const tours: Tour[] = [
   {
     id: "tour-watersport",
     slug: "boat-tour-water-sport-lesson",
-    name: "Boat Tour 4h + Water Sport Lesson (Kite or WingFoil)",
+    name: "Boat Tour 4h + Water Sport Lesson (Kite or Wing Foil)",
     category: "water-sports",
     duration: "4 hours",
     priceFrom: 1100,
@@ -270,10 +270,10 @@ export const tours: Tour[] = [
     paxNote: "Max 6 pax",
     boats: ["Speedboat"],
     shortDescription:
-      "A fast-paced cruise from Como past Isola Comacina and Villa Oleandra, then a kite or wingfoil lesson in the lake's wind zone.",
+      "A fast-paced cruise from Como past Isola Comacina and Villa Oleandra, then a kite or wing foil lesson in the lake's wind zone.",
     description:
-      "Pickup at 13:00. A fast-paced cruise from Como along the western shore — Cernobbio, Torno, Laglio, Nesso and its famous waterfall, Argegno, Isola Comacina (the only island on Lake Como), Villa Olmo, Villa D'Este, Villa Pizzo, Villa Oleandra (George Clooney's residence), Villa La Casinella, Villa del Balbianello, Bellagio and Varenna — no stops, no going ashore, just the lake passing by at its finest. From Bellagio the boat heads north to the wind zone above the lake, where your kite or wingfoil lesson begins. From the water you'll see the magnificent Castello di Santa Maria Rezzonico and the villages of Cremia. This product is available on Speedboat only, max 6 pax.",
-    includes: ["Private speedboat", "Certified skipper", "Fuel & VAT included", "Kite or WingFoil lesson", "Pickup at 13:00", "Complimentary luggage storage available"],
+      "Pickup at 13:00. A fast-paced cruise from Como along the western shore — Cernobbio, Torno, Laglio, Nesso and its famous waterfall, Argegno, Isola Comacina (the only island on Lake Como), Villa Olmo, Villa D'Este, Villa Pizzo, Villa Oleandra (George Clooney's residence), Villa La Casinella, Villa del Balbianello, Bellagio and Varenna — no stops, no going ashore, just the lake passing by at its finest. From Bellagio the boat heads north to the wind zone above the lake, where your kite or wing foil lesson begins. From the water you'll see the magnificent Castello di Santa Maria Rezzonico and the villages of Cremia. This product is available on Speedboat only, max 6 pax.",
+    includes: ["Private speedboat", "Certified skipper", "Fuel & VAT included", "Kite or Wing Foil lesson", "Pickup at 13:00", "Complimentary luggage storage available"],
     image: "/images/watersport-tour.jpg",
     featured: false,
     tag: "Speedboat Only",

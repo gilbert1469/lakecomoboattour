@@ -85,7 +85,7 @@ export default function Footer() {
           {/* Hours */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-gold-light mb-4">Opening Hours</h3>
-            <p className="text-sm text-white/70">Open all days · {contact.hours.weekdays}</p>
+            <p className="text-sm text-white/70">Mon–Sun: {contact.hours}</p>
             <div className="mt-6">
               <Link
                 href="/booking"

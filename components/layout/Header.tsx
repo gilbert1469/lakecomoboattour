@@ -3,10 +3,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { navigation, contact } from "@/data/navigation";
+import { navigation, contact, NavChild } from "@/data/navigation";
+
+function ChevronIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    </svg>
+  );
+}
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<Record<string, boolean>>({});
+
+  const toggleMobileExpanded = (key: string) => {
+    setMobileExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
@@ -43,6 +56,47 @@ export default function Header() {
                 >
                   {item.label}
                 </Link>
+              ) : item.children ? (
+                <div key={item.href} className="relative group">
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate hover:text-navy transition-colors rounded-md hover:bg-gray-50"
+                  >
+                    {item.label}
+                    <ChevronIcon className="w-3.5 h-3.5" />
+                  </Link>
+                  <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-150 absolute top-full left-0 pt-2 z-50">
+                    <ul className="w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-2">
+                      {item.children.map((child) => (
+                        <li key={child.href} className={child.children ? "relative group/sub" : undefined}>
+                          <Link
+                            href={child.href}
+                            className="flex items-center justify-between px-4 py-2 text-sm text-slate hover:text-navy hover:bg-gray-50"
+                          >
+                            {child.label}
+                            {child.children && <ChevronIcon className="w-3 h-3 -rotate-90" />}
+                          </Link>
+                          {child.children && (
+                            <div className="invisible opacity-0 group-hover/sub:visible group-hover/sub:opacity-100 transition-opacity duration-150 absolute left-full top-0 pl-2 z-50">
+                              <ul className="w-52 bg-white rounded-xl shadow-lg border border-gray-100 py-2">
+                                {child.children.map((grandchild: NavChild) => (
+                                  <li key={grandchild.href}>
+                                    <Link
+                                      href={grandchild.href}
+                                      className="block px-4 py-2 text-sm text-slate hover:text-navy hover:bg-gray-50"
+                                    >
+                                      {grandchild.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               ) : (
                 <Link
                   key={item.href}
@@ -87,20 +141,96 @@ export default function Header() {
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-100 bg-white">
           <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className={
-                  item.label === "Prenota"
-                    ? "mt-2 px-4 py-3 bg-gold-light text-navy font-semibold rounded-full text-center text-sm"
-                    : "px-4 py-3 text-sm font-medium text-slate hover:text-navy hover:bg-gray-50 rounded-md"
-                }
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navigation.map((item) =>
+              item.children ? (
+                <div key={item.href}>
+                  <div className="flex items-center">
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="flex-1 px-4 py-3 text-sm font-medium text-slate hover:text-navy hover:bg-gray-50 rounded-md"
+                    >
+                      {item.label}
+                    </Link>
+                    <button
+                      onClick={() => toggleMobileExpanded(item.label)}
+                      className="p-3 text-slate"
+                      aria-label={`Toggle ${item.label} submenu`}
+                      aria-expanded={!!mobileExpanded[item.label]}
+                    >
+                      <ChevronIcon
+                        className={`w-4 h-4 transition-transform ${mobileExpanded[item.label] ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                  </div>
+                  {mobileExpanded[item.label] && (
+                    <div className="pl-4 flex flex-col gap-1">
+                      {item.children.map((child) =>
+                        child.children ? (
+                          <div key={child.href}>
+                            <div className="flex items-center">
+                              <Link
+                                href={child.href}
+                                onClick={() => setMobileOpen(false)}
+                                className="flex-1 px-4 py-2 text-sm text-slate hover:text-navy hover:bg-gray-50 rounded-md"
+                              >
+                                {child.label}
+                              </Link>
+                              <button
+                                onClick={() => toggleMobileExpanded(child.label)}
+                                className="p-2 text-slate"
+                                aria-label={`Toggle ${child.label} submenu`}
+                                aria-expanded={!!mobileExpanded[child.label]}
+                              >
+                                <ChevronIcon
+                                  className={`w-3.5 h-3.5 transition-transform ${mobileExpanded[child.label] ? "rotate-180" : ""}`}
+                                />
+                              </button>
+                            </div>
+                            {mobileExpanded[child.label] && (
+                              <div className="pl-4 flex flex-col gap-1">
+                                {child.children.map((grandchild) => (
+                                  <Link
+                                    key={grandchild.href}
+                                    href={grandchild.href}
+                                    onClick={() => setMobileOpen(false)}
+                                    className="px-4 py-2 text-sm text-slate hover:text-navy hover:bg-gray-50 rounded-md"
+                                  >
+                                    {grandchild.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="px-4 py-2 text-sm text-slate hover:text-navy hover:bg-gray-50 rounded-md"
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={
+                    item.label === "Prenota"
+                      ? "mt-2 px-4 py-3 bg-gold-light text-navy font-semibold rounded-full text-center text-sm"
+                      : "px-4 py-3 text-sm font-medium text-slate hover:text-navy hover:bg-gray-50 rounded-md"
+                  }
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
         </div>
       )}

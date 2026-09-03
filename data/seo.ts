@@ -60,6 +60,19 @@ export const pageSEO: Record<string, PageSEO> = {
     ],
     ogImage: "/images/og-experiences.jpg",
   },
+  waterSports: {
+    title: "Water Sports on Lake Como – Kite Surf, Wing Foil, Windsurf & Sailing | Lake Como Tourist Center",
+    description:
+      "All water sports on Lake Como in one place: kite surfing, wing foiling, windsurfing and sailing with certified local instructors and reliable thermal winds.",
+    keywords: [
+      "lake como water sports",
+      "kite surfing lake como",
+      "wing foil lake como",
+      "windsurf lake como",
+      "sailing lake como",
+    ],
+    ogImage: "/images/og-experiences.jpg",
+  },
   booking: {
     title: "Book a Tour | Lake Como Tourist Center | Milan to Lake Como",
     description:
@@ -123,6 +136,18 @@ export const pageSEO: Record<string, PageSEO> = {
       "lake como tour operator contact",
     ],
     ogImage: "/images/og-contact.jpg",
+  },
+  faq: {
+    title: "FAQ – Frequently Asked Questions | Lake Como Tourist Center",
+    description:
+      "Answers to the most common questions about our Lake Como boat tours: prices, children, bad weather policy, custom itineraries and boarding points.",
+    keywords: [
+      "lake como boat tour faq",
+      "lake como tour questions",
+      "boat tour como information",
+      "lake como tourist center faq",
+    ],
+    ogImage: "/images/og-faq.jpg",
   },
   luggageStorage: {
     title: "Luggage Storage in Como | Lake Como Tourist Center",

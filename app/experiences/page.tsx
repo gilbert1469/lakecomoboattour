@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
-import { experiences } from "@/data/experiences";
+import { experiences, getWaterSportExperiences } from "@/data/experiences";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { formatPrice } from "@/lib/utils";
+import { ACTIVITY_SLUGS, ACTIVITY_SHORT_LABELS } from "./water-sports/activities";
+
+const nonWaterSportCategories = ["cycling", "cooking", "guided"];
 
 const seo = pageSEO.experiences;
 
@@ -20,6 +24,9 @@ export const metadata: Metadata = {
 };
 
 export default function ExperiencesPage() {
+  const mainExperiences = experiences.filter((exp) => nonWaterSportCategories.includes(exp.category));
+  const waterSports = getWaterSportExperiences();
+
   return (
     <>
       {/* Page title */}
@@ -30,7 +37,7 @@ export default function ExperiencesPage() {
       </div>
 
       {/* Experiences */}
-      {experiences.map((exp, idx) => (
+      {mainExperiences.map((exp, idx) => (
         <Section key={exp.id} bg={idx % 2 === 0 ? "white" : "cream"} id={exp.category}>
           <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${idx % 2 !== 0 ? "lg:grid-flow-dense" : ""}`}>
             {/* Image */}
@@ -104,6 +111,33 @@ export default function ExperiencesPage() {
           </div>
         </Section>
       ))}
+
+      {/* Water Sports teaser */}
+      <Section bg={mainExperiences.length % 2 === 0 ? "white" : "cream"} id="water-sports">
+        <SectionHeader
+          eyebrow="Services"
+          title="Water Sports"
+          subtitle="Kite surfing, wing foiling, windsurfing and sailing — all in one place, with certified local instructors."
+        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {waterSports.map((exp) => (
+            <Link
+              key={exp.id}
+              href={`/experiences/water-sports/${ACTIVITY_SLUGS[exp.category]}`}
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center"
+            >
+              <div className="text-3xl mb-3">{exp.icon}</div>
+              <h3 className="font-semibold text-navy mb-2">{ACTIVITY_SHORT_LABELS[exp.category]}</h3>
+              <span className="text-sm font-medium text-navy-light group-hover:text-navy transition-colors">
+                Discover more →
+              </span>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Button href="/experiences/water-sports">All Water Sports</Button>
+        </div>
+      </Section>
 
       {/* CTA block */}
       <Section bg="navy">
