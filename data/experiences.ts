@@ -43,8 +43,8 @@ export const experiences: Experience[] = [
     shortDescription: "Learn to cook traditional dishes from the Lake Como region with a local chef in a professional kitchen.",
     description:
       "An authentic experience in the kitchen of the Larian tradition. A local chef will guide you through preparing classic dishes: perch risotto, missultin, polenta uncia and traditional desserts. At the end you'll cook and taste together everything you've prepared, paired with local wines.",
-    duration: "3 hours",
-    price: 85,
+    duration: "1.5 hours",
+    price: 90,
     priceNote: "per person (min. 2 people)",
     highlights: [
       "Professional local chef",
