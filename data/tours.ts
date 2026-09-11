@@ -63,7 +63,7 @@ export const tours: Tour[] = [
     includes: STANDARD_INCLUDES,
     image: "/images/tour-classic.jpg",
     featured: false,
-    pricing: { speedboat: 300, luxuryBoat: 345, venetianBoat: 405 },
+    pricing: { speedboat: 300, luxuryBoat: 330, venetianBoat: 400 },
   },
   {
     id: "tour-surroundings",
@@ -82,7 +82,7 @@ export const tours: Tour[] = [
     includes: STANDARD_INCLUDES,
     image: "/images/tour-morning.jpg",
     featured: false,
-    pricing: { speedboat: 500, luxuryBoat: 575, venetianBoat: 675 },
+    pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 650 },
   },
   {
     id: "tour-heart",
@@ -102,7 +102,7 @@ export const tours: Tour[] = [
     image: "/images/tour-villa.jpg",
     featured: true,
     tag: "Most Popular",
-    pricing: { speedboat: 700, luxuryBoat: 805, venetianBoat: 945 },
+    pricing: { speedboat: 700, luxuryBoat: 800, venetianBoat: 950 },
   },
   {
     id: "tour-half-day",
@@ -121,7 +121,7 @@ export const tours: Tour[] = [
     includes: STANDARD_INCLUDES,
     image: "/images/blog-things-to-do.jpg",
     featured: false,
-    pricing: { speedboat: 900, luxuryBoat: 1035, venetianBoat: 1215 },
+    pricing: { speedboat: 900, luxuryBoat: 1000, venetianBoat: 1200 },
   },
   {
     id: "tour-six-hours",
@@ -140,7 +140,7 @@ export const tours: Tour[] = [
     includes: [...STANDARD_INCLUDES, "Swimming stop"],
     image: "/images/hero.jpg",
     featured: false,
-    pricing: { speedboat: 1300, luxuryBoat: 1495, venetianBoat: 1495 },
+    pricing: { speedboat: 1300, luxuryBoat: 1450, venetianBoat: 1500 },
   },
   {
     id: "tour-full-day",
@@ -160,7 +160,7 @@ export const tours: Tour[] = [
     image: "/images/about-lake.jpg",
     featured: false,
     tag: "Best Value",
-    pricing: { speedboat: 1500, luxuryBoat: 1725, venetianBoat: 1820 },
+    pricing: { speedboat: 1500, luxuryBoat: 1700, venetianBoat: 1800 },
   },
   {
     id: "tour-sunset",
@@ -180,7 +180,7 @@ export const tours: Tour[] = [
     image: "/images/tour-sunset.jpg",
     featured: true,
     tag: "Romantic",
-    pricing: { speedboat: 500, luxuryBoat: 575, venetianBoat: 675 },
+    pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 650 },
   },
   {
     id: "tour-family",
@@ -200,7 +200,7 @@ export const tours: Tour[] = [
     image: "/images/tour-family.jpg",
     featured: true,
     tag: "Family Favourite",
-    pricing: { speedboat: 1000, luxuryBoat: 1135, venetianBoat: 1315 },
+    pricing: { speedboat: 1000, luxuryBoat: 1100, venetianBoat: 1300 },
   },
   {
     id: "tour-custom",
