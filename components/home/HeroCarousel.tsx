@@ -5,10 +5,10 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 
 const slides = [
-  "/images/watersport-tour.jpg",
+  "/images/tour-villa.jpg",
   "/images/experience-cooking.jpg",
   "/images/guided-tours.png",
-  "/images/tour-villa.jpg",
+  "/images/watersport-tour.jpg",
   "/images/tour-sunset.jpg",
 ];
 
