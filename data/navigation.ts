@@ -12,7 +12,16 @@ export interface NavItem {
 
 export const navigation: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Boat Tours", href: "/taxi-boat-lake-como" },
+  {
+    label: "Boat Tours",
+    href: "/taxi-boat-lake-como",
+    children: [
+      { label: "All Boat Tours", href: "/taxi-boat-lake-como" },
+      { label: "Small Groups", href: "/taxi-boat-lake-como#small-groups" },
+      { label: "Big Groups", href: "/taxi-boat-lake-como#big-groups" },
+      { label: "Special Requests", href: "/taxi-boat-lake-como#special-requests" },
+    ],
+  },
   {
     label: "Experiences",
     href: "/experiences",

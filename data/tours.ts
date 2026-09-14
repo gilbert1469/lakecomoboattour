@@ -6,6 +6,9 @@ export interface BoatPriceRow {
   venetianBoat: number;
 }
 
+/** Groups tours within the /taxi-boat-lake-como page into their anchored sections. */
+export type BoatTourSubGroup = "small-groups" | "big-groups" | "special-requests";
+
 export interface Tour {
   id: string;
   slug: string;
@@ -28,14 +31,20 @@ export interface Tour {
   tag?: string;
   /** Per-boat price table for the detail page. Absent = quotation on request for every boat. */
   pricing?: BoatPriceRow;
+  /** Which anchored section of /taxi-boat-lake-como this tour appears in. Only set for category "boat-tour". */
+  subGroup?: BoatTourSubGroup;
+  /** Optional small heading shown above the card within its section (e.g. to label a big-groups tier). */
+  subheading?: string;
 }
 
 // Standard copy used on every regular boat-tour card/detail page.
-const STANDARD_PAX_NOTE = "Available from 1 to 50 pax depending on the chosen boat";
-const STANDARD_BOATS: string[] = ["Speedboat", "Luxury Boat", "Exclusive Venetian Boat", "Private Ferry"];
+const STANDARD_PAX_NOTE = "Max 10 pax, depending on the boat chosen";
+const STANDARD_BOATS: string[] = ["Speedboat", "Luxury Boat", "Exclusive Venetian Boat"];
 const SUGGESTED_BOATS: string[] = ["Luxury Boat", "Exclusive Venetian Boat", "Riva"];
 const STANDARD_PRICE_NOTE = "per boat · fuel & VAT included";
 const STANDARD_INCLUDES = ["Private boat", "Certified skipper", "Fuel & VAT included", "Complimentary luggage storage available"];
+const BIG_GROUPS_DESCRIPTION =
+  "Lake Como for everyone in your group. Our private ferry can accommodate your group in comfort and style. All our standard lake itineraries are available — from a 1-hour highlights cruise to a full day on the water. Tell us your group size, preferred duration and any special requirements, and we'll put together a tailored proposal.";
 
 // Boat classes bookable on every standard tour, with capacity — shown on detail pages.
 export const boatOptions = [
@@ -63,6 +72,7 @@ export const tours: Tour[] = [
     includes: STANDARD_INCLUDES,
     image: "/images/tour-classic.jpg",
     featured: true,
+    subGroup: "small-groups",
     pricing: { speedboat: 300, luxuryBoat: 330, venetianBoat: 400 },
   },
   {
@@ -82,6 +92,7 @@ export const tours: Tour[] = [
     includes: STANDARD_INCLUDES,
     image: "/images/tour-morning.jpg",
     featured: false,
+    subGroup: "small-groups",
     pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 650 },
   },
   {
@@ -102,6 +113,7 @@ export const tours: Tour[] = [
     image: "/images/tour-villa.jpg",
     featured: true,
     tag: "Most Popular",
+    subGroup: "small-groups",
     pricing: { speedboat: 700, luxuryBoat: 800, venetianBoat: 950 },
   },
   {
@@ -121,6 +133,7 @@ export const tours: Tour[] = [
     includes: STANDARD_INCLUDES,
     image: "/images/blog-things-to-do.jpg",
     featured: false,
+    subGroup: "small-groups",
     pricing: { speedboat: 900, luxuryBoat: 1000, venetianBoat: 1200 },
   },
   {
@@ -140,6 +153,7 @@ export const tours: Tour[] = [
     includes: [...STANDARD_INCLUDES, "Swimming stop"],
     image: "/images/hero.jpg",
     featured: false,
+    subGroup: "small-groups",
     pricing: { speedboat: 1300, luxuryBoat: 1450, venetianBoat: 1500 },
   },
   {
@@ -160,6 +174,7 @@ export const tours: Tour[] = [
     image: "/images/about-lake.jpg",
     featured: false,
     tag: "Best Value",
+    subGroup: "small-groups",
     pricing: { speedboat: 1500, luxuryBoat: 1700, venetianBoat: 1800 },
   },
   {
@@ -180,6 +195,7 @@ export const tours: Tour[] = [
     image: "/images/tour-sunset.jpg",
     featured: false,
     tag: "Romantic",
+    subGroup: "small-groups",
     pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 650 },
   },
   {
@@ -200,6 +216,7 @@ export const tours: Tour[] = [
     image: "/images/tour-family.jpg",
     featured: true,
     tag: "Family Favourite",
+    subGroup: "small-groups",
     pricing: { speedboat: 1000, luxuryBoat: 1100, venetianBoat: 1300 },
   },
   {
@@ -220,6 +237,7 @@ export const tours: Tour[] = [
     image: "/images/blog-taxi-boat.jpg",
     featured: false,
     tag: "On Request",
+    subGroup: "special-requests",
   },
   {
     id: "tour-wedding",
@@ -239,6 +257,7 @@ export const tours: Tour[] = [
     image: "/images/wedding.png",
     featured: false,
     tag: "On Request",
+    subGroup: "special-requests",
   },
   {
     id: "tour-photoshoot",
@@ -258,24 +277,61 @@ export const tours: Tour[] = [
     image: "/images/photoshoot.png",
     featured: false,
     tag: "On Request",
+    subGroup: "special-requests",
   },
   {
-    id: "tour-big-groups",
-    slug: "big-groups-tour",
-    name: "Big Groups Tour",
+    id: "tour-big-groups-15",
+    slug: "big-groups-tour-15",
+    name: "Big Groups Tour — Up to 15",
     category: "boat-tour",
     duration: "Tailored to you",
     priceFrom: null,
     priceNote: "",
     boats: ["Private Ferry"],
-    shortDescription:
-      "Lake Como for everyone in your group. Our private ferry can accommodate groups of 15, 25 or 50 people in comfort and style.",
-    description:
-      "Lake Como for everyone in your group. Our private ferry can accommodate groups of 15, 25 or 50 people in comfort and style. All our standard lake itineraries are available — from a 1-hour highlights cruise to a full day on the water. Tell us your group size, preferred duration and any special requirements, and we'll put together a tailored proposal.",
+    subheading: "Groups up to 15",
+    shortDescription: BIG_GROUPS_DESCRIPTION,
+    description: BIG_GROUPS_DESCRIPTION,
     includes: STANDARD_INCLUDES,
     image: "/images/Ferry.jpeg",
     featured: false,
     tag: "On Request",
+    subGroup: "big-groups",
+  },
+  {
+    id: "tour-big-groups-25",
+    slug: "big-groups-tour-25",
+    name: "Big Groups Tour — Up to 25",
+    category: "boat-tour",
+    duration: "Tailored to you",
+    priceFrom: null,
+    priceNote: "",
+    boats: ["Private Ferry"],
+    subheading: "Groups up to 25",
+    shortDescription: BIG_GROUPS_DESCRIPTION,
+    description: BIG_GROUPS_DESCRIPTION,
+    includes: STANDARD_INCLUDES,
+    image: "/images/Ferry.jpeg",
+    featured: false,
+    tag: "On Request",
+    subGroup: "big-groups",
+  },
+  {
+    id: "tour-big-groups-50",
+    slug: "big-groups-tour-50",
+    name: "Big Groups Tour — Up to 50",
+    category: "boat-tour",
+    duration: "Tailored to you",
+    priceFrom: null,
+    priceNote: "",
+    boats: ["Private Ferry"],
+    subheading: "Groups up to 50",
+    shortDescription: BIG_GROUPS_DESCRIPTION,
+    description: BIG_GROUPS_DESCRIPTION,
+    includes: STANDARD_INCLUDES,
+    image: "/images/Ferry.jpeg",
+    featured: false,
+    tag: "On Request",
+    subGroup: "big-groups",
   },
   {
     id: "tour-watersport",
@@ -316,4 +372,16 @@ export function getBoatTours(): Tour[] {
 
 export function getWaterSportTours(): Tour[] {
   return tours.filter((t) => t.category === "water-sports");
+}
+
+export function getSmallGroupTours(): Tour[] {
+  return tours.filter((t) => t.subGroup === "small-groups");
+}
+
+export function getBigGroupTours(): Tour[] {
+  return tours.filter((t) => t.subGroup === "big-groups");
+}
+
+export function getSpecialRequestTours(): Tour[] {
+  return tours.filter((t) => t.subGroup === "special-requests");
 }
