@@ -75,13 +75,14 @@ export default function LuggageStoragePage() {
           <p>
             Drop your bags and explore the lake without limits. Our luggage storage is
             located at {contact.address} — 3 minutes from Como San Giovanni train station.
+            Easily accessible by car, with parking available directly in front of the shop.
           </p>
           <p>
             Unlike standard luggage storage services, your bags are kept in a dedicated
             space inside our agency, with a member of staff on site at all times. We have
             plenty of room for standard luggage as well as oversized and bulky items —
-            suitcases, backpacks, sports equipment, strollers and more. If needed, we can
-            also help carry your luggage physically — just ask.
+            suitcases, backpacks, sports equipment, strollers, bikes, surf and foil boards,
+            and more. If needed, we can also help carry your luggage physically — just ask.
           </p>
           <p className="font-semibold text-navy">
             Mon–Sun: {contact.hours}.
