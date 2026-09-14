@@ -273,7 +273,7 @@ export const tours: Tour[] = [
     description:
       "Lake Como for everyone in your group. Our private ferry can accommodate groups of 15, 25 or 50 people in comfort and style. All our standard lake itineraries are available — from a 1-hour highlights cruise to a full day on the water. Tell us your group size, preferred duration and any special requirements, and we'll put together a tailored proposal.",
     includes: STANDARD_INCLUDES,
-    image: "/images/tour-bellagio.jpg",
+    image: "/images/Ferry.jpeg",
     featured: false,
     tag: "On Request",
   },
