@@ -63,7 +63,6 @@ export const tours: Tour[] = [
     duration: "1 hour",
     priceFrom: 300,
     priceNote: STANDARD_PRICE_NOTE,
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "An hour on Lake Como is just enough to understand why people keep coming back — the western shore out, the eastern shore back.",
@@ -83,7 +82,6 @@ export const tours: Tour[] = [
     duration: "2 hours",
     priceFrom: 500,
     priceNote: STANDARD_PRICE_NOTE,
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "Two hours to explore beyond Como's first basin, reaching the dramatic Orrido di Nesso gorge and back along the eastern shore.",
@@ -103,7 +101,6 @@ export const tours: Tour[] = [
     duration: "3 hours",
     priceFrom: 700,
     priceNote: STANDARD_PRICE_NOTE,
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "Reach the lake's most iconic spots — Villa del Balbianello and Bellagio — without committing to a full day.",
@@ -124,7 +121,6 @@ export const tours: Tour[] = [
     duration: "4 hours",
     priceFrom: 900,
     priceNote: STANDARD_PRICE_NOTE,
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "Villa del Balbianello, Bellagio and Varenna — colourful houses, historic villas and striking mountain scenery.",
@@ -144,7 +140,6 @@ export const tours: Tour[] = [
     duration: "6 hours",
     priceFrom: 1300,
     priceNote: STANDARD_PRICE_NOTE,
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "The same iconic stretch as the Half Day Tour, with time to actually stop, swim and linger at a viewpoint.",
@@ -164,7 +159,6 @@ export const tours: Tour[] = [
     duration: "8 hours",
     priceFrom: 1500,
     priceNote: STANDARD_PRICE_NOTE,
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "One boat, no fixed agenda. Departing any time between 10am and 6pm, north to south, with as many stops as you want.",
@@ -185,7 +179,6 @@ export const tours: Tour[] = [
     duration: "1.5 hours",
     priceFrom: 500,
     priceNote: STANDARD_PRICE_NOTE,
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "The most scenic stretch of the lake at the most beautiful time of day — prosecco in hand.",
