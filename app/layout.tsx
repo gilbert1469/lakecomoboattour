@@ -39,10 +39,6 @@ export const metadata: Metadata = {
     creator: siteSEO.twitterHandle,
   },
   robots: { index: true, follow: true },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
