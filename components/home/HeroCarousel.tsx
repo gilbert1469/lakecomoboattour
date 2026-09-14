@@ -71,6 +71,18 @@ export default function HeroCarousel() {
             Discover Experiences
           </Button>
         </div>
+        <p className="mt-6 flex items-center gap-1.5 text-sm text-white/70">
+          <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"
+            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          3 minutes walk from Como S. Giovanni station
+        </p>
       </div>
 
       <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 gap-2">
