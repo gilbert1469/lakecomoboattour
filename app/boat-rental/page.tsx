@@ -84,9 +84,24 @@ export default function BoatRentalPage() {
       <Section bg="white">
         <div className="max-w-2xl mx-auto space-y-6 text-slate text-lg leading-relaxed">
           <p>
-            Rent one of our boats and discover Lake Como on your own terms. No boating licence
-            required — we&apos;ll give you a full briefing before you set off. Perfect for a few
-            hours of freedom on the water, at your own pace and with your own itinerary.
+            Cast off and explore Lake Como at your own pace. Our{" "}
+            <strong className="font-semibold text-navy">40 CV motorboat</strong> is available for
+            private rental — <strong className="font-semibold text-navy">no licence required</strong>,
+            no skipper on board, just you and the lake.
+          </p>
+          <p>
+            Before you set off, we&apos;ll walk you through everything you need: how to handle the
+            boat, the best routes and the spots worth stopping at. After that, the lake is all
+            yours.
+          </p>
+          <p>
+            <strong className="font-semibold text-navy">Up to 6 people</strong> on board. Choose
+            your duration and go wherever the water takes you.
+          </p>
+          <p>
+            Fuel is charged separately at{" "}
+            <strong className="font-semibold text-navy">€25 per hour</strong>, payable in cash on
+            board at the start of your rental.
           </p>
         </div>
       </Section>
