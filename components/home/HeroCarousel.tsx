@@ -52,7 +52,7 @@ export default function HeroCarousel() {
           We Make Experiences
         </p>
         <h1 className="font-serif text-4xl font-bold text-white text-balance sm:text-5xl lg:text-6xl">
-          Your Reference Point on Lake Como
+          Your Gateway to Lake Como
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
           Boat tours, guided experiences, cooking classes and more — everything you need to
