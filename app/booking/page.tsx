@@ -32,9 +32,12 @@ type FormData = z.infer<typeof schema>;
 
 const timeSlots = ["9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"];
 
+const boatRentalOption = { slug: "boat-rental", name: "Boat Rental – 40 CV" };
+
 const serviceOptions = [
   ...tours.map((t) => ({ slug: t.slug, name: t.name })),
   ...experiences.map((e) => ({ slug: e.slug, name: e.name })),
+  boatRentalOption,
 ];
 
 export default function BookingPage() {
@@ -200,6 +203,9 @@ export default function BookingPage() {
                       {experiences.map((e) => (
                         <option key={e.slug} value={e.slug}>{e.name}</option>
                       ))}
+                    </optgroup>
+                    <optgroup label="🛥️ Boat Rental">
+                      <option value={boatRentalOption.slug}>{boatRentalOption.name}</option>
                     </optgroup>
                   </select>
                   {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service.message}</p>}
