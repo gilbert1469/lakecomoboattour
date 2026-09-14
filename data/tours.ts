@@ -220,7 +220,6 @@ export const tours: Tour[] = [
     duration: "Tailored to you",
     priceFrom: null,
     priceNote: "",
-    paxNote: STANDARD_PAX_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
       "Tell us where you want to go and how long you want to stay out — we'll build the route around you.",
