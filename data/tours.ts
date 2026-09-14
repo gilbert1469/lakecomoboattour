@@ -72,7 +72,7 @@ export const tours: Tour[] = [
     image: "/images/tour-classic.jpg",
     featured: true,
     subGroup: "small-groups",
-    pricing: { speedboat: 300, luxuryBoat: 330, venetianBoat: 400 },
+    pricing: { speedboat: 300, luxuryBoat: 330, venetianBoat: 350 },
   },
   {
     id: "tour-surroundings",
@@ -91,7 +91,7 @@ export const tours: Tour[] = [
     image: "/images/tour-morning.jpg",
     featured: false,
     subGroup: "small-groups",
-    pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 650 },
+    pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 600 },
   },
   {
     id: "tour-heart",
@@ -111,7 +111,7 @@ export const tours: Tour[] = [
     featured: true,
     tag: "Most Popular",
     subGroup: "small-groups",
-    pricing: { speedboat: 700, luxuryBoat: 800, venetianBoat: 950 },
+    pricing: { speedboat: 700, luxuryBoat: 750, venetianBoat: 800 },
   },
   {
     id: "tour-half-day",
@@ -130,7 +130,7 @@ export const tours: Tour[] = [
     image: "/images/blog-things-to-do.jpg",
     featured: false,
     subGroup: "small-groups",
-    pricing: { speedboat: 900, luxuryBoat: 1000, venetianBoat: 1200 },
+    pricing: { speedboat: 900, luxuryBoat: 900, venetianBoat: 1000 },
   },
   {
     id: "tour-six-hours",
@@ -149,7 +149,7 @@ export const tours: Tour[] = [
     image: "/images/hero.jpg",
     featured: false,
     subGroup: "small-groups",
-    pricing: { speedboat: 1300, luxuryBoat: 1450, venetianBoat: 1500 },
+    pricing: { speedboat: 1300, luxuryBoat: 1350, venetianBoat: 1400 },
   },
   {
     id: "tour-full-day",
@@ -169,7 +169,7 @@ export const tours: Tour[] = [
     featured: false,
     tag: "Best Value",
     subGroup: "small-groups",
-    pricing: { speedboat: 1500, luxuryBoat: 1700, venetianBoat: 1800 },
+    pricing: { speedboat: 1500, luxuryBoat: 1600, venetianBoat: 1700 },
   },
   {
     id: "tour-sunset",
@@ -189,7 +189,7 @@ export const tours: Tour[] = [
     featured: false,
     tag: "Romantic",
     subGroup: "small-groups",
-    pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 650 },
+    pricing: { speedboat: 500, luxuryBoat: 550, venetianBoat: 550 },
   },
   {
     id: "tour-family",
