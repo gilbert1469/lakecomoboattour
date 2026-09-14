@@ -7,6 +7,7 @@ import { getExperiencesByCategory } from "@/data/experiences";
 import TourCard from "@/components/tours/TourCard";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
+import HeroCarousel from "@/components/home/HeroCarousel";
 import { formatPrice } from "@/lib/utils";
 
 const seo = pageSEO.home;
@@ -119,6 +120,8 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+
+      <HeroCarousel />
 
       {/* Featured Tours */}
       <Section bg="cream">
