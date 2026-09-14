@@ -22,6 +22,7 @@ export const navigation: NavItem[] = [
       { label: "Special Requests", href: "/taxi-boat-lake-como#special-requests" },
     ],
   },
+  { label: "Boat Rental", href: "/boat-rental" },
   {
     label: "Experiences",
     href: "/experiences",

@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${base}/taxi-boat-lake-como`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/boat-rental`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/experiences`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/experiences/water-sports`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/experiences/wine-tasting`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },

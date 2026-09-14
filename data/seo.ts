@@ -46,6 +46,19 @@ export const pageSEO: Record<string, PageSEO> = {
     ],
     ogImage: "/images/og-tours.jpg",
   },
+  boatRental: {
+    title: "Boat Rental on Lake Como — No Licence Needed | Lake Como Tourist Center",
+    description:
+      "Rent a boat on Lake Como and explore at your own pace. No boating licence required, full briefing included. 40 CV motorboat, up to 6 people, from €150.",
+    keywords: [
+      "boat rental lake como",
+      "rent a boat como",
+      "lake como boat hire",
+      "no licence boat rental como",
+      "self drive boat lake como",
+    ],
+    ogImage: "/images/og-tours.jpg",
+  },
   experiences: {
     title: "Lake Como Experiences – Guided Tours, Cooking Class & Cycling | Lake Como Tourist Center",
     description:
