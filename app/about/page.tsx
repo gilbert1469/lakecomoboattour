@@ -84,7 +84,16 @@ export default function AboutPage() {
               surroundings the way only a local truly can.
             </p>
             <p>
-              Alongside him, <strong>Natalie Vogt</strong> brings over 40 years of experience in the Lake Como
+              Alongside him,{" "}
+              <a
+                href="https://bsktravel.com/travel_designer/natalie-vogt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-navy hover:text-navy-light underline"
+              >
+                Natalie Vogt
+              </a>{" "}
+              brings over 40 years of experience in the Lake Como
               travel industry. One of the most respected names in local tourism, Natalie has spent four
               decades building relationships, curating experiences and welcoming visitors from every
               corner of the world to this extraordinary place.
