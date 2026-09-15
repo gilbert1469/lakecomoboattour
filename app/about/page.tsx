@@ -51,8 +51,8 @@ export default function AboutPage() {
       <section className="relative h-72 lg:h-96 flex items-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/about-agency.jpg"
-            alt="Our team in Como"
+            src="/images/vetrina.jpg"
+            alt="Lake Como Tourist Center storefront in Como"
             fill
             priority
             className="object-cover"
