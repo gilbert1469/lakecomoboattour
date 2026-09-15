@@ -48,10 +48,7 @@ export default function HeroCarousel() {
       <div className="absolute inset-0 hero-gradient" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-gold-light">
-          We Make Experiences
-        </p>
-        <h1 className="font-serif text-4xl font-bold text-white text-balance sm:text-5xl lg:text-6xl">
+        <h1 className="font-serif text-4xl font-bold text-gold-light text-balance sm:text-5xl lg:text-6xl">
           Your Gateway to Lake Como
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
