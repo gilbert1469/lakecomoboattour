@@ -11,20 +11,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-10 h-10 lg:w-12 lg:h-12 shrink-0 bg-white rounded-full flex items-center justify-center overflow-hidden">
+            <div className="mb-4">
+              <span className="inline-block bg-white rounded-lg px-3 py-2">
                 <Image
-                  src="/images/logo-icon.png"
+                  src="/images/logo-orizzontale.png"
                   alt="Lake Como Tourist Center"
-                  width={48}
-                  height={48}
-                  className="w-9 h-9 lg:w-11 lg:h-11 object-contain"
+                  width={1033}
+                  height={396}
+                  className="h-9 lg:h-11 w-auto object-contain"
                 />
               </span>
-              <div>
-                <div className="font-serif text-lg font-bold leading-tight">Lake Como</div>
-                <div className="text-xs text-gold-light font-medium tracking-widest uppercase">Tourist Center</div>
-              </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
               We Make Experiences

@@ -26,23 +26,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
+          <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/images/logo-icon.png"
+              src="/images/logo-orizzontale.png"
               alt="Lake Como Tourist Center"
-              width={48}
-              height={48}
-              className="w-10 h-10 lg:w-12 lg:h-12"
+              width={1033}
+              height={396}
+              className="h-10 lg:h-12 w-auto"
               priority
             />
-            <div>
-              <div className="font-serif text-lg font-bold text-navy leading-tight">
-                Lake Como
-              </div>
-              <div className="text-xs text-navy-light font-medium tracking-widest uppercase leading-tight">
-                Tourist Center
-              </div>
-            </div>
           </Link>
 
           {/* Desktop nav */}
