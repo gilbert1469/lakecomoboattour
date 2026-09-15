@@ -98,11 +98,6 @@ export default function BoatRentalPage() {
             <strong className="font-semibold text-navy">Up to 6 people</strong> on board. Choose
             your duration and go wherever the water takes you.
           </p>
-          <p>
-            Fuel is charged separately at{" "}
-            <strong className="font-semibold text-navy">€25 per hour</strong>, payable in cash on
-            board at the start of your rental.
-          </p>
         </div>
       </Section>
 
