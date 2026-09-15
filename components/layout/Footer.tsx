@@ -12,15 +12,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <span className="inline-block bg-white rounded-lg px-3 py-2">
-                <Image
-                  src="/images/5.png"
-                  alt="Lake Como Tourist Center"
-                  width={1050}
-                  height={600}
-                  className="h-9 lg:h-11 w-auto object-contain"
-                />
-              </span>
+              <Image
+                src="/images/logo_white_transparent.png"
+                alt="Lake Como Tourist Center"
+                width={1202}
+                height={1074}
+                className="h-16 lg:h-20 w-auto object-contain"
+              />
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
               We Make Experiences
