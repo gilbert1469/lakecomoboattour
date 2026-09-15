@@ -14,10 +14,10 @@ export default function Footer() {
             <div className="mb-4">
               <span className="inline-block bg-white rounded-lg px-3 py-2">
                 <Image
-                  src="/images/logo-orizzontale.png"
+                  src="/images/5.png"
                   alt="Lake Como Tourist Center"
-                  width={1033}
-                  height={396}
+                  width={1050}
+                  height={600}
                   className="h-9 lg:h-11 w-auto object-contain"
                 />
               </span>
