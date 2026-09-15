@@ -88,8 +88,9 @@ export default function WineTastingPage() {
         <div className="max-w-2xl mx-auto text-center text-white">
           <h2 className="font-serif text-3xl font-bold mb-4">Ready to Book?</h2>
           <p className="text-white/70 mb-8">
-            Visit us at Lake Como Tourist Center, Via Borgo Vico 62 — 3 minutes walk from Como San
-            Giovanni station. Or contact us directly for availability and pricing.
+            Visit us at Lake Como Tourist Center, Via Borgo Vico 62 — 3 minutes from Como S.
+            Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano
+            Porta Garibaldi, Lugano and Zurigo. Or contact us directly for availability and pricing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href={`/booking?tour=${exp.slug}`} size="lg">

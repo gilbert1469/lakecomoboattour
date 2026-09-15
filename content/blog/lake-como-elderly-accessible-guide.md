@@ -33,4 +33,4 @@ We recommend booking a morning departure, when the lake is calmest and the light
 
 ## Book with Us
 
-Come find us at Via Borgo Vico 42, Como — 3 minutes from Como San Giovanni station. We will talk through the options and make sure your experience on Lake Como is comfortable, unhurried and genuinely memorable.
+Come find us at Via Borgo Vico 42, Como — 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo. We will talk through the options and make sure your experience on Lake Como is comfortable, unhurried and genuinely memorable.

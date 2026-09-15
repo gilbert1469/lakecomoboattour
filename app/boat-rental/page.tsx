@@ -147,7 +147,8 @@ export default function BoatRentalPage() {
         <div className="max-w-2xl mx-auto text-center text-white">
           <h2 className="font-serif text-3xl font-bold mb-4">Ready to Set Off?</h2>
           <p className="text-white/70 mb-8">
-            Departure from {contact.address} — 3 minutes from Como San Giovanni station.
+            Departure from {contact.address} — 3 minutes from Como S. Giovanni train station -
+            Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo.
           </p>
           <Button href="/booking" size="lg">
             Book Now

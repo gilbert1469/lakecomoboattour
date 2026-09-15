@@ -37,7 +37,7 @@ const usps = [
   {
     icon: "🏠",
     title: "From the Station to the Lake",
-    description: "Step off the train and straight onto your tour in Como or on the lake. Drop your bags at our office — 3 minutes from Como San Giovanni station — and you're ready to go.",
+    description: "Step off the train and straight onto your tour in Como or on the lake. Drop your bags at our office — 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo — and you're ready to go.",
   },
   {
     icon: "💁",
@@ -228,7 +228,7 @@ export default function HomePage() {
         <SectionHeader
           eyebrow="Why book with us"
           title="We Are Your Reference Point in Como"
-          subtitle="3 minutes walk from Como San Giovanni station. Book with confidence: if the weather changes, we give you a full refund and help you reorganise your day."
+          subtitle="3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo. Book with confidence: if the weather changes, we give you a full refund and help you reorganise your day."
           light
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -242,7 +242,7 @@ export default function HomePage() {
             {
               icon: "🧳",
               title: "Luggage Storage",
-              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 62 — 3 minutes walk from Como San Giovanni station.",
+              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 62 — 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo.",
               href: "/luggage-storage",
             },
           ].map((item) => (
