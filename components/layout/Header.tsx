@@ -24,15 +24,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-24 lg:h-28">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <Image
-              src="/images/logo-orizzontale.png"
+              src="/images/5.png"
               alt="Lake Como Tourist Center"
-              width={1033}
-              height={396}
-              className="h-10 lg:h-12 w-auto"
+              width={1050}
+              height={600}
+              className="h-20 lg:h-24 w-auto"
               priority
             />
           </Link>
