@@ -75,23 +75,27 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-4 text-slate leading-relaxed">
             <p>
-              Lake Como Tourist Center was born from the meeting of two passions for this lake.
+              <strong>Lake Como Tourist Center</strong> was born from the meeting of two passions for this lake.
             </p>
             <p>
-              Gilberto Mosconi, a Como native, grew up on these shores and spent years exploring every
-              corner of the lake — its hidden bays, its iconic villas, its rhythms through the seasons.
-              That deep local knowledge became the foundation of everything we do.
+              <strong>Gilberto Mosconi</strong>, a Como native, grew up on these shores and spent years exploring
+              every corner of the lake. After nearly a decade working in the financial sector, he chose to
+              return to his hometown to chase a dream: helping travelers discover his city and its
+              surroundings the way only a local truly can.
             </p>
             <p>
-              Alongside him, Natalie Vogt brings over 40 years of experience in the Lake Como travel
-              industry. One of the most respected names in local tourism, Natalie has spent four decades
-              building relationships, curating experiences and welcoming visitors from every corner of
-              the world to this extraordinary place.
+              Alongside him, <strong>Natalie Vogt</strong> brings over 40 years of experience in the Lake Como
+              travel industry. One of the most respected names in local tourism, Natalie has spent four
+              decades building relationships, curating experiences and welcoming visitors from every
+              corner of the world to this extraordinary place.
             </p>
             <p>
-              Together, they built Lake Como Tourist Center for one kind of traveller — the one who wants
-              to do more than just pass through. We plan, we guide, we take care of every detail, so that
-              every hour spent here becomes something worth remembering.
+              Together, they built <strong>Lake Como Tourist Center</strong> for one kind of traveller — the
+              one who wants to do more than just pass through.
+            </p>
+            <p>
+              We plan, we guide, we take care with ❤️ of every detail, so that every hour spent here
+              becomes something worth remembering.
             </p>
           </div>
         </div>
