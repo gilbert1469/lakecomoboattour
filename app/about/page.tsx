@@ -48,21 +48,31 @@ export default function AboutPage() {
       />
 
       {/* Hero */}
-      <section className="relative h-72 lg:h-96 flex items-end overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/vetrina.jpg"
-            alt="Lake Como Tourist Center storefront in Como"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-navy/60" />
-        </div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 w-full">
-          <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">Our story</p>
-          <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white">About Us</h1>
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Content */}
+            <div>
+              <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-3">Our story</p>
+              <h1 className="font-serif text-3xl lg:text-5xl font-bold text-navy mb-6">About Us</h1>
+              <p className="text-slate text-lg leading-relaxed">
+                We&apos;re a private tour agency based in the heart of Como — a multilingual team,
+                certified skippers and a genuine passion for Lake Como.
+              </p>
+            </div>
+
+            {/* Image */}
+            <div className="relative h-72 lg:h-[420px] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/images/vetrina.jpg"
+                alt="Lake Como Tourist Center storefront in Como"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
