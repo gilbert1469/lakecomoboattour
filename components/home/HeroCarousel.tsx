@@ -49,8 +49,11 @@ export default function HeroCarousel() {
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
         <h1 className="font-serif text-4xl font-bold text-gold-light text-balance sm:text-5xl lg:text-6xl">
-          Your Gateway to Lake Como
+          We Make Experiences
         </h1>
+        <p className="mt-3 font-serif text-xl font-semibold text-gold-light sm:text-2xl">
+          Your Gateway to Lake Como
+        </p>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
           Boat tours, guided experiences, cooking classes and more — everything you need to
           make the most of your time on the lake, all from one place.
