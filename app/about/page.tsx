@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { pageSEO, siteSEO } from "@/data/seo";
-import Section, { SectionHeader } from "@/components/ui/Section";
+import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { contact } from "@/data/navigation";
 
@@ -111,25 +111,6 @@ export default function AboutPage() {
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
-        </div>
-      </Section>
-
-      {/* Values */}
-      <Section bg="cream">
-        <SectionHeader eyebrow="Our values" title="What Makes Us Different" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: "🛡️", title: "Safety First", desc: "All skippers are licensed, boats certified and fully insured." },
-            { icon: "❤️", title: "Guest Care", desc: "Every booking is treated as if you were our most valued guest." },
-            { icon: "🌱", title: "Respect for the Lake", desc: "We navigate responsibly, protecting the lake's ecosystem and local communities." },
-            { icon: "⭐", title: "Uncompromising Quality", desc: "From the boat to every communication, every detail matters." },
-          ].map((v) => (
-            <div key={v.title} className="bg-white rounded-2xl p-6 shadow-sm text-center">
-              <div className="text-3xl mb-3">{v.icon}</div>
-              <h3 className="font-serif text-lg font-bold text-navy mb-2">{v.title}</h3>
-              <p className="text-slate text-sm leading-relaxed">{v.desc}</p>
-            </div>
-          ))}
         </div>
       </Section>
 
