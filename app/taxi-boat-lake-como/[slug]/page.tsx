@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${tour.name} — Lake Como Tourist Center`,
     description: tour.shortDescription,
     keywords: ["taxi boat lake como", "lake como boat tour", "private boat lake como", tour.slug],
+    alternates: { canonical: `/taxi-boat-lake-como/${tour.slug}` },
   };
 }
 

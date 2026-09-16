@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   description:
     "Your gateway to Lake Como experiences: private boat tours, day trips, cycling, cooking classes and more. Certified skippers, multilingual crew, family-friendly.",
   keywords: ["lake como boat tour", "private boat tour lake como", "lake como cruise", "lake como italy"],
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: siteSEO.locale,

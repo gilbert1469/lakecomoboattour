@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${post.title} — Lake Como Tourist Center`,
     description: post.excerpt,
     keywords: post.keywords,
+    alternates: { canonical: `/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,

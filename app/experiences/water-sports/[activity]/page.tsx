@@ -32,6 +32,7 @@ export async function generateMetadata({
     title: `${exp.name} | Lake Como Tourist Center`,
     description: exp.shortDescription,
     keywords: ["lake como water sports", exp.category, exp.slug],
+    alternates: { canonical: `/experiences/water-sports/${activity}` },
     openGraph: {
       title: `${exp.name} | Lake Como Tourist Center`,
       description: exp.shortDescription,

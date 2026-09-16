@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
   keywords: seo.keywords,
+  alternates: { canonical: "/faq" },
   openGraph: {
     title: seo.title,
     description: seo.description,

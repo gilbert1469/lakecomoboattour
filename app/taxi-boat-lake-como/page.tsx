@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
   keywords: seo.keywords,
+  alternates: { canonical: "/taxi-boat-lake-como" },
   openGraph: {
     title: seo.title,
     description: seo.description,
