@@ -104,8 +104,8 @@ export default function AboutPage() {
           {/* Image */}
           <div className="relative h-72 lg:h-[420px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/images/vetrina.jpg"
-              alt="Lake Como Tourist Center storefront in Como"
+              src="/images/foto-team.jpeg"
+              alt="Lake Como Tourist Center team"
               fill
               priority
               className="object-cover"
