@@ -72,7 +72,7 @@ export const tours: Tour[] = [
     image: "/images/tour-classic.jpg",
     featured: true,
     subGroup: "small-groups",
-    pricing: { speedboat: 270, luxuryBoat: 297, venetianBoat: 360 },
+    pricing: { speedboat: 270, luxuryBoat: 300, venetianBoat: 360 },
   },
   {
     id: "tour-surroundings",
