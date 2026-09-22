@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 };
 
 const priceTable = [
-  { duration: "1 hour", price: "€150" },
+  { duration: "1 hour", price: "€180" },
   { duration: "2 hours", price: "€290" },
   { duration: "3 hours", price: "€420" },
   { duration: "4 hours", price: "€500" },
