@@ -91,7 +91,7 @@ export const tours: Tour[] = [
     image: "/images/tour-morning.jpg",
     featured: false,
     subGroup: "small-groups",
-    pricing: { speedboat: 550, luxuryBoat: 500, venetianBoat: 650 },
+    pricing: { speedboat: 550, luxuryBoat: 600, venetianBoat: 650 },
   },
   {
     id: "tour-heart",
