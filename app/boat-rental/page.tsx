@@ -132,8 +132,7 @@ export default function BoatRentalPage() {
             </table>
           </div>
           <p className="mt-6 text-slate leading-relaxed">
-            Prices are per boat, not per person. Fuel is not included — it is charged separately
-            at €25 per hour, payable in cash directly on the boat at the start of the rental.
+            Prices are per boat, not per person. VAT, fuel and any other fees are included.
           </p>
         </div>
       </Section>
