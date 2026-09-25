@@ -179,7 +179,7 @@ export const pageSEO: Record<string, PageSEO> = {
   luggageStorage: {
     title: "Luggage Storage in Como | Lake Como Tourist Center",
     description:
-      "Drop your bags and enjoy the lake. Luggage storage at Via Borgo Vico 62, Como — 3 minutes from Como San Giovanni station. Open all days, 9:00–20:30.",
+      "Drop your bags and enjoy the lake. Luggage storage at Via Borgo Vico 62, Como — 3 minutes from Como San Giovanni station. Open all days, 9:00–19:30.",
     keywords: [
       "luggage storage como",
       "bag storage como train station",

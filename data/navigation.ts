@@ -56,5 +56,5 @@ export const contact = {
     "https://maps.google.com/maps?q=" +
     encodeURIComponent("Via Borgo Vico 62, Como, Italy") +
     "&z=16&output=embed",
-  hours: "9:00 – 20:30",
+  hours: "9:00 – 19:30",
 };
