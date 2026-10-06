@@ -91,6 +91,7 @@ export default function BookingPage() {
         ? `${serviceLabel} – ${rentalDuration}h`
         : serviceLabel;
 
+    let emailSent = false;
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
@@ -108,8 +109,14 @@ export default function BookingPage() {
         },
         { publicKey: EMAILJS_PUBLIC_KEY }
       );
+      emailSent = true;
+    } catch (err) {
+      console.error("EmailJS send failed:", err);
+    }
 
-      if (price !== null) {
+    // Payable services go to Stripe even if the notification email failed.
+    if (price !== null) {
+      try {
         const res = await fetch("/api/checkout", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -130,12 +137,16 @@ export default function BookingPage() {
         const json: { url?: string } = await res.json();
         if (!res.ok || !json.url) throw new Error("Checkout session creation failed");
         window.location.href = json.url;
-        return;
+      } catch (err) {
+        console.error("Checkout failed:", err);
+        setSubmitError(true);
       }
+      return;
+    }
 
+    if (emailSent) {
       setSubmitted(true);
-    } catch (err) {
-      console.error("Booking submission failed:", err);
+    } else {
       setSubmitError(true);
     }
   };
