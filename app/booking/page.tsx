@@ -185,7 +185,7 @@ export default function BookingPage() {
             Book Your Tour
           </h1>
           <p className="text-white/70 text-lg max-w-xl">
-            Boat tours and boat rental are booked and paid securely online. For all other experiences, just send a request — we&apos;ll confirm availability within a few hours, no upfront payment.
+            Hourly boat tours and boat rental are booked and paid securely online. Sunset, family and tailored tours, and all other experiences, are on request — just send the form and we&apos;ll confirm within a few hours, no upfront payment.
           </p>
         </div>
       </div>
@@ -445,7 +445,7 @@ export default function BookingPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="text-gold-light">✓</span>
-                  Secure online payment for tours &amp; rentals
+                  Secure online payment for hourly tours &amp; rentals
                 </li>
                 <li className="flex gap-2">
                   <span className="text-gold-light">✓</span>
