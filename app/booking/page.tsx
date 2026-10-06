@@ -185,7 +185,7 @@ export default function BookingPage() {
             Book Your Tour
           </h1>
           <p className="text-white/70 text-lg max-w-xl">
-            Fill in the form and we will confirm your availability within a few hours. No upfront payment required.
+            Boat tours and boat rental are booked and paid securely online. For all other experiences, just send a request — we&apos;ll confirm availability within a few hours, no upfront payment.
           </p>
         </div>
       </div>
@@ -445,7 +445,7 @@ export default function BookingPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="text-gold-light">✓</span>
-                  No upfront payment required
+                  Secure online payment for tours &amp; rentals
                 </li>
                 <li className="flex gap-2">
                   <span className="text-gold-light">✓</span>
