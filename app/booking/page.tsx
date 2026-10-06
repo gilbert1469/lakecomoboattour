@@ -10,6 +10,13 @@ import { experiences } from "@/data/experiences";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { contact } from "@/data/navigation";
+import {
+  BOAT_RENTAL_PRICES,
+  BOAT_TYPE_OPTIONS,
+  getBookingPrice,
+  isBoatRental,
+  isPayableTour,
+} from "@/lib/pricing";
 
 const EMAILJS_SERVICE_ID = "service_pvty7cg";
 const EMAILJS_TEMPLATE_ID = "template_zrttijd";
@@ -25,7 +32,16 @@ const schema = z.object({
   time: z.string().min(1, "Please select a time"),
   people: z.string().min(1, "Please indicate the number of people"),
   notes: z.string().optional(),
+  boatType: z.string().optional(),
+  rentalDuration: z.string().optional(),
   privacy: z.literal(true, { message: "You must accept the privacy policy" }),
+}).superRefine((data, ctx) => {
+  if (isPayableTour(data.service) && !data.boatType) {
+    ctx.addIssue({ code: "custom", path: ["boatType"], message: "Please select a boat type" });
+  }
+  if (isBoatRental(data.service) && !data.rentalDuration) {
+    ctx.addIssue({ code: "custom", path: ["rentalDuration"], message: "Please select a rental duration" });
+  }
 });
 
 type FormData = z.infer<typeof schema>;
@@ -47,14 +63,33 @@ export default function BookingPage() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
 
+  const selectedService = watch("service");
+  const showBoatType = isPayableTour(selectedService);
+  const showRentalDuration = isBoatRental(selectedService);
+  const totalPrice = getBookingPrice({
+    service: selectedService,
+    boatType: watch("boatType"),
+    rentalDuration: watch("rentalDuration"),
+  });
+
   const onSubmit = async (data: FormData) => {
     setSubmitError(false);
     const serviceLabel = serviceOptions.find((s) => s.slug === data.service)?.name ?? data.service;
+    const boatType = isPayableTour(data.service) ? data.boatType : undefined;
+    const rentalDuration = isBoatRental(data.service) ? data.rentalDuration : undefined;
+    const price = getBookingPrice({ service: data.service, boatType, rentalDuration });
+    const boatTypeLabel = BOAT_TYPE_OPTIONS.find((o) => o.value === boatType)?.label;
+    const serviceDetail = boatTypeLabel
+      ? `${serviceLabel} – ${boatTypeLabel}`
+      : rentalDuration
+        ? `${serviceLabel} – ${rentalDuration}h`
+        : serviceLabel;
 
     try {
       await emailjs.send(
@@ -65,7 +100,7 @@ export default function BookingPage() {
           last_name: data.lastName,
           email: data.email,
           phone: data.phone,
-          service: serviceLabel,
+          service: price !== null ? `${serviceDetail} – €${price} (online payment)` : serviceDetail,
           date: data.date,
           time: data.time,
           people: data.people,
@@ -73,9 +108,34 @@ export default function BookingPage() {
         },
         { publicKey: EMAILJS_PUBLIC_KEY }
       );
+
+      if (price !== null) {
+        const res = await fetch("/api/checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            service: data.service,
+            boatType,
+            rentalDuration,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone,
+            date: data.date,
+            time: data.time,
+            people: data.people,
+            notes: data.notes ?? "",
+          }),
+        });
+        const json: { url?: string } = await res.json();
+        if (!res.ok || !json.url) throw new Error("Checkout session creation failed");
+        window.location.href = json.url;
+        return;
+      }
+
       setSubmitted(true);
     } catch (err) {
-      console.error("EmailJS send failed:", err);
+      console.error("Booking submission failed:", err);
       setSubmitError(true);
     }
   };
@@ -211,6 +271,38 @@ export default function BookingPage() {
                   {errors.service && <p className="text-red-500 text-xs mt-1">{errors.service.message}</p>}
                 </div>
 
+                {showBoatType && (
+                  <div>
+                    <label className="block text-sm font-medium text-navy mb-1">Boat type *</label>
+                    <select
+                      {...register("boatType")}
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark bg-white"
+                    >
+                      <option value="">Select a boat type...</option>
+                      {BOAT_TYPE_OPTIONS.map((o) => (
+                        <option key={o.value} value={o.value}>{o.label}</option>
+                      ))}
+                    </select>
+                    {errors.boatType && <p className="text-red-500 text-xs mt-1">{errors.boatType.message}</p>}
+                  </div>
+                )}
+
+                {showRentalDuration && (
+                  <div>
+                    <label className="block text-sm font-medium text-navy mb-1">Rental duration *</label>
+                    <select
+                      {...register("rentalDuration")}
+                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark bg-white"
+                    >
+                      <option value="">Select a duration...</option>
+                      {Object.keys(BOAT_RENTAL_PRICES).map((h) => (
+                        <option key={h} value={h}>{h} {h === "1" ? "hour" : "hours"}</option>
+                      ))}
+                    </select>
+                    {errors.rentalDuration && <p className="text-red-500 text-xs mt-1">{errors.rentalDuration.message}</p>}
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-medium text-navy mb-1">Preferred date *</label>
@@ -282,8 +374,19 @@ export default function BookingPage() {
                   </div>
                 )}
 
+                {totalPrice !== null && (
+                  <div className="flex items-center justify-between bg-cream rounded-lg px-4 py-3">
+                    <span className="text-sm text-slate">Price per boat, paid securely online</span>
+                    <span className="font-serif text-xl font-bold text-navy">Total: €{totalPrice}</span>
+                  </div>
+                )}
+
                 <Button type="submit" disabled={isSubmitting} className="w-full">
-                  {isSubmitting ? "Sending..." : "Send Booking Request"}
+                  {isSubmitting
+                    ? "Sending..."
+                    : totalPrice !== null
+                      ? "Continue to Payment"
+                      : "Send Booking Request"}
                 </Button>
               </form>
             </div>
