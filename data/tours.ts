@@ -284,7 +284,7 @@ export const tours: Tour[] = [
     shortDescription: BIG_GROUPS_DESCRIPTION,
     description: BIG_GROUPS_DESCRIPTION,
     includes: STANDARD_INCLUDES,
-    image: "/images/Ferry_15_pax.png",
+    image: "/images/Ferry_15-25_pax.png",
     featured: false,
     tag: "On Request",
     subGroup: "big-groups",
