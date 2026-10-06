@@ -20,14 +20,14 @@ export const metadata: Metadata = {
 };
 
 const priceTable = [
-  { duration: "1 hour", price: "€180" },
-  { duration: "2 hours", price: "€290" },
-  { duration: "3 hours", price: "€420" },
-  { duration: "4 hours", price: "€500" },
-  { duration: "5 hours", price: "€600" },
-  { duration: "6 hours", price: "€650" },
-  { duration: "7 hours", price: "€700" },
-  { duration: "8 hours", price: "€800" },
+  { duration: "1 hour", price: "€190" },
+  { duration: "2 hours", price: "€300" },
+  { duration: "3 hours", price: "€435" },
+  { duration: "4 hours", price: "€520" },
+  { duration: "5 hours", price: "€620" },
+  { duration: "6 hours", price: "€675" },
+  { duration: "7 hours", price: "€725" },
+  { duration: "8 hours", price: "€830" },
 ];
 
 const jsonLd = {

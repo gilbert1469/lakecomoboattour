@@ -61,7 +61,7 @@ export const tours: Tour[] = [
     name: "Lake Como Highlights",
     category: "boat-tour",
     duration: "1 hour",
-    priceFrom: 350,
+    priceFrom: 365,
     priceNote: STANDARD_PRICE_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
@@ -72,7 +72,7 @@ export const tours: Tour[] = [
     image: "/images/tour-classic.jpg",
     featured: true,
     subGroup: "small-groups",
-    pricing: { speedboat: 350, luxuryBoat: 400, venetianBoat: 450 },
+    pricing: { speedboat: 365, luxuryBoat: 415, venetianBoat: 465 },
   },
   {
     id: "tour-surroundings",
@@ -80,7 +80,7 @@ export const tours: Tour[] = [
     name: "Como & Surroundings",
     category: "boat-tour",
     duration: "2 hours",
-    priceFrom: 550,
+    priceFrom: 570,
     priceNote: STANDARD_PRICE_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
@@ -91,7 +91,7 @@ export const tours: Tour[] = [
     image: "/images/tour-morning.jpg",
     featured: false,
     subGroup: "small-groups",
-    pricing: { speedboat: 550, luxuryBoat: 600, venetianBoat: 650 },
+    pricing: { speedboat: 570, luxuryBoat: 620, venetianBoat: 675 },
   },
   {
     id: "tour-heart",
@@ -99,7 +99,7 @@ export const tours: Tour[] = [
     name: "Heart of the Lake",
     category: "boat-tour",
     duration: "3 hours",
-    priceFrom: 770,
+    priceFrom: 800,
     priceNote: STANDARD_PRICE_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
@@ -111,7 +111,7 @@ export const tours: Tour[] = [
     featured: true,
     tag: "Most Popular",
     subGroup: "small-groups",
-    pricing: { speedboat: 770, luxuryBoat: 830, venetianBoat: 900 },
+    pricing: { speedboat: 800, luxuryBoat: 860, venetianBoat: 930 },
   },
   {
     id: "tour-half-day",
@@ -119,7 +119,7 @@ export const tours: Tour[] = [
     name: "Half Day Tour",
     category: "boat-tour",
     duration: "4 hours",
-    priceFrom: 950,
+    priceFrom: 985,
     priceNote: STANDARD_PRICE_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
@@ -130,7 +130,7 @@ export const tours: Tour[] = [
     image: "/images/blog-things-to-do.jpg",
     featured: false,
     subGroup: "small-groups",
-    pricing: { speedboat: 950, luxuryBoat: 1000, venetianBoat: 1050 },
+    pricing: { speedboat: 985, luxuryBoat: 1035, venetianBoat: 1085 },
   },
   {
     id: "tour-six-hours",
@@ -138,7 +138,7 @@ export const tours: Tour[] = [
     name: "Six Hours of Wonder",
     category: "boat-tour",
     duration: "6 hours",
-    priceFrom: 1280,
+    priceFrom: 1325,
     priceNote: STANDARD_PRICE_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
@@ -149,7 +149,7 @@ export const tours: Tour[] = [
     image: "/images/hero.jpg",
     featured: false,
     subGroup: "small-groups",
-    pricing: { speedboat: 1280, luxuryBoat: 1320, venetianBoat: 1380 },
+    pricing: { speedboat: 1325, luxuryBoat: 1365, venetianBoat: 1430 },
   },
   {
     id: "tour-full-day",
@@ -157,7 +157,7 @@ export const tours: Tour[] = [
     name: "Full Day Tour",
     category: "boat-tour",
     duration: "8 hours",
-    priceFrom: 1600,
+    priceFrom: 1655,
     priceNote: STANDARD_PRICE_NOTE,
     boats: STANDARD_BOATS,
     shortDescription:
@@ -169,7 +169,7 @@ export const tours: Tour[] = [
     featured: false,
     tag: "Best Value",
     subGroup: "small-groups",
-    pricing: { speedboat: 1600, luxuryBoat: 1650, venetianBoat: 1700 },
+    pricing: { speedboat: 1655, luxuryBoat: 1705, venetianBoat: 1760 },
   },
   {
     id: "tour-sunset",

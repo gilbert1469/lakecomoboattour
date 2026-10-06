@@ -22,14 +22,14 @@ export const BOAT_TYPE_OPTIONS: { value: BoatType; label: string }[] = [
 
 /** Boat rental price (EUR, per boat) by duration in hours. */
 export const BOAT_RENTAL_PRICES: Record<number, number> = {
-  1: 180,
-  2: 290,
-  3: 420,
-  4: 500,
-  5: 600,
-  6: 650,
-  7: 700,
-  8: 800,
+  1: 190,
+  2: 300,
+  3: 435,
+  4: 520,
+  5: 620,
+  6: 675,
+  7: 725,
+  8: 830,
 };
 
 export function isPayableTour(service: string | undefined): boolean {
