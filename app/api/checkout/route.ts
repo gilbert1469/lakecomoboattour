@@ -89,7 +89,7 @@ export async function POST(request: Request) {
         notes: meta(body.notes),
         amountEur: String(price),
       },
-      success_url: `${origin}/booking/success`,
+      success_url: `${origin}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/booking`,
     });
 
