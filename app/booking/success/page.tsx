@@ -74,7 +74,7 @@ export default async function BookingSuccessPage({
               We couldn&apos;t confirm your payment
             </h1>
             <p className="text-slate leading-relaxed mb-8">
-              If you were charged, please contact us on {phoneLink} and we&apos;ll sort it out right away.
+              If you were charged, please contact us on {phoneLink}{" "}and we&apos;ll sort it out right away.
             </p>
           </>
         )}
