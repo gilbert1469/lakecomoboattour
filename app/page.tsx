@@ -89,7 +89,7 @@ export default function HomePage() {
     name: "Lake Como Tourist Center",
     description: seo.description,
     url: siteSEO.siteUrl,
-    telephone: "+39 334 381 7235",
+    telephone: "+39 350 1136349",
     email: "info@lakecomotouristcenter.com",
     address: {
       "@type": "PostalAddress",

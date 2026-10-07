@@ -49,9 +49,9 @@ export const navigation: NavItem[] = [
 
 export const contact = {
   address: "Via Borgo Vico 62, Como",
-  phone: "+39 334 381 7235",
+  phone: "+39 350 1136349",
   email: "info@lakecomotouristcenter.com",
-  whatsapp: "+39 334 381 7235",
+  whatsapp: "+39 350 1136349",
   googleMapsUrl:
     "https://maps.google.com/maps?q=" +
     encodeURIComponent("Via Borgo Vico 62, Como, Italy") +
