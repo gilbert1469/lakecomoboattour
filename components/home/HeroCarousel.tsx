@@ -82,7 +82,7 @@ export default function HeroCarousel() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
           </svg>
           3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano
-          Malpensa, Milano Porta Garibaldi, Lugano and Zurigo
+          Malpensa, Milano Porta Garibaldi, Lugano and Zurich
         </p>
       </div>
 

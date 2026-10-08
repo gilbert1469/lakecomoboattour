@@ -76,7 +76,7 @@ export default function LuggageStoragePage() {
           <p>
             Drop your bags and explore the lake without limits. Our luggage storage is
             located at {contact.address} — 3 minutes from Como S. Giovanni train station -
-            Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo.
+            Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich.
             Easily accessible by car, with parking available directly in front of the shop.
           </p>
           <p>

@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "What should I do when I arrive at Como San Giovanni?",
-    a: "Lake Como Tourist Center is 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo, at Via Borgo Vico 62. Come find us first — we will help you plan the perfect day based on current weather and lake conditions.",
+    a: "Lake Como Tourist Center is 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich, at Via Borgo Vico 62. Come find us first — we will help you plan the perfect day based on current weather and lake conditions.",
   },
 ];
 
@@ -160,7 +160,7 @@ export default function MilanToComoPage() {
           </h2>
           <p className="text-white/80 text-lg leading-relaxed mb-4">
             Lake Como Tourist Center is 3 minutes from Como S. Giovanni train station - Connection
-            with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurigo. Come find us before
+            with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich. Come find us before
             planning your day — we know the lake, we check conditions daily and we will help you
             make the most of your time in Como.
           </p>
