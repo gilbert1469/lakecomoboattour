@@ -164,6 +164,22 @@ export const pageSEO: Record<string, PageSEO> = {
     ],
     ogImage: "/images/og-contact.jpg",
   },
+  partners: {
+    title: "Travel Trade & Partners — Lake Como DMC | Lake Como Tourist Center",
+    description:
+      "Lake Como DMC and ground handler for travel agencies and tour operators: net rates, private boat tours, transfers, groups, incentives and weddings.",
+    keywords: [
+      "lake como dmc",
+      "lake como ground handler",
+      "lake como travel trade",
+      "lake como incoming agency",
+      "destination management company lake como",
+      "lake como tour operator partner",
+      "lake como incentives",
+      "lake como net rates travel agency",
+    ],
+    ogImage: "/images/og-about.jpg",
+  },
   faq: {
     title: "FAQ – Frequently Asked Questions | Lake Como Tourist Center",
     description:

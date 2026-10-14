@@ -224,6 +224,18 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* Travel trade strip */}
+      <div className="bg-cream border-y border-navy/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-slate text-sm">
+            <span className="font-semibold text-navy">Travel agency or DMC?</span> Partner with us on Lake Como.
+          </p>
+          <Link href="/partners" className="text-sm font-semibold text-navy-light hover:text-navy transition-colors">
+            For travel trade →
+          </Link>
+        </div>
+      </div>
+
       {/* Why book with us */}
       <Section bg="navy">
         <SectionHeader
