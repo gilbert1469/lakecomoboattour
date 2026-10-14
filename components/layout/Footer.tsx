@@ -1,6 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
-import { navigation, contact } from "@/data/navigation";
+import { contact } from "@/data/navigation";
+
+const footerGroups = [
+  {
+    title: "Explore",
+    links: [
+      { label: "Home", href: "/" },
+      { label: "Boat Tours", href: "/taxi-boat-lake-como" },
+      { label: "Boat Rental", href: "/boat-rental" },
+      { label: "Experiences", href: "/experiences" },
+      { label: "Luggage Storage", href: "/luggage-storage" },
+      { label: "Travel Trade", href: "/travel-trade" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About Us", href: "/about" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: "/contact" },
+      { label: "FAQ", href: "/faq" },
+    ],
+  },
+];
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -28,27 +51,21 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-gold-light mb-4">Explore</h3>
-            <ul className="space-y-2">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-white/70 text-sm hover:text-white transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              {[
-                { label: "Luggage Storage", href: "/luggage-storage" },
-                { label: "FAQ", href: "/faq" },
-              ].map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="text-white/70 text-sm hover:text-white transition-colors">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="space-y-8">
+            {footerGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="font-semibold text-sm uppercase tracking-wider text-gold-light mb-4">{group.title}</h3>
+                <ul className="space-y-2">
+                  {group.links.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} className="text-white/70 text-sm hover:text-white transition-colors">
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           {/* Contact */}
