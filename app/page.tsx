@@ -230,7 +230,7 @@ export default function HomePage() {
           <p className="text-slate text-sm">
             <span className="font-semibold text-navy">Travel agency or DMC?</span> Partner with us on Lake Como.
           </p>
-          <Link href="/partners" className="text-sm font-semibold text-navy-light hover:text-navy transition-colors">
+          <Link href="/travel-trade" className="text-sm font-semibold text-navy-light hover:text-navy transition-colors">
             For travel trade →
           </Link>
         </div>

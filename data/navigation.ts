@@ -40,7 +40,7 @@ export const navigation: NavItem[] = [
       },
     ],
   },
-  { label: "Travel Trade", href: "/partners" },
+  { label: "Travel Trade", href: "/travel-trade" },
   { label: "Blog", href: "/blog" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
