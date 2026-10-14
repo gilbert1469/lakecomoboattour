@@ -180,6 +180,16 @@ export const pageSEO: Record<string, PageSEO> = {
     ],
     ogImage: "/images/og-about.jpg",
   },
+  privacy: {
+    title: "Privacy Policy | Lake Como Tourist Center",
+    description:
+      "How Lake Como Tourist Center (LCTC.srl) collects, uses and protects your personal data, and your rights under the GDPR.",
+    keywords: [
+      "lake como tourist center privacy policy",
+      "lctc srl privacy",
+      "gdpr privacy policy",
+    ],
+  },
   faq: {
     title: "FAQ – Frequently Asked Questions | Lake Como Tourist Center",
     description:
