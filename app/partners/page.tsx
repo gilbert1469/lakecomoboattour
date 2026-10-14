@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { pageSEO, siteSEO } from "@/data/seo";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
@@ -44,13 +45,23 @@ export default function PartnersPage() {
   return (
     <>
       {/* Hero */}
-      <div className="bg-navy py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative overflow-hidden bg-navy py-20 lg:py-28">
+        <Image
+          src="/images/venetian-taxi-hero.png"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-navy/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/50 via-navy/20 to-transparent" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-gold-light text-sm font-semibold uppercase tracking-widest mb-2">Travel Trade</p>
           <h1 className="font-serif text-3xl lg:text-5xl font-bold text-white mb-4">
             Your DMC &amp; ground partner on Lake Como
           </h1>
-          <p className="text-white/70 text-lg max-w-2xl mb-8">
+          <p className="text-white/90 text-lg max-w-2xl mb-8">
             We design and operate tailor-made experiences on Lake Como for travel agencies, DMCs and tour operators
             worldwide — with net rates, reliable operations and a single local point of contact.
           </p>
