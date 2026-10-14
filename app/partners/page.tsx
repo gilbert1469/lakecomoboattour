@@ -22,8 +22,6 @@ const valueProps = [
   { icon: "💼", title: "Net rates & commissions", description: "Flexible commercial terms for the trade, on request." },
   { icon: "📍", title: "Local ground expertise", description: "Based in Como, with every service operated in-house." },
   { icon: "🗺️", title: "Tailor-made itineraries", description: "Private tours, groups, incentives and weddings." },
-  { icon: "🌍", title: "Multilingual team", description: "IT · EN · FR · DE · ES · PT · ZH · AR" },
-  { icon: "🛡️", title: "Certified & insured", description: "Certified skippers, fully insured, LCTC.srl." },
   { icon: "🤝", title: "One point of contact", description: "Fast replies and end-to-end handling of every booking." },
 ];
 
@@ -63,7 +61,7 @@ export default function PartnersPage() {
       {/* Why partner with us */}
       <Section bg="white">
         <SectionHeader eyebrow="For the trade" title="Why partner with us" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {valueProps.map((item) => (
             <div key={item.title} className="flex gap-4">
               <div className="text-3xl shrink-0">{item.icon}</div>
