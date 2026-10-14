@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/partners`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${base}/cookie`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   const waterSportRoutes: MetadataRoute.Sitemap = Object.keys(ACTIVITY_CATEGORIES).map((activity) => ({

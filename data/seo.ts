@@ -190,6 +190,15 @@ export const pageSEO: Record<string, PageSEO> = {
       "gdpr privacy policy",
     ],
   },
+  cookie: {
+    title: "Cookie Policy | Lake Como Tourist Center",
+    description:
+      "Which cookies the Lake Como Tourist Center website uses, why, and how you can manage or delete them.",
+    keywords: [
+      "lake como tourist center cookie policy",
+      "lctc srl cookies",
+    ],
+  },
   faq: {
     title: "FAQ – Frequently Asked Questions | Lake Como Tourist Center",
     description:
