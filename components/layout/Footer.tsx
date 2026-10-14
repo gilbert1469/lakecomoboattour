@@ -38,6 +38,16 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              {[
+                { label: "Luggage Storage", href: "/luggage-storage" },
+                { label: "FAQ", href: "/faq" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="text-white/70 text-sm hover:text-white transition-colors">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
