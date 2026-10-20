@@ -46,7 +46,6 @@ export default function ExperiencesPage() {
 
         {/* Content */}
         <div className={idx % 2 !== 0 ? "lg:col-start-1 lg:row-start-1" : ""}>
-          <div className="text-4xl mb-4">{exp.icon}</div>
           <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-2">
             {exp.category === "cycling"
               ? "Cycling Tour"
@@ -130,7 +129,6 @@ export default function ExperiencesPage() {
             />
           </div>
           <div>
-            <div className="text-4xl mb-4">{wineTasting.icon}</div>
             <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-2">
               Food &amp; Wine
             </p>
@@ -162,7 +160,6 @@ export default function ExperiencesPage() {
             />
           </div>
           <div>
-            <div className="text-4xl mb-4">🍽️</div>
             <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-2">
               Food &amp; Wine
             </p>
@@ -195,7 +192,6 @@ export default function ExperiencesPage() {
               href={`/experiences/water-sports/${ACTIVITY_SLUGS[exp.category]}`}
               className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300 text-center"
             >
-              <div className="text-3xl mb-3">{exp.icon}</div>
               <h3 className="font-semibold text-navy mb-2">{ACTIVITY_SHORT_LABELS[exp.category]}</h3>
               <span className="text-sm font-medium text-navy-light group-hover:text-navy transition-colors">
                 Discover more →
