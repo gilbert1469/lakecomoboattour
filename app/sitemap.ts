@@ -1,10 +1,12 @@
 import { MetadataRoute } from "next";
 import { siteSEO } from "@/data/seo";
 import { tours } from "@/data/tours";
-import { getAllPosts } from "@/lib/blog";
+import { getAllBlogPosts } from "@/lib/contentful";
 import { ACTIVITY_CATEGORIES } from "./experiences/water-sports/activities";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const revalidate = 3600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteSEO.siteUrl;
   const now = new Date();
 
@@ -39,10 +41,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const blogPosts = getAllPosts();
-  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
-    url: `${base}/blog/${p.slug}`,
-    lastModified: p.date ? new Date(p.date) : now,
+  const blogPosts = await getAllBlogPosts();
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${base}/blog/${post.slug}`,
+    lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
