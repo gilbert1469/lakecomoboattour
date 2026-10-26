@@ -9,6 +9,9 @@ import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import HeroCarousel from "@/components/home/HeroCarousel";
 import { formatPrice } from "@/lib/utils";
+import { getAllBlogPosts, BlogPost } from "@/lib/contentful";
+
+export const revalidate = 3600;
 
 const seo = pageSEO.home;
 
@@ -47,7 +50,14 @@ const usps = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  let latestPosts: BlogPost[] = [];
+  try {
+    latestPosts = (await getAllBlogPosts()).slice(0, 4);
+  } catch (error) {
+    console.error("Failed to load blog posts for homepage", error);
+  }
+
   const featuredTours = getFeaturedTours();
   const cookingClass = getExperiencesByCategory("cooking")[0];
   const guidedTours = getExperiencesByCategory("guided")[0];
@@ -235,6 +245,66 @@ export default function HomePage() {
           </Link>
         </div>
       </div>
+
+      {/* Latest blog articles */}
+      {latestPosts.length > 0 && (
+        <Section bg="white">
+          <SectionHeader
+            eyebrow="From our blog"
+            title="Guides & Stories from Lake Como"
+            subtitle="Tips and ideas to help you plan your visit to the lake."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {latestPosts.map((post) => {
+              const imageUrl = post.coverImage?.fields?.file?.url
+                ? `https:${post.coverImage.fields.file.url}`
+                : null;
+              return (
+                <article
+                  key={post.slug}
+                  className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+                >
+                  <Link href={`/blog/${post.slug}`} className="relative block h-44 overflow-hidden bg-cream">
+                    {imageUrl ? (
+                      <Image
+                        src={imageUrl}
+                        alt={post.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-navy/10" />
+                    )}
+                  </Link>
+                  <div className="flex flex-col flex-1 p-5">
+                    <h3 className="font-serif text-lg font-bold text-navy leading-snug mb-2 group-hover:text-gold-dark transition-colors">
+                      <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+                    </h3>
+                    {post.excerpt && (
+                      <p className="text-slate text-sm leading-relaxed line-clamp-3 flex-1">{post.excerpt}</p>
+                    )}
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="mt-4 text-sm font-semibold text-gold hover:text-gold-dark transition-colors"
+                    >
+                      Read article →
+                    </Link>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/blog"
+              className="inline-flex items-center px-6 py-3 rounded-full border-2 border-navy text-navy font-semibold hover:bg-navy hover:text-white transition-colors"
+            >
+              View all articles →
+            </Link>
+          </div>
+        </Section>
+      )}
 
       {/* Why book with us */}
       <Section bg="navy">
