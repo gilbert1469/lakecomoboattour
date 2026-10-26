@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="mb-4">
@@ -50,23 +50,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
-          <div className="space-y-8">
-            {footerGroups.map((group) => (
-              <div key={group.title}>
-                <h3 className="font-semibold text-sm uppercase tracking-wider text-gold-light mb-4">{group.title}</h3>
-                <ul className="space-y-2">
-                  {group.links.map((item) => (
-                    <li key={item.href}>
-                      <Link href={item.href} className="text-white/70 text-sm hover:text-white transition-colors">
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {/* Navigation: Explore, Company */}
+          {footerGroups.map((group) => (
+            <div key={group.title}>
+              <h3 className="font-semibold text-sm uppercase tracking-wider text-gold-light mb-4">{group.title}</h3>
+              <ul className="space-y-2">
+                {group.links.map((item) => (
+                  <li key={item.href}>
+                    <Link href={item.href} className="text-white/70 text-sm hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           {/* Contact */}
           <div>
