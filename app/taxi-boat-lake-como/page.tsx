@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
 import {
   tours,
@@ -71,6 +72,14 @@ export default function ToursPage() {
           title="Small Groups Private Tours"
           subtitle="From a 1-hour first taste to a full personalised day. Every tour is private — the boat is exclusively yours. Each boat accommodates max 10 pax."
         />
+        <p className="-mt-6 mb-10 text-center text-sm">
+          <Link
+            href="/blog/lake-como-summer-july-august"
+            className="font-medium text-navy-light hover:text-navy underline underline-offset-4 decoration-navy-light/30 hover:decoration-navy transition-colors"
+          >
+            Planning a summer visit? Read our Lake Como summer guide
+          </Link>
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {smallGroupTours.map((tour) => (
             <TourCard key={tour.id} tour={tour} />

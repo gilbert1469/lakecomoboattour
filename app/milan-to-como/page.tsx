@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
@@ -145,6 +146,31 @@ export default function MilanToComoPage() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Related reading */}
+          <div className="mt-10 pt-6 border-t border-navy/10">
+            <p className="text-navy-light text-xs font-semibold uppercase tracking-widest mb-3">
+              Related reading
+            </p>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/blog/milan-to-como-train-guide-2026"
+                  className="font-medium text-navy hover:text-gold-dark underline underline-offset-4 decoration-navy/20 hover:decoration-gold-dark transition-colors"
+                >
+                  Milan to Como by train — full 2026 guide
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog/milan-centrale-to-como-san-giovanni"
+                  className="font-medium text-navy hover:text-gold-dark underline underline-offset-4 decoration-navy/20 hover:decoration-gold-dark transition-colors"
+                >
+                  From Milan Centrale to Como San Giovanni
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
       </Section>
