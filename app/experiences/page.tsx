@@ -5,7 +5,6 @@ import { pageSEO, siteSEO } from "@/data/seo";
 import { experiences, type Experience, getWaterSportExperiences, getExperiencesByCategory } from "@/data/experiences";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
-import { formatPrice } from "@/lib/utils";
 import { ACTIVITY_SLUGS, ACTIVITY_SHORT_LABELS } from "./water-sports/activities";
 
 const nonWaterSportCategories = ["cooking", "guided"];
@@ -70,33 +69,11 @@ export default function ExperiencesPage() {
             ))}
           </ul>
 
-          {/* Includes */}
-          <div className="bg-cream rounded-xl p-4 mb-6">
-            <p className="text-xs font-semibold text-navy uppercase tracking-wider mb-2">Included:</p>
-            <ul className="flex flex-wrap gap-2">
-              {exp.includes.map((inc) => (
-                <li key={inc} className="text-xs bg-white text-slate px-3 py-1 rounded-full border border-gray-200">
-                  {inc}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Price + CTA */}
+          {/* Duration + CTA */}
           <div className="flex items-center gap-6">
-            <div>
-              {exp.price > 0 ? (
-                <>
-                  <span className="text-3xl font-bold text-navy">{formatPrice(exp.price)}</span>
-                  <span className="text-sm text-slate ml-2">{exp.priceNote}</span>
-                </>
-              ) : (
-                <span className="text-3xl font-bold text-navy">{exp.priceNote}</span>
-              )}
-              {exp.duration && (
-                <div className="text-sm text-slate mt-1">⏱ {exp.duration}</div>
-              )}
-            </div>
+            {exp.duration && (
+              <div className="text-sm text-slate">⏱ {exp.duration}</div>
+            )}
             <Button href="/booking">Book Now</Button>
           </div>
         </div>
@@ -135,7 +112,6 @@ export default function ExperiencesPage() {
             <h2 className="font-serif text-3xl font-bold text-navy mb-4">{wineTasting.name}</h2>
             <p className="text-slate leading-relaxed mb-6">{wineTasting.shortDescription}</p>
             <div className="flex items-center gap-6">
-              <span className="text-3xl font-bold text-navy">{wineTasting.priceNote}</span>
               <Link
                 href="/experiences/wine-tasting"
                 className="px-4 py-2 bg-gold-light text-navy text-sm font-semibold rounded-full hover:bg-gold transition-colors"
@@ -168,7 +144,6 @@ export default function ExperiencesPage() {
               A genuine home restaurant experience on Lake Como. Our chefs, with proven professional experience, prepare authentic local dishes served in an intimate, private setting — for an evening where you feel like a welcomed guest, not a customer.
             </p>
             <div className="flex items-center gap-6">
-              <span className="text-3xl font-bold text-navy">Quotation on request</span>
               <Button href="/booking">Book Now</Button>
             </div>
           </div>

@@ -66,19 +66,6 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
         </div>
       </Section>
 
-      {/* Includes */}
-      <Section bg="white">
-        <SectionHeader eyebrow="What's included" title="Includes" />
-        <ul className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {tour.includes.map((item) => (
-            <li key={item} className="flex items-start gap-3">
-              <span className="text-gold text-xl mt-0.5">✦</span>
-              <span className="text-slate">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
       {/* Boats & Pricing */}
       {showBoatsSection && (
         <Section bg="cream">

@@ -81,12 +81,6 @@ export default function TourCard({ tour }: TourCardProps) {
                     </ul>
                   </div>
                 </div>
-                <p className="flex items-start gap-2">
-                  <svg className="w-4 h-4 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14l-1 12H6L5 8zm0 0l1-4h12l1 4M9 12v4m6-4v4" />
-                  </svg>
-                  Complimentary luggage storage available
-                </p>
               </>
             )}
           </div>

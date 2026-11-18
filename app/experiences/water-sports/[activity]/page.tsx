@@ -114,19 +114,6 @@ export default async function WaterSportActivityPage({
         </ul>
       </Section>
 
-      {/* Includes */}
-      <Section bg="cream">
-        <SectionHeader eyebrow="What's included" title="Includes" />
-        <ul className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {exp.includes.map((item) => (
-            <li key={item} className="flex items-start gap-3">
-              <span className="text-gold text-xl mt-0.5">✦</span>
-              <span className="text-slate">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
       {/* CTA */}
       <Section bg="navy">
         <div className="max-w-2xl mx-auto text-center text-white">
