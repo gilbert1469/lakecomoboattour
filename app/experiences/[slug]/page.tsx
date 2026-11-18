@@ -7,7 +7,7 @@ import Section, { SectionHeader } from "@/components/ui/Section";
 import BookingCta from "@/components/ui/BookingCta";
 
 // Only these categories use this generic detail page; wine and water sports have their own routes.
-const DETAIL_CATEGORIES: Experience["category"][] = ["cooking", "guided", "cycling"];
+const DETAIL_CATEGORIES: Experience["category"][] = ["cooking", "guided", "cycling", "dining"];
 
 function getDetailExperience(slug: string): Experience | undefined {
   const exp = getExperienceBySlug(slug);

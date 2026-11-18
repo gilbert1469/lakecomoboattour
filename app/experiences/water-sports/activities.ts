@@ -9,6 +9,7 @@ export const ACTIVITY_SLUGS: Record<Experience["category"], string> = {
   cooking: "",
   guided: "",
   wine: "",
+  dining: "",
 };
 
 export const ACTIVITY_CATEGORIES: Record<string, Experience["category"]> = {
@@ -27,4 +28,5 @@ export const ACTIVITY_SHORT_LABELS: Record<Experience["category"], string> = {
   cooking: "",
   guided: "",
   wine: "",
+  dining: "",
 };

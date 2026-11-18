@@ -2,7 +2,7 @@ export interface Experience {
   id: string;
   slug: string;
   name: string;
-  category: "cycling" | "cooking" | "guided" | "kite" | "sailing" | "wingfoil" | "windsurf" | "wine";
+  category: "cycling" | "cooking" | "guided" | "kite" | "sailing" | "wingfoil" | "windsurf" | "wine" | "dining";
   shortDescription: string;
   description: string;
   duration?: string;
@@ -181,6 +181,25 @@ export const experiences: Experience[] = [
     includes: ["Windsurf & wind foil equipment", "Wetsuit", "Certified instructor", "Equipment rental"],
     image: "/images/wind_surf.jpeg",
     icon: "🌊",
+  },
+  {
+    id: "fine-dining",
+    slug: "fine-dining-lake-como",
+    name: "Fine Dining",
+    category: "dining",
+    shortDescription: "A genuine fine dining experience on Lake Como — authentic local dishes served in an intimate, private setting.",
+    description: "A genuine fine dining experience on Lake Como. Our chefs, with proven professional experience, prepare authentic local dishes served in an intimate, private setting — for an evening where you feel like a welcomed guest, not a customer.",
+    price: 0,
+    priceNote: "Quotation on request",
+    highlights: [
+      "Chefs with proven professional experience",
+      "Authentic local dishes",
+      "Intimate, private setting",
+      "An evening as a welcomed guest",
+    ],
+    includes: ["Professional chef", "Local dishes", "Private setting"],
+    image: "/images/home-restaurant.png",
+    icon: "🍽️",
   },
 ];
 

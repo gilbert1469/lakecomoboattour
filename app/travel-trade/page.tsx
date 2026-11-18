@@ -30,7 +30,7 @@ const offer = [
   "Private boat tours & transfers",
   "Self-drive boat rental",
   "Guided tours",
-  "Cooking classes & home restaurant",
+  "Cooking classes & fine dining",
   "Wine tasting",
   "Cycling and water sports",
 ];

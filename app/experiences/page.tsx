@@ -7,7 +7,7 @@ import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { ACTIVITY_SLUGS, ACTIVITY_SHORT_LABELS } from "./water-sports/activities";
 
-const nonWaterSportCategories = ["cooking", "guided"];
+const nonWaterSportCategories = ["cooking", "guided", "dining"];
 
 const seo = pageSEO.experiences;
 
@@ -48,7 +48,7 @@ export default function ExperiencesPage() {
           <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-2">
             {exp.category === "cycling"
               ? "Cycling Tour"
-              : exp.category === "cooking"
+              : exp.category === "cooking" || exp.category === "dining"
               ? "Food & Wine"
               : exp.category === "guided"
               ? "Local Guide"
@@ -128,38 +128,11 @@ export default function ExperiencesPage() {
         </div>
       </Section>
 
-      {/* Home Restaurant */}
-      <Section bg={(mainExperiences.length + 1) % 2 === 0 ? "white" : "cream"} id="home-restaurant">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-72 lg:h-[420px] rounded-2xl overflow-hidden shadow-lg">
-            <Image
-              src="/images/home-restaurant.png"
-              alt="Home Restaurant"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-          <div>
-            <p className="text-navy-light text-sm font-semibold uppercase tracking-widest mb-2">
-              Food &amp; Wine
-            </p>
-            <h2 className="font-serif text-3xl font-bold text-navy mb-4">Home Restaurant</h2>
-            <p className="text-slate leading-relaxed mb-6">
-              A genuine home restaurant experience on Lake Como. Our chefs, with proven professional experience, prepare authentic local dishes served in an intimate, private setting — for an evening where you feel like a welcomed guest, not a customer.
-            </p>
-            <div className="flex items-center gap-6">
-              <Button href="/booking">Book Now</Button>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* Cycling Tour */}
-      {cyclingExperiences.map((exp, idx) => renderExperience(exp, mainExperiences.length + 2 + idx))}
+      {cyclingExperiences.map((exp, idx) => renderExperience(exp, mainExperiences.length + 1 + idx))}
 
       {/* Water Sports teaser */}
-      <Section bg={(mainExperiences.length + 2 + cyclingExperiences.length) % 2 === 0 ? "white" : "cream"} id="water-sports">
+      <Section bg={(mainExperiences.length + 1 + cyclingExperiences.length) % 2 === 0 ? "white" : "cream"} id="water-sports">
         <SectionHeader
           eyebrow="Services"
           title="Water Sports"

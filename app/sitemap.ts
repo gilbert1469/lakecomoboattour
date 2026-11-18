@@ -36,7 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const experienceRoutes: MetadataRoute.Sitemap = experiences
-    .filter((exp) => ["cooking", "guided", "cycling"].includes(exp.category))
+    .filter((exp) => ["cooking", "guided", "cycling", "dining"].includes(exp.category))
     .map((exp) => ({
       url: `${base}/experiences/${exp.slug}`,
       lastModified: now,
