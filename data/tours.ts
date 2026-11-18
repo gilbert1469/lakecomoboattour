@@ -222,9 +222,9 @@ export const tours: Tour[] = [
     priceNote: "",
     boats: STANDARD_BOATS,
     shortDescription:
-      "Tell us where you want to go and how long you want to stay out — we'll build the route around you.",
+      "A private itinerary built around you — planned by people who know the lake and handle every detail.",
     description:
-      "A custom journey designed around your preferences. Tell us where you want to go, how long you want to stay out and what you want to see — we'll build the route around you. Whether it's a specific villa, a hidden bay or a combination of stops no standard tour covers, we'll make it happen. Get in touch and we'll put together a proposal.",
+      "Not every trip fits a standard route, and that's where our experience comes in. We design private itineraries around what you actually want to see — a specific villa, a quiet bay, a lunch stop, a combination no fixed tour covers — and we take care of the planning and the logistics so the day runs smoothly. We know the lake, the right timings and the spots worth the detour, and when an outing calls for more — a restaurant booking, a local guide, a special occasion on board — we coordinate it with trusted local partners. Tell us what you have in mind and we'll put together a tailored proposal.",
     includes: STANDARD_INCLUDES,
     image: "/images/blog-taxi-boat.jpg",
     featured: false,
@@ -242,9 +242,9 @@ export const tours: Tour[] = [
     boats: SUGGESTED_BOATS,
     boatsLabel: "Boats suggested",
     shortDescription:
-      "Arriving by private boat makes it unforgettable — from guest transfers to a scenic cruise for the wedding party.",
+      "Weddings and events on Lake Como, organised down to the detail — with trusted local partners and a single point of contact.",
     description:
-      "Lake Como is one of the most romantic settings in the world — and arriving by private boat makes it unforgettable. Whether you're looking for a boat to transfer guests between venues, a scenic cruise for the wedding party or something completely bespoke, we'll tailor every detail to your day. Contact us to discuss your plans.",
+      "Organising a wedding on Lake Como takes more than a beautiful setting: it takes people who know the lake and handle every detail without a hitch. We coordinate the boat side of your day end to end — guest transfers between venues, a private cruise for the couple and the wedding party, timing around the ceremony and reception — working alongside trusted local professionals we collaborate with regularly, from planners and photographers to venues and skippers. You deal with a single point of contact who manages the logistics, so on the day you can simply enjoy it. Tell us about your plans and we'll build a tailored proposal around them.",
     includes: STANDARD_INCLUDES,
     image: "/images/wedding.png",
     featured: false,
@@ -262,9 +262,9 @@ export const tours: Tour[] = [
     boats: SUGGESTED_BOATS,
     boatsLabel: "Boats suggested",
     shortDescription:
-      "Iconic villas, dramatic mountains and light photographers dream about — our skippers know every angle of the lake.",
+      "Fashion shoots, elopements and professional content on the water — organised with experienced crews and the right partners.",
     description:
-      "Lake Como offers an extraordinary backdrop — iconic villas, dramatic mountains, crystal-clear water and light that photographers dream about. Our skippers know every angle of the lake and will position the boat exactly where you need it, for as long as you need it. Ideal for fashion shoots, elopements, content creation and professional photography. Get in touch to plan your session.",
+      "Behind a good shoot on the lake there's real organisation: the right boat, a skipper used to working with crews, the best locations at the right time of day, and permits where they're needed. We regularly support fashion shoots, elopements, content creation and professional photography, and we take care of the practical side so your team can focus on the work. When useful, we can also connect you with trusted local professionals — photographers, stylists and production support. Tell us what the shoot requires and we'll put together a plan.",
     includes: STANDARD_INCLUDES,
     image: "/images/photoshoot.png",
     featured: false,
