@@ -8,7 +8,6 @@ import TourCard from "@/components/tours/TourCard";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import HeroCarousel from "@/components/home/HeroCarousel";
-import { formatPrice } from "@/lib/utils";
 import { getAllBlogPosts, BlogPost } from "@/lib/contentful";
 
 export const revalidate = 3600;
@@ -45,26 +44,20 @@ export default async function HomePage() {
       title: cookingClass.name,
       icon: cookingClass.icon,
       duration: cookingClass.duration,
-      price: cookingClass.price,
-      priceNote: cookingClass.priceNote,
       image: cookingClass.image,
-      href: "/experiences#cooking",
+      href: `/experiences/${cookingClass.slug}`,
     },
     {
       title: guidedTours.name,
       icon: guidedTours.icon,
       duration: guidedTours.duration,
-      price: guidedTours.price,
-      priceNote: guidedTours.priceNote,
       image: guidedTours.image,
-      href: "/experiences#guided",
+      href: `/experiences/${guidedTours.slug}`,
     },
     {
       title: "Water Sports",
       icon: "🌊",
       duration: undefined,
-      price: 0,
-      priceNote: "Quotation on request",
       image: "/images/kite_surf.jpg",
       href: "/experiences/water-sports",
     },
@@ -178,22 +171,8 @@ export default async function HomePage() {
                     {exp.duration}
                   </div>
                 )}
-                <div className="mb-4">
-                  <span className="text-2xl font-bold text-navy">
-                    {exp.price > 0 ? formatPrice(exp.price) : exp.priceNote}
-                  </span>
-                  {exp.price > 0 && exp.priceNote && (
-                    <span className="block text-xs text-slate mt-0.5">{exp.priceNote}</span>
-                  )}
-                </div>
                 <div className="flex-1" />
                 <div className="flex items-center gap-3">
-                  <Link
-                    href="/booking"
-                    className="px-4 py-2 bg-gold-light text-navy text-sm font-semibold rounded-full hover:bg-gold transition-colors"
-                  >
-                    Book
-                  </Link>
                   <Link href={exp.href} className="text-sm font-medium text-navy-light hover:text-navy transition-colors">
                     Discover more →
                   </Link>
