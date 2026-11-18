@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
-import { getFeaturedTours } from "@/data/tours";
+import { getSmallGroupTours, getBigGroupTours } from "@/data/tours";
 import { getExperiencesByCategory } from "@/data/experiences";
 import TourCard from "@/components/tours/TourCard";
 import Section, { SectionHeader } from "@/components/ui/Section";
@@ -58,7 +58,8 @@ export default async function HomePage() {
     console.error("Failed to load blog posts for homepage", error);
   }
 
-  const featuredTours = getFeaturedTours();
+  const smallGroupTours = getSmallGroupTours();
+  const bigGroupTours = getBigGroupTours();
   const cookingClass = getExperiencesByCategory("cooking")[0];
   const guidedTours = getExperiencesByCategory("guided")[0];
 
@@ -134,7 +135,7 @@ export default async function HomePage() {
 
       <HeroCarousel />
 
-      {/* Featured Tours */}
+      {/* Boat Tours: Small Groups, then Big Groups */}
       <Section bg="cream">
         <div className="mb-12 text-center max-w-2xl mx-auto">
           <h2 className="font-serif text-3xl lg:text-4xl font-bold text-navy">
@@ -147,8 +148,20 @@ export default async function HomePage() {
             Every tour is fully private with a certified skipper. Pick the duration and itinerary that suits you best.
           </p>
         </div>
+        <h3 className="text-navy-light text-sm font-semibold uppercase tracking-widest text-center mb-8">
+          Small Groups
+        </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredTours.map((tour) => (
+          {smallGroupTours.map((tour) => (
+            <TourCard key={tour.id} tour={tour} />
+          ))}
+        </div>
+
+        <h3 className="text-navy-light text-sm font-semibold uppercase tracking-widest text-center mt-16 mb-8">
+          Big Groups
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {bigGroupTours.map((tour) => (
             <TourCard key={tour.id} tour={tour} />
           ))}
         </div>
