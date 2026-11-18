@@ -15,7 +15,7 @@ export default function Section({ children, className, bg = "white", id }: Secti
   };
 
   return (
-    <section id={id} className={cn("py-16 lg:py-24", bgMap[bg], className)}>
+    <section id={id} className={cn("py-10 lg:py-16", bgMap[bg], className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
@@ -31,7 +31,7 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ eyebrow, title, subtitle, centered = true, light = false }: SectionHeaderProps) {
   return (
-    <div className={cn("mb-12", centered && "text-center max-w-2xl mx-auto")}>
+    <div className={cn("mb-8", centered && "text-center max-w-2xl mx-auto")}>
       {eyebrow && (
         <p className={cn("text-sm font-semibold uppercase tracking-widest mb-3", light ? "text-gold-light" : "text-navy-light")}>
           {eyebrow}
