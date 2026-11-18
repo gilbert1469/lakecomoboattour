@@ -26,6 +26,7 @@ const EMAILJS_PUBLIC_KEY = "i54f0HPpkKN2Zc4QN";
 
 const GROUP_SIZE_OPTIONS = [
   { value: "up-to-10", label: "Individuals / small group (up to 10)" },
+  { value: "up-to-15", label: "Up to 15 people" },
   { value: "up-to-25", label: "Up to 25 people" },
   { value: "up-to-50", label: "Up to 50 people" },
   { value: "over-50", label: "Over 50 people" },
