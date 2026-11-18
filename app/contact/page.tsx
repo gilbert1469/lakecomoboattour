@@ -1,38 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { contact } from "@/data/navigation";
 import Section from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
-
-const schema = z.object({
-  name: z.string().min(2, "Please enter your name"),
-  email: z.string().email("Invalid email address"),
-  subject: z.string().min(3, "Please enter a subject"),
-  message: z.string().min(10, "Message is too short"),
-  privacy: z.literal(true, { message: "You must accept the privacy policy" }),
-});
-
-type FormData = z.infer<typeof schema>;
+import ContactForm from "@/components/contact/ContactForm";
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({ resolver: zodResolver(schema) });
-
-  const onSubmit = async (data: FormData) => {
-    await new Promise((r) => setTimeout(r, 800));
-    console.log("Contact form:", data);
-    setSubmitted(true);
-  };
-
   return (
     <>
       {/* Header */}
@@ -120,84 +92,9 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Form or success */}
+          {/* Form */}
           <div className="lg:col-span-2">
-            {submitted ? (
-              <div className="bg-white rounded-2xl shadow-sm p-8 text-center h-full flex flex-col items-center justify-center">
-                <div className="text-5xl mb-4">✅</div>
-                <h2 className="font-serif text-2xl font-bold text-navy mb-3">Message sent!</h2>
-                <p className="text-slate mb-6">
-                  Thank you for writing to us. We will reply within 24 hours to the email address you provided.
-                </p>
-                <Button href="/">Back to Home</Button>
-              </div>
-            ) : (
-              <div className="bg-white rounded-2xl shadow-sm p-8">
-                <h2 className="font-serif text-2xl font-bold text-navy mb-6">Send a Message</h2>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-sm font-medium text-navy mb-1">Full Name *</label>
-                      <input
-                        {...register("name")}
-                        className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
-                        placeholder="John Smith"
-                      />
-                      {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-navy mb-1">Email *</label>
-                      <input
-                        {...register("email")}
-                        type="email"
-                        className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
-                        placeholder="john@example.com"
-                      />
-                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-navy mb-1">Subject *</label>
-                    <input
-                      {...register("subject")}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark"
-                      placeholder="Enquiry about the Classic Tour..."
-                    />
-                    {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-navy mb-1">Message *</label>
-                    <textarea
-                      {...register("message")}
-                      rows={6}
-                      className="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark resize-none"
-                      placeholder="Write your message here..."
-                    />
-                    {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <input
-                      {...register("privacy")}
-                      type="checkbox"
-                      id="privacy-contact"
-                      className="mt-0.5 accent-gold"
-                    />
-                    <label htmlFor="privacy-contact" className="text-sm text-slate">
-                      I have read and accept the{" "}
-                      <a href="/privacy" className="text-navy-light underline">Privacy Policy</a>. *
-                    </label>
-                  </div>
-                  {errors.privacy && <p className="text-red-500 text-xs -mt-3">{errors.privacy.message}</p>}
-
-                  <Button type="submit" disabled={isSubmitting} className="w-full">
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </div>
-            )}
+            <ContactForm />
           </div>
         </div>
       </Section>

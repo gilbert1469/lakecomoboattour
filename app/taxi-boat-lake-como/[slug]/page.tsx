@@ -1,6 +1,7 @@
 import { getTourBySlug, getAllTours } from "@/data/tours";
 import { notFound } from "next/navigation";
 import BookingCta from "@/components/ui/BookingCta";
+import ContactForm from "@/components/contact/ContactForm";
 import Section, { SectionHeader } from "@/components/ui/Section";
 
 export async function generateStaticParams() {
@@ -23,6 +24,34 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
   const { slug } = await params;
   const tour = getTourBySlug(slug);
   if (!tour) notFound();
+
+  // Special requests (Custom, Wedding, Photoshoot): description plus an enquiry form only.
+  if (tour.subGroup === "special-requests") {
+    return (
+      <>
+        {/* Hero */}
+        <section className="bg-navy py-20 px-4">
+          <div className="max-w-4xl mx-auto text-white text-center">
+            {tour.tag && (
+              <span className="inline-block bg-gold text-navy text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+                {tour.tag}
+              </span>
+            )}
+            <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-4">{tour.name}</h1>
+            <p className="text-white/80 text-lg">{tour.shortDescription}</p>
+          </div>
+        </section>
+
+        {/* Overview + enquiry form */}
+        <Section bg="cream">
+          <div className="max-w-2xl mx-auto space-y-10">
+            <p className="text-slate text-lg leading-relaxed">{tour.description}</p>
+            <ContactForm tourName={tour.name} title={`Enquire about the ${tour.name}`} />
+          </div>
+        </Section>
+      </>
+    );
+  }
 
   return (
     <>
