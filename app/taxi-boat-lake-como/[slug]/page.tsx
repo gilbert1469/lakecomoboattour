@@ -25,6 +25,10 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
   const tour = getTourBySlug(slug);
   if (!tour) notFound();
 
+  // On-request tours list only the boats they actually offer.
+  const offeredBoats = boatOptions.filter((boat) => tour.boats.includes(boat.name));
+  const showBoatsSection = Boolean(tour.pricing) || offeredBoats.length > 0;
+
   return (
     <>
       {/* Hero */}
@@ -76,67 +80,69 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
       </Section>
 
       {/* Boats & Pricing */}
-      <Section bg="cream">
-        <SectionHeader
-          eyebrow="Choose your boat"
-          title="Boats & Pricing"
-          subtitle={
-            tour.pricing
-              ? "Prices are per boat, fuel & VAT included. Pick the boat that suits your group."
-              : "This tour is quoted individually for every boat, based on your requirements."
-          }
-        />
-        <div className="max-w-3xl mx-auto">
-          {tour.pricing ? (
-            <div className="overflow-x-auto bg-white rounded-2xl shadow-md">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-gray-100">
-                    <th className="px-6 py-4 text-sm font-semibold text-navy">Boat</th>
-                    <th className="px-6 py-4 text-sm font-semibold text-navy">Max pax</th>
-                    <th className="px-6 py-4 text-sm font-semibold text-navy text-right">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4 text-slate">Speedboat</td>
-                    <td className="px-6 py-4 text-slate">6</td>
-                    <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.speedboat)}</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4 text-slate">Luxury Boat</td>
-                    <td className="px-6 py-4 text-slate">6</td>
-                    <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.luxuryBoat)}</td>
-                  </tr>
-                  <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4 text-slate">Exclusive Venetian Boat</td>
-                    <td className="px-6 py-4 text-slate">10</td>
-                    <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.venetianBoat)}</td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 text-slate">Private Ferry</td>
-                    <td className="px-6 py-4 text-slate">25 or 50</td>
-                    <td className="px-6 py-4 text-navy font-bold text-right">Quotation on request</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div className="bg-white rounded-2xl shadow-md p-6">
-              <ul className="space-y-3">
-                {boatOptions.map((boat) => (
-                  <li key={boat.name} className="flex items-center justify-between border-b border-gray-100 last:border-0 pb-3 last:pb-0">
-                    <span className="text-slate">
-                      {boat.name} <span className="text-slate/70">— max {boat.maxPax} pax</span>
-                    </span>
-                    <span className="text-navy font-bold">Quotation on request</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </Section>
+      {showBoatsSection && (
+        <Section bg="cream">
+          <SectionHeader
+            eyebrow="Choose your boat"
+            title="Boats & Pricing"
+            subtitle={
+              tour.pricing
+                ? "Prices are per boat, fuel & VAT included. Pick the boat that suits your group."
+                : "This tour is quoted individually for every boat, based on your requirements."
+            }
+          />
+          <div className="max-w-3xl mx-auto">
+            {tour.pricing ? (
+              <div className="overflow-x-auto bg-white rounded-2xl shadow-md">
+                <table className="w-full text-left">
+                  <thead>
+                    <tr className="border-b border-gray-100">
+                      <th className="px-6 py-4 text-sm font-semibold text-navy">Boat</th>
+                      <th className="px-6 py-4 text-sm font-semibold text-navy">Max pax</th>
+                      <th className="px-6 py-4 text-sm font-semibold text-navy text-right">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-gray-100">
+                      <td className="px-6 py-4 text-slate">Speedboat</td>
+                      <td className="px-6 py-4 text-slate">6</td>
+                      <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.speedboat)}</td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <td className="px-6 py-4 text-slate">Luxury Boat</td>
+                      <td className="px-6 py-4 text-slate">6</td>
+                      <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.luxuryBoat)}</td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <td className="px-6 py-4 text-slate">Exclusive Venetian Boat</td>
+                      <td className="px-6 py-4 text-slate">10</td>
+                      <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.venetianBoat)}</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 text-slate">Private Ferry</td>
+                      <td className="px-6 py-4 text-slate">25 or 50</td>
+                      <td className="px-6 py-4 text-navy font-bold text-right">Quotation on request</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl shadow-md p-6">
+                <ul className="space-y-3">
+                  {offeredBoats.map((boat) => (
+                    <li key={boat.name} className="flex items-center justify-between border-b border-gray-100 last:border-0 pb-3 last:pb-0">
+                      <span className="text-slate">
+                        {boat.name} <span className="text-slate/70">— max {boat.maxPax} pax</span>
+                      </span>
+                      <span className="text-navy font-bold">Quotation on request</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </Section>
+      )}
 
       {/* Good to Know */}
       <Section bg="white">
