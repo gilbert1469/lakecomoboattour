@@ -90,8 +90,6 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
             "Price is per boat — not per person",
             "Fuel and VAT included",
             tour.paxNote,
-            `${tour.boatsLabel ?? "Boats available"}: ${tour.boats.join(" · ")}`,
-            "Departures from Como city only",
             "Weather guarantee: if conditions prevent the tour, full refund provided",
           ]
             .filter((note): note is string => Boolean(note))
