@@ -132,7 +132,10 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
                   {offeredBoats.map((boat) => (
                     <li key={boat.name} className="flex items-center justify-between border-b border-gray-100 last:border-0 pb-3 last:pb-0">
                       <span className="text-slate">
-                        {boat.name} <span className="text-slate/70">— max {boat.maxPax} pax</span>
+                        {boat.name}
+                        {boat.name !== "Private Ferry" && (
+                          <span className="text-slate/70"> — max {boat.maxPax} pax</span>
+                        )}
                       </span>
                       <span className="text-navy font-bold">Quotation on request</span>
                     </li>

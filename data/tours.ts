@@ -40,7 +40,7 @@ export interface Tour {
 // Standard copy used on every regular boat-tour card/detail page.
 const STANDARD_PAX_NOTE = "Max 10 pax, depending on the boat chosen";
 const STANDARD_BOATS: string[] = ["Speedboat", "Luxury Boat", "Exclusive Venetian Boat"];
-const SUGGESTED_BOATS: string[] = ["Luxury Boat", "Exclusive Venetian Boat", "Riva"];
+const SUGGESTED_BOATS: string[] = ["Luxury Boat", "Exclusive Venetian Boat"];
 const STANDARD_PRICE_NOTE = "per boat · fuel & VAT included";
 const STANDARD_INCLUDES = ["Private boat", "Certified skipper", "Fuel & VAT included", "Complimentary luggage storage available"];
 const BIG_GROUPS_DESCRIPTION =
