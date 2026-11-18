@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { siteSEO } from "@/data/seo";
 import { tours } from "@/data/tours";
+import { experiences } from "@/data/experiences";
 import { getAllBlogPosts } from "@/lib/contentful";
 import { ACTIVITY_CATEGORIES } from "./experiences/water-sports/activities";
 
@@ -34,6 +35,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  const experienceRoutes: MetadataRoute.Sitemap = experiences
+    .filter((exp) => ["cooking", "guided", "cycling"].includes(exp.category))
+    .map((exp) => ({
+      url: `${base}/experiences/${exp.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+
   const tourRoutes: MetadataRoute.Sitemap = tours.map((t) => ({
     url: `${base}/taxi-boat-lake-como#${t.slug}`,
     lastModified: now,
@@ -49,5 +59,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...tourRoutes, ...waterSportRoutes, ...blogRoutes];
+  return [...staticRoutes, ...tourRoutes, ...experienceRoutes, ...waterSportRoutes, ...blogRoutes];
 }
