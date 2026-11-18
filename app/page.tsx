@@ -266,7 +266,7 @@ export default async function HomePage() {
           subtitle="3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich. Book with confidence: if the weather changes, we give you a full refund and help you reorganise your day."
           light
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {[
             {
               icon: "🌦️",
@@ -277,14 +277,8 @@ export default async function HomePage() {
             {
               icon: "🧳",
               title: "Luggage Storage",
-              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 62 — 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich.",
+              description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 62.",
               href: "/luggage-storage",
-            },
-            {
-              icon: "🔒",
-              title: "Fully Private Boat",
-              description: "No other passengers: the boat is entirely yours. Total freedom over route and stops.",
-              href: "/taxi-boat-lake-como",
             },
             {
               icon: "💁",
