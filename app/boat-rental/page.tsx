@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { pageSEO, siteSEO } from "@/data/seo";
 import { contact } from "@/data/navigation";
-import Section, { SectionHeader } from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
+import BookingCta from "@/components/ui/BookingCta";
 
 const seo = pageSEO.boatRental;
 
@@ -18,17 +18,6 @@ export const metadata: Metadata = {
     images: [{ url: seo.ogImage ?? siteSEO.defaultOgImage }],
   },
 };
-
-const priceTable = [
-  { duration: "1 hour", price: "€190" },
-  { duration: "2 hours", price: "€300" },
-  { duration: "3 hours", price: "€435" },
-  { duration: "4 hours", price: "€520" },
-  { duration: "5 hours", price: "€620" },
-  { duration: "6 hours", price: "€675" },
-  { duration: "7 hours", price: "€725" },
-  { duration: "8 hours", price: "€830" },
-];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -102,54 +91,8 @@ export default function BoatRentalPage() {
         </div>
       </Section>
 
-      {/* Boat & Pricing */}
-      <Section bg="cream">
-        <SectionHeader
-          eyebrow="Available boat"
-          title="40 CV Motorboat"
-          subtitle="Max 6 people"
-        />
-        <div className="max-w-3xl mx-auto">
-          <div className="overflow-x-auto bg-white rounded-2xl shadow-md">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="border-b border-gray-100">
-                  <th className="px-6 py-4 text-sm font-semibold text-navy">Duration</th>
-                  <th className="px-6 py-4 text-sm font-semibold text-navy text-right">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {priceTable.map((row, i) => (
-                  <tr
-                    key={row.duration}
-                    className={i < priceTable.length - 1 ? "border-b border-gray-100" : undefined}
-                  >
-                    <td className="px-6 py-4 text-slate">{row.duration}</td>
-                    <td className="px-6 py-4 text-navy font-bold text-right">{row.price}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-6 text-slate leading-relaxed">
-            Prices are per boat, not per person. VAT, fuel and any other fees are included.
-          </p>
-        </div>
-      </Section>
-
       {/* CTA */}
-      <Section bg="navy">
-        <div className="max-w-2xl mx-auto text-center text-white">
-          <h2 className="font-serif text-3xl font-bold mb-4">Ready to Set Off?</h2>
-          <p className="text-white/70 mb-8">
-            Departure from {contact.address} — 3 minutes from Como S. Giovanni train station -
-            Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich.
-          </p>
-          <Button href="/booking" size="lg">
-            Book Now
-          </Button>
-        </div>
-      </Section>
+      <BookingCta href="/booking" label="Book Now" />
     </>
   );
 }

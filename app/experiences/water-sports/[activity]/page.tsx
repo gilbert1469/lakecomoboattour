@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getExperiencesByCategory } from "@/data/experiences";
 import { siteSEO } from "@/data/seo";
 import Section, { SectionHeader } from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
+import BookingCta from "@/components/ui/BookingCta";
 import { ACTIVITY_CATEGORIES } from "../activities";
 
 export async function generateStaticParams() {
@@ -106,29 +106,7 @@ export default async function WaterSportActivityPage({
       </Section>
 
       {/* CTA */}
-      <Section bg="navy">
-        <div className="max-w-2xl mx-auto text-center text-white">
-          <h2 className="font-serif text-3xl font-bold mb-4">Ready to Book?</h2>
-          <p className="text-white/70 mb-8">
-            Visit us at Lake Como Tourist Center, Via Borgo Vico 62 — 3 minutes from Como S.
-            Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano
-            Porta Garibaldi, Lugano and Zurich. Or contact us directly for availability and pricing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href={`/booking?tour=${exp.slug}`} size="lg">
-              Book This Activity
-            </Button>
-            <Button
-              href="/experiences/water-sports"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-navy"
-            >
-              All Water Sports
-            </Button>
-          </div>
-        </div>
-      </Section>
+      <BookingCta href={`/booking?tour=${exp.slug}`} label="Book This Activity" />
     </>
   );
 }

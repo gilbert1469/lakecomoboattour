@@ -4,7 +4,7 @@ import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
 import { getExperiencesByCategory } from "@/data/experiences";
 import Section, { SectionHeader } from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
+import BookingCta from "@/components/ui/BookingCta";
 
 const seo = pageSEO.wineTasting;
 
@@ -72,29 +72,7 @@ export default function WineTastingPage() {
       </Section>
 
       {/* CTA */}
-      <Section bg="navy">
-        <div className="max-w-2xl mx-auto text-center text-white">
-          <h2 className="font-serif text-3xl font-bold mb-4">Ready to Book?</h2>
-          <p className="text-white/70 mb-8">
-            Visit us at Lake Como Tourist Center, Via Borgo Vico 62 — 3 minutes from Como S.
-            Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano
-            Porta Garibaldi, Lugano and Zurich. Or contact us directly for availability and pricing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href={`/booking?tour=${exp.slug}`} size="lg">
-              Book This Experience
-            </Button>
-            <Button
-              href="/experiences"
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-navy"
-            >
-              All Experiences
-            </Button>
-          </div>
-        </div>
-      </Section>
+      <BookingCta href={`/booking?tour=${exp.slug}`} label="Book This Experience" />
     </>
   );
 }

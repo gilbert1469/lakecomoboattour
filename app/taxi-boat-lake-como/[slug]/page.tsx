@@ -1,8 +1,7 @@
-import { getTourBySlug, getAllTours, boatOptions } from "@/data/tours";
+import { getTourBySlug, getAllTours } from "@/data/tours";
 import { notFound } from "next/navigation";
-import Button from "@/components/ui/Button";
+import BookingCta from "@/components/ui/BookingCta";
 import Section, { SectionHeader } from "@/components/ui/Section";
-import { formatPrice } from "@/lib/utils";
 
 export async function generateStaticParams() {
   return getAllTours().map((tour) => ({ slug: tour.slug }));
@@ -25,10 +24,6 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
   const tour = getTourBySlug(slug);
   if (!tour) notFound();
 
-  // On-request tours list only the boats they actually offer.
-  const offeredBoats = boatOptions.filter((boat) => tour.boats.includes(boat.name));
-  const showBoatsSection = Boolean(tour.pricing) || offeredBoats.length > 0;
-
   return (
     <>
       {/* Hero */}
@@ -42,14 +37,6 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
           <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-4">{tour.name}</h1>
           <p className="text-white/80 text-lg mb-6">{tour.shortDescription}</p>
           <div className="flex justify-center gap-8 text-center">
-            <div>
-              <div className="text-2xl font-bold text-gold">
-                {tour.priceFrom !== null ? `from ${formatPrice(tour.priceFrom)}` : "On request"}
-              </div>
-              <div className="text-white/60 text-sm">
-                {tour.priceFrom !== null ? "starting from · per boat" : "quotation"}
-              </div>
-            </div>
             <div>
               <div className="text-2xl font-bold text-gold">{tour.duration}</div>
               <div className="text-white/60 text-sm">duration</div>
@@ -65,74 +52,6 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
           <p className="text-slate text-lg leading-relaxed">{tour.description}</p>
         </div>
       </Section>
-
-      {/* Boats & Pricing */}
-      {showBoatsSection && (
-        <Section bg="cream">
-          <SectionHeader
-            eyebrow="Choose your boat"
-            title="Boats & Pricing"
-            subtitle={
-              tour.pricing
-                ? "Prices are per boat, fuel & VAT included. Pick the boat that suits your group."
-                : "This tour is quoted individually for every boat, based on your requirements."
-            }
-          />
-          <div className="max-w-3xl mx-auto">
-            {tour.pricing ? (
-              <div className="overflow-x-auto bg-white rounded-2xl shadow-md">
-                <table className="w-full text-left">
-                  <thead>
-                    <tr className="border-b border-gray-100">
-                      <th className="px-6 py-4 text-sm font-semibold text-navy">Boat</th>
-                      <th className="px-6 py-4 text-sm font-semibold text-navy">Max pax</th>
-                      <th className="px-6 py-4 text-sm font-semibold text-navy text-right">Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-gray-100">
-                      <td className="px-6 py-4 text-slate">Speedboat</td>
-                      <td className="px-6 py-4 text-slate">6</td>
-                      <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.speedboat)}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="px-6 py-4 text-slate">Luxury Boat</td>
-                      <td className="px-6 py-4 text-slate">6</td>
-                      <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.luxuryBoat)}</td>
-                    </tr>
-                    <tr className="border-b border-gray-100">
-                      <td className="px-6 py-4 text-slate">Exclusive Venetian Boat</td>
-                      <td className="px-6 py-4 text-slate">10</td>
-                      <td className="px-6 py-4 text-navy font-bold text-right">{formatPrice(tour.pricing.venetianBoat)}</td>
-                    </tr>
-                    <tr>
-                      <td className="px-6 py-4 text-slate">Private Ferry</td>
-                      <td className="px-6 py-4 text-slate">25 or 50</td>
-                      <td className="px-6 py-4 text-navy font-bold text-right">Quotation on request</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            ) : (
-              <div className="bg-white rounded-2xl shadow-md p-6">
-                <ul className="space-y-3">
-                  {offeredBoats.map((boat) => (
-                    <li key={boat.name} className="flex items-center justify-between border-b border-gray-100 last:border-0 pb-3 last:pb-0">
-                      <span className="text-slate">
-                        {boat.name}
-                        {boat.name !== "Private Ferry" && (
-                          <span className="text-slate/70"> — max {boat.maxPax} pax</span>
-                        )}
-                      </span>
-                      <span className="text-navy font-bold">Quotation on request</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </Section>
-      )}
 
       {/* Good to Know */}
       <Section bg="white">
@@ -157,20 +76,7 @@ export default async function TourDetailPage({ params }: { params: Promise<{ slu
       </Section>
 
       {/* CTA */}
-      <Section bg="navy">
-        <div className="max-w-2xl mx-auto text-center text-white">
-          <h2 className="font-serif text-3xl font-bold mb-4">Ready to Book?</h2>
-          <p className="text-white/70 mb-8">
-            Visit us at Lake Como Tourist Center, Via Borgo Vico 62 — 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich. Or contact us directly for availability and pricing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href={`/booking?tour=${tour.slug}`} size="lg">Book This Tour</Button>
-            <Button href="/taxi-boat-lake-como" variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-navy">
-              All Tours
-            </Button>
-          </div>
-        </div>
-      </Section>
+      <BookingCta href={`/booking?tour=${tour.slug}`} label="Book This Tour" />
     </>
   );
 }
