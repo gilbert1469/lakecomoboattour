@@ -11,7 +11,9 @@ export default function TourCard({ tour }: TourCardProps) {
   const shortDuration = getShortDuration(tour.duration);
   // Big Groups cards skip the boats / luggage details: they are quoted individually on a single ferry.
   const isBigGroup = tour.subGroup === "big-groups";
-  const showDetails = !isBigGroup || Boolean(tour.paxNote);
+  // Special-request cards (Custom, Wedding, Photoshoot) show only the name and CTAs.
+  const isSpecialRequest = tour.subGroup === "special-requests";
+  const showDetails = !isSpecialRequest && (!isBigGroup || Boolean(tour.paxNote));
 
   return (
     <article className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
@@ -38,21 +40,25 @@ export default function TourCard({ tour }: TourCardProps) {
           {shortDuration && ` – ${shortDuration}`}
         </h3>
 
-        <div className="flex items-center gap-1 text-sm text-slate mb-3">
-          <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          {tour.duration}
-        </div>
+        {!isSpecialRequest && (
+          <>
+            <div className="flex items-center gap-1 text-sm text-slate mb-3">
+              <svg className="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              {tour.duration}
+            </div>
 
-        <div className="mb-4">
-          <span className="text-2xl font-bold text-navy">
-            {tour.priceFrom !== null ? `from ${formatPrice(tour.priceFrom)}` : "Quotation on request"}
-          </span>
-          {tour.priceFrom !== null && tour.priceNote && (
-            <span className="block text-xs text-slate mt-0.5">{tour.priceNote}</span>
-          )}
-        </div>
+            <div className="mb-4">
+              <span className="text-2xl font-bold text-navy">
+                {tour.priceFrom !== null ? `from ${formatPrice(tour.priceFrom)}` : "Quotation on request"}
+              </span>
+              {tour.priceFrom !== null && tour.priceNote && (
+                <span className="block text-xs text-slate mt-0.5">{tour.priceNote}</span>
+              )}
+            </div>
+          </>
+        )}
 
         {showDetails ? (
           <div className="flex-1 space-y-2 text-sm text-slate border-t border-gray-100 pt-4 mb-5">
@@ -65,23 +71,21 @@ export default function TourCard({ tour }: TourCardProps) {
               </p>
             )}
             {!isBigGroup && (
-              <>
-                <div className="flex items-start gap-2">
-                  <svg className="w-4 h-4 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 16l4-8 4 4 4-9 6 13H3z" />
-                  </svg>
-                  <div>
-                    <span>{tour.boatsLabel ?? "Boats available"}:</span>
-                    <ul className="mt-1 space-y-0.5">
-                      {tour.boats.map((boat) => (
-                        <li key={boat} className="list-disc list-inside">
-                          {boat}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+              <div className="flex items-start gap-2">
+                <svg className="w-4 h-4 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 16l4-8 4 4 4-9 6 13H3z" />
+                </svg>
+                <div>
+                  <span>{tour.boatsLabel ?? "Boats available"}:</span>
+                  <ul className="mt-1 space-y-0.5">
+                    {tour.boats.map((boat) => (
+                      <li key={boat} className="list-disc list-inside">
+                        {boat}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </>
+              </div>
             )}
           </div>
         ) : (
