@@ -147,7 +147,7 @@ export default function ExperiencesPage() {
             >
               <h3 className="font-semibold text-navy mb-2">{ACTIVITY_SHORT_LABELS[exp.category]}</h3>
               <span className="text-sm font-medium text-navy-light group-hover:text-navy transition-colors">
-                Discover more →
+                Send us a request
               </span>
             </Link>
           ))}
