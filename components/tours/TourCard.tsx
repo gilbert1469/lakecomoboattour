@@ -1,12 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Tour } from "@/data/tours";
+import { formatPrice, getShortDuration } from "@/lib/utils";
 
 interface TourCardProps {
   tour: Tour;
 }
 
 export default function TourCard({ tour }: TourCardProps) {
+  const shortDuration = getShortDuration(tour.duration);
+
   return (
     <article className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col">
       {/* Image */}
@@ -27,7 +30,17 @@ export default function TourCard({ tour }: TourCardProps) {
 
       {/* Content: name on top, CTAs pinned to the bottom */}
       <div className="flex flex-col flex-1 p-6">
-        <h3 className="font-serif text-xl font-bold text-navy leading-snug mb-5">{tour.name}</h3>
+        <h3 className="font-serif text-xl font-bold text-navy leading-snug mb-3">
+          {tour.name}
+          {shortDuration && ` – ${shortDuration}`}
+        </h3>
+
+        {tour.priceFrom !== null && (
+          <div className="mb-5">
+            <span className="text-2xl font-bold text-navy">from {formatPrice(tour.priceFrom)}</span>
+            {tour.priceNote && <span className="block text-xs text-slate mt-0.5">{tour.priceNote}</span>}
+          </div>
+        )}
 
         <div className="mt-auto flex items-center gap-3">
           <Link
