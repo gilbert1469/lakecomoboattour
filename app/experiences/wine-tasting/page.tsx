@@ -4,7 +4,7 @@ import Link from "next/link";
 import { pageSEO, siteSEO } from "@/data/seo";
 import { getExperiencesByCategory } from "@/data/experiences";
 import Section, { SectionHeader } from "@/components/ui/Section";
-import BookingCta from "@/components/ui/BookingCta";
+import ContactForm from "@/components/contact/ContactForm";
 
 const seo = pageSEO.wineTasting;
 
@@ -71,8 +71,16 @@ export default function WineTastingPage() {
         </ul>
       </Section>
 
-      {/* CTA */}
-      <BookingCta href={`/booking?tour=${exp.slug}`} label="Book This Experience" />
+      {/* Enquiry form */}
+      <Section bg="cream">
+        <div className="max-w-2xl mx-auto">
+          <ContactForm
+            tourName={exp.name}
+            enquiryType="EXPERIENCE ENQUIRY"
+            title={`Send us a request for ${exp.name}`}
+          />
+        </div>
+      </Section>
     </>
   );
 }

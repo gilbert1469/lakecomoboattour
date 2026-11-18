@@ -68,7 +68,7 @@ export default function WaterSportsPage() {
                 <h2 className="font-serif text-xl font-bold text-navy mb-2">{exp.name}</h2>
                 <p className="text-slate text-sm leading-relaxed flex-1">{exp.shortDescription}</p>
                 <span className="mt-4 text-sm font-medium text-navy-light group-hover:text-navy transition-colors">
-                  Discover more →
+                  Send us a request
                 </span>
               </div>
             </Link>
@@ -90,7 +90,6 @@ export default function WaterSportsPage() {
             <Button href="/contact" variant="outline" className="border-white text-white hover:bg-white hover:text-navy">
               Contact Us
             </Button>
-            <Button href="/booking">Book Now</Button>
           </div>
         </div>
       </Section>

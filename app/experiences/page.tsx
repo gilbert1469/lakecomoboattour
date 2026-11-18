@@ -78,7 +78,7 @@ export default function ExperiencesPage() {
               href={`/experiences/${exp.slug}`}
               className="px-4 py-2 bg-gold-light text-navy text-sm font-semibold rounded-full hover:bg-gold transition-colors"
             >
-              Discover more →
+              Send us a request
             </Link>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function ExperiencesPage() {
                 href="/experiences/wine-tasting"
                 className="px-4 py-2 bg-gold-light text-navy text-sm font-semibold rounded-full hover:bg-gold transition-colors"
               >
-                Discover more →
+                Send us a request
               </Link>
             </div>
           </div>

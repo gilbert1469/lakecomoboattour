@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { experiences, getExperienceBySlug, type Experience } from "@/data/experiences";
 import Section, { SectionHeader } from "@/components/ui/Section";
-import BookingCta from "@/components/ui/BookingCta";
+import ContactForm from "@/components/contact/ContactForm";
 
 // Only these categories use this generic detail page; wine and water sports have their own routes.
 const DETAIL_CATEGORIES: Experience["category"][] = ["cooking", "guided", "cycling", "dining"];
@@ -108,8 +108,16 @@ export default async function ExperienceDetailPage({
         </ul>
       </Section>
 
-      {/* CTA */}
-      <BookingCta href={`/booking?tour=${exp.slug}`} label="Book This Experience" />
+      {/* Enquiry form */}
+      <Section bg="cream">
+        <div className="max-w-2xl mx-auto">
+          <ContactForm
+            tourName={exp.name}
+            enquiryType="EXPERIENCE ENQUIRY"
+            title={`Send us a request for ${exp.name}`}
+          />
+        </div>
+      </Section>
     </>
   );
 }

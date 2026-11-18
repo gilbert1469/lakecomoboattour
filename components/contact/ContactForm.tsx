@@ -27,12 +27,18 @@ const inputClass =
   "w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-gold-dark/50 focus:border-gold-dark";
 
 interface ContactFormProps {
-  /** When set, the enquiry is tagged with this tour and the subject is prefilled. */
+  /** When set, the enquiry is tagged with this tour/experience and the subject is prefilled. */
   tourName?: string;
+  /** Label used to tag a tour/experience enquiry in the email, e.g. "TOUR ENQUIRY". */
+  enquiryType?: string;
   title?: string;
 }
 
-export default function ContactForm({ tourName, title = "Send a Message" }: ContactFormProps) {
+export default function ContactForm({
+  tourName,
+  enquiryType = "TOUR ENQUIRY",
+  title = "Send a Message",
+}: ContactFormProps) {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState(false);
 
@@ -56,12 +62,12 @@ export default function ContactForm({ tourName, title = "Send a Message" }: Cont
           last_name: "",
           email: data.email,
           phone: "-",
-          service: tourName ? `TOUR ENQUIRY – ${tourName}` : `CONTACT – ${data.subject}`,
+          service: tourName ? `${enquiryType} – ${tourName}` : `CONTACT – ${data.subject}`,
           date: "-",
           time: "-",
           people: "-",
           notes: [
-            tourName ? `TOUR ENQUIRY: ${tourName}` : "CONTACT FORM",
+            tourName ? `${enquiryType}: ${tourName}` : "CONTACT FORM",
             `Subject: ${data.subject}`,
             "",
             data.message,

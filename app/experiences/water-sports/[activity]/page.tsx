@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { getExperiencesByCategory } from "@/data/experiences";
 import { siteSEO } from "@/data/seo";
 import Section, { SectionHeader } from "@/components/ui/Section";
-import BookingCta from "@/components/ui/BookingCta";
+import ContactForm from "@/components/contact/ContactForm";
 import { ACTIVITY_CATEGORIES } from "../activities";
 
 export async function generateStaticParams() {
@@ -105,8 +105,16 @@ export default async function WaterSportActivityPage({
         </ul>
       </Section>
 
-      {/* CTA */}
-      <BookingCta href={`/booking?tour=${exp.slug}`} label="Book This Activity" />
+      {/* Enquiry form */}
+      <Section bg="cream">
+        <div className="max-w-2xl mx-auto">
+          <ContactForm
+            tourName={exp.name}
+            enquiryType="EXPERIENCE ENQUIRY"
+            title={`Send us a request for ${exp.name}`}
+          />
+        </div>
+      </Section>
     </>
   );
 }

@@ -46,6 +46,7 @@ export default async function HomePage() {
       duration: cookingClass.duration,
       image: cookingClass.image,
       href: `/experiences/${cookingClass.slug}`,
+      cta: "Send us a request",
     },
     {
       title: guidedTours.name,
@@ -53,6 +54,7 @@ export default async function HomePage() {
       duration: guidedTours.duration,
       image: guidedTours.image,
       href: `/experiences/${guidedTours.slug}`,
+      cta: "Send us a request",
     },
     {
       title: "Water Sports",
@@ -60,6 +62,7 @@ export default async function HomePage() {
       duration: undefined,
       image: "/images/kite_surf.jpg",
       href: "/experiences/water-sports",
+      cta: "Discover more →",
     },
   ];
 
@@ -174,7 +177,7 @@ export default async function HomePage() {
                 <div className="flex-1" />
                 <div className="flex items-center gap-3">
                   <Link href={exp.href} className="text-sm font-medium text-navy-light hover:text-navy transition-colors">
-                    Discover more →
+                    {exp.cta}
                   </Link>
                 </div>
               </div>
