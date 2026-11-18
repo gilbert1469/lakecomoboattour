@@ -27,29 +27,6 @@ export const metadata: Metadata = {
   },
 };
 
-const usps = [
-  {
-    icon: "🔒",
-    title: "Fully Private Boat",
-    description: "No other passengers: the boat is entirely yours. Total freedom over route and stops.",
-  },
-  {
-    icon: "🧳",
-    title: "Complimentary Luggage Storage",
-    description: "Drop your bags at our secure office before or after your tour. Our luggage storage is staffed and monitored at all times.",
-  },
-  {
-    icon: "🏠",
-    title: "From the Station to the Lake",
-    description: "Step off the train and straight onto your tour in Como or on the lake. Drop your bags at our office — 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich — and you're ready to go.",
-  },
-  {
-    icon: "💁",
-    title: "Physical Help Desk",
-    description: "We are available in person at our office to answer any question and help you make the most of your time in Como and on the lake.",
-  },
-];
-
 export default async function HomePage() {
   let latestPosts: BlogPost[] = [];
   try {
@@ -227,26 +204,6 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* USPs */}
-      <Section bg="white">
-        <SectionHeader
-          eyebrow="Why choose us"
-          title="A Tailor-Made Experience, Just for You"
-          subtitle="We're not a ferry service. Every tour is crafted to let you experience the lake in an authentic, personal way."
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {usps.map((usp) => (
-            <div key={usp.title} className="flex gap-4">
-              <div className="text-3xl shrink-0">{usp.icon}</div>
-              <div>
-                <h3 className="font-serif text-lg font-bold text-navy mb-2">{usp.title}</h3>
-                <p className="text-slate text-sm leading-relaxed">{usp.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* Travel trade strip */}
       <div className="bg-cream border-y border-navy/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
@@ -340,6 +297,18 @@ export default async function HomePage() {
               title: "Luggage Storage",
               description: "Drop your bags at our office and explore Como hands-free. Safe, secure and open daily. Via Borgo Vico 62 — 3 minutes from Como S. Giovanni train station - Connection with Milano Centrale, Milano Malpensa, Milano Porta Garibaldi, Lugano and Zurich.",
               href: "/luggage-storage",
+            },
+            {
+              icon: "🔒",
+              title: "Fully Private Boat",
+              description: "No other passengers: the boat is entirely yours. Total freedom over route and stops.",
+              href: "/taxi-boat-lake-como",
+            },
+            {
+              icon: "💁",
+              title: "Physical Help Desk",
+              description: "We are available in person at our office to answer any question and help you make the most of your time in Como and on the lake.",
+              href: "/contact",
             },
           ].map((item) => (
             <Link
