@@ -94,7 +94,7 @@ export default function ToursPage() {
           title="Big Groups Private Tours"
           subtitle="Travelling with a larger party? Our private ferry accommodates groups of up to 50 people. Every standard itinerary is available, quoted individually for your group."
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {bigGroupTours.map((tour) => (
             <div key={tour.id}>
               {tour.subheading && (
