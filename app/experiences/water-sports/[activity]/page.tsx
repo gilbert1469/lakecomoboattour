@@ -6,7 +6,6 @@ import { getExperiencesByCategory } from "@/data/experiences";
 import { siteSEO } from "@/data/seo";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
-import { formatPrice } from "@/lib/utils";
 import { ACTIVITY_CATEGORIES } from "../activities";
 
 export async function generateStaticParams() {
@@ -64,14 +63,6 @@ export default async function WaterSportActivityPage({
           <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-4">{exp.name}</h1>
           <p className="text-white/80 text-lg mb-6">{exp.shortDescription}</p>
           <div className="flex justify-center gap-8 text-center">
-            <div>
-              <div className="text-2xl font-bold text-gold">
-                {exp.price > 0 ? formatPrice(exp.price) : exp.priceNote}
-              </div>
-              <div className="text-white/60 text-sm">
-                {exp.price > 0 ? exp.priceNote : "pricing"}
-              </div>
-            </div>
             {exp.duration && (
               <div>
                 <div className="text-2xl font-bold text-gold">{exp.duration}</div>

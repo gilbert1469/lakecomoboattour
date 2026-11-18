@@ -35,7 +35,7 @@ export default function WineTastingPage() {
           </p>
           <div className="text-4xl mb-4">{exp.icon}</div>
           <h1 className="font-serif text-4xl lg:text-5xl font-bold mb-4">{exp.name}</h1>
-          <p className="text-white/80 text-lg mb-6">{exp.priceNote}</p>
+          <p className="text-white/80 text-lg mb-6">{exp.shortDescription}</p>
         </div>
       </section>
 
